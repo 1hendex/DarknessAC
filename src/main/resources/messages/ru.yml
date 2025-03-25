@@ -1,0 +1,145 @@
+# +----------------------------------------------------------------------------------------------+
+# |                                                                                              |
+# |                                       Darkness Liquidation                                   |
+# |                                                                                              |
+# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                                                                                              |
+# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                                                                              |
+# +----------------------------------------------------------------------------------------------+
+
+# \u00BB is » (double >>), ANSI and UTF-8 interpret this differently... you may even see ? due to this
+prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os§r §8|"
+
+alerts_enabled: "%prefix% &fОповещения включены"
+alerts_disabled: "%prefix% &fОповещения выключены"
+verbose_enabled: "%prefix% &fVerbose enabled"
+verbose_disabled: "%prefix% &fVerbose disabled"
+cps_enabled: "%prefix% &fОтображение CPS &aвключено"
+cps_disabled: "%prefix% &fОтображение CPS &cвыключено"
+action_bar: "&e⚡ &fИгрок: &c%player%&f, CPS: &c%сps%"
+console_specify_target: "%prefix% &cВы должны указать цель в качестве консоли!"
+player_not_this_server: "%prefix% &cИгрок не на этом сервере!"
+player_not_found: "%prefix% &cУказанный игрок не может быть найден!"
+reloading: "%prefix% &7Перезагрузка конфигурации..."
+reload_success: "%prefix% &fЯ успешно перезагружена!"
+reload_failed: "%prefix% &cНе удалось перезагрузить конфигурацию. (Подробности в консоли)"
+rotate_success: "%prefix% &cУспешно повернут игрок %player%"
+knockback_success: "%prefix% &cУспешно проведен тест отбрасывания для игрока %player%"
+client_brand_format: "%prefix% &f%player% присоединился, используя %brand%"
+client_brand_kick: "&c%brand% &fне разрешен на этом сервере!"
+bot_spawned: "%prefix% &fВы заспавнили бота для &7%player%"
+bot_already_spawned: "%prefix% &fБот уже был заспавнен для этого игрока"
+spectate_return: "\n%prefix% &fНажмите здесь, чтобы вернуться в предыдущее место\n"
+cannot_spectate_return: "%prefix% &cВы можете сделать это только после наблюдения за игроком"
+cannot_run_on_self: "%prefix% &cВы не можете использовать эту команду на себе!"
+add_point_success: "%prefix% &cДобавлено 1 поинтов игроку %player%"
+reset_points_success: "%prefix% &cБан-поинты сброшены для игрока %player%"
+crash_invalid_mode: "%prefix% &cНеизвестный метод! Используйте entity,particle,explosion,position или explosion1!"
+crash_player: "%prefix% &cВы, возможно, крашнули клиент игрока &7%player%"
+shuffle_one: "%prefix% &cУспешно перемешан один слот Hotbar для игрока %player%"
+shuffle_many: "%prefix% &cУспешно перемешан Hotbar для игрока %player%"
+shuffle_invalid_mode: "%prefix% &cНеверный режим. Доступные: one , many"
+setback_message: "%prefix% &cВы успешно сетбекнули назад игрока %player%"
+punish_message: "%prefix% &fВы наказали игрока &c%player%&c!"
+kick_message: "%prefix% &fВы выгнали игрока &c%player%&c!"
+upload_log: "%prefix% &fЗагрузил отладку в: %url%"
+upload_log_start: "%prefix% &fЗагрузка журнала... пожалуйста, подождите"
+upload_log_not_found: "%prefix% &cНе удалось найти этот журнал"
+upload_log_upload_failure: "%prefix% &cЧто-то пошло не так при загрузке этого журнала, см. консоль для получения дополнительной информации."
+
+# Доступные плейсхолдеры:
+# %time% - Текущее время (Обязательный плейсхолдер к логу)
+# %server_name% - Название сервера
+# %player% - Никнейм игрока
+# %ip% - IP-адрес игрока
+# %uuid% - Уникальный идентификатор игрока
+# %check_name% - Название проверки
+# %verbose% - Дополнительная информация от проверки. Не все проверки добавляют эту информацию
+# %vl% - Количество нарушений
+# %ping% - Пинг игрока
+# %tps% - Текущий TPS
+# %component% - Модуль кика (Только для бренда)
+brand_log_format: "(%time%) %server_name%: %player% (%ip%) был исключен за бренд: %brand% | component: %component%"
+log_format: "(%time%) %server_name%: %player% (%ip%) провалил %check% | (%verbose%) | vl: %vl% ping: %ping% tps: %tps%"
+alerts_format: "%prefix% &c%player% &7провалил &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
+alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7провалил &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
+
+profile_command:
+  - ' '
+  - '%prefix%'
+  - ' '
+  - '&8» &7Профиль игрока: &f%player%'
+  - '&8» &7Пинг: &f%ping%'
+  - '&8» &7Версия: &f%version%'
+  - '&8» &7Клиент: &f%brand%'
+  - '&8» &7Горизонтальная чувствительность: &f%h_sensitivity%%'
+  - '&8» &7Вертикальная чувствительность: &f%v_sensitivity%%'
+  - '&8» &7Быстрая математика: &f%fast_math%'
+  - ' '
+
+lag_command:
+  - ' '
+  - '%prefix%'
+  - ' '
+  - '&8» &7Ядро/Версия: &f%version%'
+  - '&8» &7Система: &f%system%'
+  - '&8» &7TPS: &f%tps%'
+  - '&8» &7Потоки: &f%threads%'
+  - '&8» &7Версия Java: &f%javaversion%'
+  - '&8» &7Свободная память: &f%freememory%'
+  - '&8» &7Максимальная память: &f%maxmemory%'
+  - '&8» &7Плагины: &f%plugins%'
+  - ' '
+
+checks_command:
+  space: ' '
+  type-space: ' '
+  type: "&8» &7Категория проверки: &f%checkType%"
+  not-found-total: "&8» &cПроверки не найдены."
+  not-found-type: "&8» &cНету."
+  separator: "&7, "
+  check:
+    enabled: "&a%checkName%%experimental%"
+    disabled: "&c%checkName%%experimental%"
+    exempted: "&e%checkName%%experimental%"
+
+info:
+  - "&6&l&m┏  &7"
+  - "&6&l| &c&lDarkness Liquidation &8| &cВерсия 2.2.1"
+  - "&6&l| &fСвязь с разработчиком: &c&n1hendex&r &7(Discord)"
+  - "&6&l&m┗  &1"
+
+# Плейсхолдеры: %prefix% -> (Префикс Даркнесс), %player% -> (Игрок, который был наказан), %reason% -> (Причина, указанная в команде наказания Грима)
+broadcast:
+  kick:
+    - "%prefix% &cИгрок &6&l%player%&r &cбыл кикнут за использование читов!"
+  ban:
+    - "%prefix% &cИгрок &6&l%player%&r &cбыл забанен за использование читов!"
+
+help:
+  - ' '
+  - '%prefix% &7Список доступных команд Darkness'
+  - ' '
+  - '&8» &c/darkness alerts &f- &7Включить/выключить оповещения.'
+  - '&8» &c/darkness profile <player> &f- &7Посмотреть информацию об игроке.'
+  - '&8» &c/darkness help &f- &7Просмотр списка доступных команд.'
+  - '&8» &c/darkness debug <player> &f- &7Отладка с прогнозом разработчика.'
+  - '&8» &c/darkness perf &f- &7Показатель производительности (ms/prediction).'
+  - '&8» &c/darkness kb <player> <back> &f- &7Проверка игрока на откидывание.'
+  - '&8» &c/darkness cps <player> &f- &7Отображение CPS игрока.'
+  - '&8» &c/darkness kick <player> <reason> &f- &7Кикнуть игрока с сервера.'
+  - '&8» &c/darkness punish <player> <reason> &f- &7Наказать игрока за использование читов.'
+  - '&8» &c/darkness ban <player> <reason> &f- &7Забанить игрока на сервере.'
+  - '&8» &c/darkness flag <player> &f- &7Сетбек игрока назад.'
+  - '&8» &c/darkness addpoint <player> &f- &7Выдать бан-поинт игроку.'
+  - '&8» &c/darkness resetpoints <player> &f- &7Сбросить все бан-поинты игрока.'
+  - '&8» &c/darkness checks &f- &7Посмотреть все активные проверки Darkness.'
+  - '&8» &c/darkness shuffle <player> <method> &f- &7Перемешать слоты игрока.'
+  - '&8» &c/darkness crash <player> <method> &f- &7Крашнуть клиент игрока.'
+  - '&8» &c/darkness lag &f- &7Просмотреть характеристики сервера.'
+  - '&8» &c/darkness rotate <player> &f- &7Рандомный поворот игрока.'
+  - '&8» &c/darkness reload &f- &7Перезагрузить конфигурацию.'
+  - '&8» &c/darkness spectate <player> &f- &7Слежка за игроком.'
+  - '&8» &c/darkness verbose &f- &7Показ всех флагов без буферов.'
+  - ' '

@@ -1,0 +1,145 @@
+# +----------------------------------------------------------------------------------------------+
+# |                                                                                              |
+# |                                       Darkness Liquidation                                   |
+# |                                                                                              |
+# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                                                                                              |
+# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                                                                              |
+# +----------------------------------------------------------------------------------------------+
+
+# \u00BB is » (double >>), ANSI and UTF-8 interpret this differently... you may even see ? due to this
+prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os§r §8|"
+
+alerts_enabled: "%prefix% &fAlerts enabled"
+alerts_disabled: "%prefix% &fAlerts disabled"
+verbose_enabled: "%prefix% &fVerbose enabled"
+verbose_disabled: "%prefix% &fVerbose disabled"
+cps_enabled: "%prefix% &fCPS display &aenabled"
+cps_disabled: "%prefix% &fCPS display &cdisabled"
+action_bar: "&e⚡ &fPlayer: &c%player%&f, CPS: &c%сps%"
+console_specify_target: "%prefix% &cYou must specify a target in the console!"
+player_not_this_server: "%prefix% &cPlayer is not on this server!"
+player_not_found: "%prefix% &cThe specified player could not be found!"
+reloading: "%prefix% &7Reloading configuration..."
+reload_success: "%prefix% &fSuccessfully reloaded!"
+reload_failed: "%prefix% &cFailed to reload configuration. (Details in console)"
+rotate_success: "%prefix% &cSuccessfully rotated player %player%"
+knockback_success: "%prefix% &cSuccessfully performed knockback test for player %player%"
+client_brand_format: "%prefix% &f%player% joined using %brand%"
+client_brand_kick: "&c%brand% &fis not allowed on this server!"
+bot_spawned: "%prefix% &fYou spawned a bot for &7%player%"
+bot_already_spawned: "%prefix% &fBot has already been spawned for this player"
+spectate_return: "\n%prefix% &fClick here to return to the previous location\n"
+cannot_spectate_return: "%prefix% &cYou can only do this after spectating a player"
+cannot_run_on_self: "%prefix% &cYou cannot use this command on yourself!"
+add_point_success: "%prefix% &cAdded 1 point to player %player%"
+reset_points_success: "%prefix% &cBan points reset for player %player%"
+crash_invalid_mode: "%prefix% &cUnknown method! Use entity, particle, explosion, position, or explosion1!"
+crash_player: "%prefix% &cYou may have crashed the client of player &7%player%"
+shuffle_one: "%prefix% &cSuccessfully shuffled one hotbar slot for player %player%"
+shuffle_many: "%prefix% &cSuccessfully shuffled hotbar for player %player%"
+shuffle_invalid_mode: "%prefix% &cInvalid mode. Available: one, many"
+setback_message: "%prefix% &cYou successfully set back player %player%"
+punish_message: "%prefix% &fYou punished player &c%player%&c!"
+kick_message: "%prefix% &fYou kicked player &c%player%&c!"
+upload_log: "%prefix% &fUploaded the debug log to: %url%"
+upload_log_start: "%prefix% &fUploading log... please wait"
+upload_log_not_found: "%prefix% &cFailed to find this log"
+upload_log_upload_failure: "%prefix% &cSomething went wrong while uploading this log, see console for details."
+
+# Valid placeholders:
+# %time% - Current time (Required placeholder for the log)
+# %server_name% - Server name
+# %player% - Player's nickname
+# %ip% - Player's IP address
+# %uuid% - Player's unique identifier
+# %check_name% - Check name
+# %verbose% - Additional information from the check. Not all checks add this information
+# %vl% - Violation count
+# %ping% - Player's ping
+# %tps% - Current TPS
+# %component% - Kick module (Only for brand)
+brand_log_format: "(%time%) %server_name%: %player% (%ip%) was kicked for brand: %brand% | component: %component%"
+log_format: "(%time%) %server_name%: %player% (%ip%) failed %check% | (%verbose%) | vl: %vl% ping: %ping% tps: %tps%"
+alerts_format: "%prefix% &c%player% &7failed &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
+alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7failed &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
+
+profile_command:
+  - ' '
+  - '%prefix%'
+  - ' '
+  - '&8» &7Player Profile: &f%player%'
+  - '&8» &7Ping: &f%ping%'
+  - '&8» &7Version: &f%version%'
+  - '&8» &7Client: &f%brand%'
+  - '&8» &7Horizontal sensitivity: &f%h_sensitivity%%'
+  - '&8» &7Vertical sensitivity: &f%v_sensitivity%%'
+  - '&8» &7Fast math: &f%fast_math%'
+  - ' '
+
+lag_command:
+  - ' '
+  - '%prefix%'
+  - ' '
+  - '&8» &7Core/Version: &f%version%'
+  - '&8» &7System: &f%system%'
+  - '&8» &7TPS: &f%tps%'
+  - '&8» &7Threads: &f%threads%'
+  - '&8» &7Java version: &f%javaversion%'
+  - '&8» &7Free memory: &f%freememory%'
+  - '&8» &7Max memory: &f%maxmemory%'
+  - '&8» &7Plugins: &f%plugins%'
+  - ' '
+
+checks_command:
+  space: ' '
+  type-space: ' '
+  type: "&8» &7Check Category: &f%checkType%"
+  not-found-total: "&8» &cNo checks found."
+  not-found-type: "&8» &cNone."
+  separator: "&7, "
+  check:
+    enabled: "&a%checkName%%experimental%"
+    disabled: "&c%checkName%%experimental%"
+    exempted: "&e%checkName%%experimental%"
+
+info:
+  - "&6&l&m┏  &7"
+  - "&6&l| &c&lDarkness Liquidation &8| &cVersion 2.2.1"
+  - "&6&l| &fContact developer: &c&n1hendex&r &7(Discord)"
+  - "&6&l&m┛  &1"
+
+# Placeholders: %prefix% -> (Darkness Prefix), %player% -> (The player that got punished), %reason% -> (The reason provided by the Darkness punish command)
+broadcast:
+  kick:
+    - "%prefix% &cPlayer &6&l%player%&r &cwas kicked for cheating!"
+  ban:
+    - "%prefix% &cPlayer &6&l%player%&r &cwas banned for cheating!"
+
+help:
+  - ' '
+  - '%prefix% &7List of available Darkness commands'
+  - ' '
+  - '&8» &c/darkness alerts &f- &7Enable/disable alerts.'
+  - '&8» &c/darkness profile <player> &f- &7View player information.'
+  - '&8» &c/darkness help &f- &7View the list of available commands.'
+  - '&8» &c/darkness debug <player> &f- &7Developer debug with prediction.'
+  - '&8» &c/darkness perf &f- &7Performance indicator (ms/prediction).'
+  - '&8» &c/darkness kb <player> <back> &f- &7Test player for knockback.'
+  - '&8» &c/darkness cps <player> &f- &7Display player CPS.'
+  - '&8» &c/darkness kick <player> <reason> &f- &7Kick player from server.'
+  - '&8» &c/darkness punish <player> <reason> &f- &7Punish player for cheating.'
+  - '&8» &c/darkness ban <player> <reason> &f- &7Ban player from server.'
+  - '&8» &c/darkness flag <player> &f- &7Setback player.'
+  - '&8» &c/darkness addpoint <player> &f- &7Give ban point to player.'
+  - '&8» &c/darkness resetpoints <player> &f- &7Reset all ban points for player.'
+  - '&8» &c/darkness checks &f- &7View all active Darkness checks.'
+  - '&8» &c/darkness shuffle <player> <method> &f- &7Shuffle player slots.'
+  - '&8» &c/darkness crash <player> <method> &f- &7Crash player client.'
+  - '&8» &c/darkness lag &f- &7View server stats.'
+  - '&8» &c/darkness rotate <player> &f- &7Random player rotation.'
+  - '&8» &c/darkness reload &f- &7Reload configuration.'
+  - '&8» &c/darkness spectate <player> &f- &7Spectate player.'
+  - '&8» &c/darkness verbose &f- &7Show all flags without buffers.'
+  - ' '

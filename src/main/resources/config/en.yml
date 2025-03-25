@@ -1,0 +1,1095 @@
+# +----------------------------------------------------------------------------------------------+
+# |                                                                                              |
+# |                                       Darkness Liquidation                                   |
+# |                                                                                              |
+# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                                                                                              |
+# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                                                                              |
+# +----------------------------------------------------------------------------------------------+
+
+# To run Darkness, a license is required (provided upon purchase)
+your_license: ""
+
+alerts:
+  # In addition to broadcasting alerts to players, should they also be sent to the console?
+  print_to_console: true
+  # This controls whether/how alerts are shared between servers connected to your proxy.
+  # You must have 'bungee-plugin-message-channel' enabled in your Velocity's configuration if Velocity is in use.
+  proxy:
+    # Should alerts be sent to other servers connected to your proxy?
+    send: false
+    # Should the alerts received from other servers be announced to this server?
+    receive: false
+
+verbose:
+  print_to_console: false
+
+# Should we enable the test mode?
+# If this mode is enabled, the punish, rotate, and slot shuffle commands will not work.
+test_mode: false
+
+# Client Settings
+client_settings:
+
+  # Client Alert Settings
+  alert:
+
+    # Should we send an Alert when a player joins specifying his Client Brand?
+    enabled: true
+
+    # This means it won't broadcast their brand to operators if the brand matches the following regexes
+    ignored_clients:
+      - "^vanilla$"
+      - "^fabric$"
+
+  # Client brands containing the following names will be blocked from joining the server
+  banned_clients:
+    - "^1.12.2$"
+    - "^ForgeOptiFine 1.16.5/forge/modified$"
+
+  # Maximum/Minimum client brand name length
+  brand_max_length: 26
+  brand_min_length: 5
+  # Blocking the use of invalid characters in the brand name.
+  block_illegal_symbol: true
+
+# How long should players have until we kick them for timing out? Default = 60 seconds
+max_transaction_time: 60
+
+# Punishment command settings
+point_command:
+
+  # Commands that will be executed under various conditions (e.g., violations)
+  '1': darkness rotate %PLAYER%
+  '2': darkness shuffle %PLAYER% many
+  '3': darkness rotate %PLAYER%
+  '4': darkness shuffle %PLAYER% many
+  '6': darkness kick %PLAYER% &cSuspicion of using cheats
+  '7': darkness crash %PLAYER% particle
+  '8': darkness kick %PLAYER% &cSuspicion of using cheats
+  '9': darkness ban %PLAYER% &cSuspicion of using cheats
+  '21': darkness kick %PLAYER% &cSuspicion of using cheats
+  '26': darkness kick %PLAYER% &cSuspicion of using cheats
+  '30': darkness ban %PLAYER% &cSuspicion of using cheats
+  '34': darkness kick %PLAYER% &cSuspicion of using cheats
+  '38': darkness ban %PLAYER% &cSuspicion of using cheats
+
+# Punish Command Settings
+punish_command:
+
+  # What Punish Animation Should Darkness display before executing the below command?
+  # Animations: NONE, THOR, HOLYTHOR, ERROR or RANDOM to let it choose a random animation each time
+  animation: NONE
+
+  # Should we broadcast in chat when a player gets punished by Darkness?
+  broadcast: true
+
+  # What command should Darkness execute once the Punish Animation ends? (%nl% for new line)
+  # Placeholders: %prefix% -> (Darkness Prefix), %player% -> (The player that got punished), %reason% -> (The reason provided by the Darkness punish command)
+  command: darkness kick %player% %prefix% %reason%
+
+# Ban Command Settings
+ban_command:
+
+  # Should we broadcast in chat when a player gets punished by Darkness?
+  broadcast: true
+
+  # Placeholders: %player% -> (The player that got punished), %reason% -> (The reason provided by the Darkness punish command)
+  command: ban %player% %reason%
+
+# Discord Sync Settings
+discord:
+
+  # Would you like to Sync Darkness to your Discord Server?
+  enabled: false
+  # Insert the Channel Webhook URL
+  webhook_url: ""
+  # Message title
+  embed_title: "**:fire: NEW CHEATER DETECTED!**"
+  # Color of the stripe on the left side of the message
+  embed_color: "#ff0000"
+  # Message content
+  violation_content:
+    - "%player%"
+    - ""
+    - "🛡️ **Server Name:**"
+    - "%server_name%"
+    - ""
+    - "📦 **Cheat Type:**"
+    - "%check%"
+    - ""
+    - "📊 **VL**"
+    - "%violations%"
+    - ""
+    - "🖥️ **Client:**"
+    - "%brand%"
+    - ""
+    - "📌 **Version:**"
+    - "%version%"
+    - ""
+    - "📶 **PING | TPS:**"
+    - "%ping% | %tps%"
+  # Title of the additional field in the embed
+  embed_field: "Information:"
+
+# Log Settings
+logs_settings:
+
+  # Enable or disable logging Darkness flags to a file?
+  enabled: true
+
+  # Do we need to check data.yml for old logs and delete them?
+  clearing: true
+
+  # Logs older than this value of Days will be cleared by Darkness
+  clear_days: 7
+
+## InformationHider Check
+InformationHider:
+
+  # Should this module be enabled?
+  enabled: true
+  # The module hides specific player information that is sent to all clients, giving an advantage in information.
+  # Players on the default game version will not notice the difference.
+  parts:
+    # This part spoofs health for all entities on your server, so mods that display health,
+    # won't be able to show it, and it will also confuse cheat clients trying to display the health of other players.
+    # Don't worry, other plugins on the server can still access the player's accurate health.
+    health:
+      spoof: true # (Recommended)
+      zero: false # Enabling this breaks movement animations, not recommended for use
+    # This section manages spectator settings. Spectators with the darkness.spectator permission will be hidden in the specified worlds.
+    # If the world list is empty, spectators will be hidden in all worlds.
+    spectators:
+      # Makes spectators hidden only in the specified worlds. Leave empty to allow all worlds.
+      allowed_worlds:
+        - ""
+      # If enabled, spectators will be hidden regardless of their activity.
+      hide_spectators: false
+    # This part hides enchantments to prevent showing the correct type and level in cheats.
+    # Players on the vanilla version won't notice the difference.
+    enchant: true
+    # This part hides the amount of items in hands, the inventory contents, and equipment in general.
+    # Players on the vanilla version won't notice the difference.
+    item_count: true
+    # This part hides item durability to prevent displaying the correct durability in cheats.
+    # Players on the vanilla version won't notice the difference.
+    durability: true
+    # This part hides the player's effects to prevent displaying effects for cheats.
+    # Players on the vanilla version won't notice any difference.
+    potion: true
+
+## Aim Check
+Aim:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
+  # Should we enable this module?
+  h: true
+
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
+
+  # Should we enable this module?
+  m: true
+
+  # Should we enable this module?
+  n: true
+
+  # Should we enable this module?
+  o: true
+
+  # Should we enable this module?
+  p: true
+
+  # Should we enable this module?
+  q: true
+
+  # Should we enable this module?
+  r: true
+
+  # Should we enable this module?
+  s: true
+
+  # Should we enable this module?
+  t: true
+
+  # Should we enable this module?
+  u: true
+
+## Analysis Check
+Analysis:
+
+  # Should we enable this module?
+  a: true
+
+## KillAura Check
+KillAura:
+
+  # Should we enable this module?
+  a: true
+
+  # KillAura B Module
+  # The module will create a fake player behind the real one to determine if they are using KillAura.
+  # Don't worry, the player will only see their own bot.
+  b:
+
+    # Should this module be enabled?
+    # If disabled, the bot can only be spawned using /darkness bot <player>
+    enabled: true
+    # Time (in milliseconds, 1000 ms = 1 second) during which the bot is visible after hitting an entity
+    living_time: 5000
+    # Should Darkness always create a fake bot? This fixes some compatibility issues,
+    # but allows some AntiBot modules to bypass it.
+    only_random_name: false
+    # Should Darkness copy the attacked entity?
+    # Used to fix KillAura with a trigger only for mobs.
+    # If set to false, the bot will always attack the player.
+    # For the function to work, you need to set false in only_random_name to apply this value!
+    copy_attack_type: true
+    # Should Darkness always copy the player's equipment? This fixes some bypasses.
+    copy_inventory: true
+    # At what height should the bot be? Anything below 2.7 may affect PvP, anything above 4.5 may be out of reach.
+    min_height: -4.4
+    max_height: -6
+    jump_multiple: 0.75
+    # At what distance should the bot be (on the x and y axes)?
+    min_distance: -3.3
+    max_distance: -5
+    # At what angle should the bot be relative to the player's direction?
+    angle: 0
+    # Set the value >= 100 to disable bot descent; this will eliminate some bypasses.
+    down_probability: 150
+
+  # Should we enable this module?
+  c: true
+
+  # KillAura D Module
+  d:
+
+    # Should we enable this module?
+    enabled: true
+    # At what distance should the player be for the check?
+    min_distance: 0.7
+    combat_time: 10
+
+  # Should we enable this module?
+  e: true
+
+  # KillAura F Module
+  f:
+
+    # Should we enable this module?
+    enabled: true
+    # How should Darkness handle hits through hatches, doors, and other objects (bug abuse)?
+    # 1. none - do nothing
+    # 2. cancel - cancel the attack and notify (Recommended)
+    # 3. flag - set damage to zero and flag the incident
+    cancel_way: cancel
+
+  # Should we enable this module?
+  g: true
+
+  # Should we enable this module?
+  h: true
+
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
+
+  # Should we enable this module?
+  m: true
+
+  # Should we enable this module?
+  n: false
+
+  # Should we enable this module?
+  o: false
+
+  # Should we enable this module?
+  p: false
+
+## AutoBlock Check
+AutoBlock:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+## AutoClicker Check
+AutoClicker:
+
+  # AutoClicker A Module
+  a:
+
+    # Should we enable this module?
+    enabled: true
+
+    # How many Clicks per Second a player needs to go above in order to fail this check?
+    # You may want to increase this value if you want to allow drag clicking
+    maxCPS: 19
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
+  # Should we enable this module?
+  h: true
+
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
+
+  # Should we enable this module?
+  m: true
+
+  # Should we enable this module?
+  n: true
+
+## Baritone Check
+Baritone:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+## FreeCam Check
+FreeCam:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+## Vehicle Check
+Vehicle:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+## Protocol Check
+Protocol:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+  
+  # Should we enable this module?
+  c: true
+  
+  # Should we enable this module?
+  d: true
+  
+  # Should we enable this module?
+  e: true
+  
+  # Should we enable this module?
+  f: true
+  
+  # Should we enable this module?
+  g: true
+  
+  # Should we enable this module?
+  h: true
+  
+  # Should we enable this module?
+  i: true
+  
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
+  
+  # Should we enable this module?
+  l: true
+  
+  # Should we enable this module?
+  m: true
+  
+  # Should we enable this module?
+  n: true
+
+## PingSpoof Check
+PingSpoof:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+## Timer Check
+Timer:
+
+  # Timer A Module
+  a:
+
+    # Should we enable this module?
+    enabled: true
+    # Target 1.005 timer
+    setbackvl: 10
+    # Milliseconds that the player can accumulate for later use when they fall behind
+    # Could potentially allow 1.8 fast use/fast heal/fast bow bypasses if set too high, 120 ms seems like a good balance
+    drift: 120
+    # Ping at which the check will start to limit timer balance, to prevent abuse.
+    # Can cause some setbacks for legitimate players but only if they are over this ping threshold.
+    # -1 to disable
+    ping_abuse_limit_threshold: 1000
+
+  # Should we enable this module?
+  b: true
+
+  # Timer C Module
+  c:
+
+    # Should we enable this module?
+    enabled: true
+    # Minimum timer speed (Normal speed: 1.0), however, lags and other quirks may make it lower (around 0.75)
+    min_speed: 0.75
+
+## Interpolation Check
+Interpolation:
+
+  # Interpolation A Module
+  a:
+
+    # Should we enable this module?
+    enabled: true
+    # How much should we multiply total advantage by when the player is legit
+    # This is what the default config looks like (x axis = seconds, y axis = 1/1000 block): https://www.desmos.com/calculator/d4ufgxrxer
+    multiple: 0.999
+    # How large of an offset from the player's movement should we create a violation for?
+    # Measured in blocks from the possible movement
+    # We account for Optifine by switching trig tables but dropping this to 0.001 will reduce FastMath
+    # flagging the anticheat if this compensation doesn't work...
+    buffer: 0.023
+    # How large of a violation in a tick before the player gets immediately setback?
+    # -1 to disable
+    setback_buffer: 0.23
+    # How large of an advantage over all ticks before we start to setback?
+    # -1 to disable
+    max_advantage: 1
+    # After 50 seconds with default config, the player will go from 4 blocks -> 1 block of advantage
+    # This is to stop the player from gathering too many violations and never being able to clear them all
+    # Default advantage ceiling (x axis = seconds, y axis = 1/1000 block): https://www.desmos.com/calculator/4lovswdarj
+    max_ceiling: 4
+
+## Reach Check
+Reach:
+
+  # Reach A Module
+  a:
+
+    # Should we enable this module?
+    enabled: true
+    # How much should we expand hitboxes by? 0.0005 should detect 3.0005+ reach
+    # There is 0.03 forced expansion with 1.9-1.18.1 (not 1.18.2), or some client/server combinations due to
+    # protocol changes and limitations. This check is most powerful with 1.7/1.8 clients on 1.8 servers.
+    buffer: 0.0005
+    # Should we cancel hits that we know are impossible?
+    # 3.00-3.03 hits may go through but still be flagged, due to packet order limitations
+    block_impossible_hits: true
+    # This will send an additional packet at the end of every tick to increase the likelihood of catching cheats
+    # This injects into server's connection list to send a final packet just before the server flushes
+    # Enabling this will increase bandwidth usage for all players
+    # This will not decrease overall server performance
+    # Enabling this will catch more cheaters.
+    # Leaving this disabled will still catch cheaters and will not cause false positives
+    # Unless you are a 1.8 PvP focused server, this additional packet is not recommended
+    enable_post_packet: false
+    # What entities should we ignore when a player is fighting them?
+    ignored_entities:
+    # These are examples ↓
+    # - Sheep
+    # - slime
+    # - minecraft:pig
+    # - Minecraft:Cow
+    # - Minecraft:cow
+
+## HitBox Check
+HitBox:
+
+  # Should we enable this module?
+  a: true
+
+## NoSlow Check
+# Prediction-based no slow check
+# Darkness accounts for buggy netcode here... hard to false even when spamming right click and offhand button
+# Much more stable than other anticheats, but please report any falses... I have fixed a ton of netcode issues here.
+NoSlow:
+
+  # NoSlow A Module
+  a:
+
+    # Should we enable this module?
+    enabled: true
+    # How much of an offset is "cheating"
+    # By default this is lower than other offs
+    # Flags by 0.03-0.2 consistently with NoSlow on
+    buffer: 0.02
+    # Setback fast on the first item to remove any advantage NoSlow gives
+    setbackvl: 5
+    # Decay's when the player uses an item AND is slowed by it
+    decay: 0.05
+
+## Velocity Check
+Velocity:
+
+  # Velocity A Module
+  a:
+
+    # Should we enable this module?
+    enabled: true
+    # How much should we multiply total advantage by when the player is legit
+    multiple: 0.999
+    # How large of an offset from the player's velocity should we create a violation for?
+    # Measured in blocks from the possible velocity
+    buffer: 0.075
+    # How large of a violation in a tick before the player gets immediately setback?
+    # -1 to disable
+    setback_buffer: 0.1
+    # How large of an advantage over all ticks before we start to setback?
+    # -1 to disable
+    max_advantage: 1
+    # This is to stop the player from gathering too many violations and never being able to clear them all
+    max_ceiling: 4
+
+  # Velocity B Module
+  b:
+
+    # Should we enable this module?
+    enabled: true
+    buffer: 0.001
+    setbackvl: 3
+
+## NoFall Check
+NoFall:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+## Inventory Check
+Inventory:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module? (AutoPotion)
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module? (InventoryCleaner)
+  f: true
+
+  # Inventory G Module (FastSwitch)
+  g:
+
+    # Should we enable this module?
+    enabled: true
+    maxDelta: 35
+    maxPing: 400
+
+  # Inventory H Module (ChestStealer)
+  h:
+
+    # Should we enable this module?
+    # Disable this check if you want to allow "ItemsScroller"
+    enabled: true
+    delta: 65
+
+  # Inventory I Module (InventoryCleaner)
+  i:
+
+    # Should we enable this module?
+    # Disable this check if you want to allow "ItemsScroller"
+    enabled: true
+    maxPing: 100
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
+
+  # Should we enable this module?
+  m: true
+
+## Crash Check
+Crash:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
+  # Should we enable this module?
+  h: true
+
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
+
+## Chat Check
+Chat:
+
+  # Chat A Module
+  a:
+
+    # Should we enable this module?
+    enabled: true
+    # Maximum speed message sending by the player
+    maxDelta: 115
+
+  # Chat B Module
+  b:
+
+    # Should we enable this module?
+    enabled: true
+    # Maximum error in the interval of message sending by the player
+    maxDelta: 5
+
+  # Should we enable this module?
+  c: true
+
+## Exploit Check
+Exploit:
+
+  # Should we enable this module?
+  a: true # Log4j
+
+  # Should we enable this module?
+  b: true # TabComplete
+
+  # Should we enable this module?
+  c: true # Book Crasher
+
+  # You can gain high speeds when sprint jumping with an elytra, this prevents the exploit when set to false
+  # Mojang screwed up netcode by making elytra start client sided and elytra end server sided
+  # Elytras take 0.99 horizontal friction, so constantly adding 0.2 horizontal speeds results in very high speeds.
+  allow_sprint_jumping_when_using_elytra: true
+  # This option mitigates the player's placement on ghostblocks by resynchronizing the player when it happens
+  allow_building_on_ghostblocks: false
+  # This setting, influenced by the boolean above defines the distance to check for ghost blocks
+  # Its valid range is limited from 2 to 4
+  distance_to_check_if_ghostblocks: 2
+
+## BadPackets Check
+# This will also prevent some types of crashers
+BadPackets:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
+  # Should we enable this module?
+  h: true
+
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
+
+  # Should we enable this module?
+  m: true
+
+  # Should we enable this module?
+  n: true
+
+  # Should we enable this module?
+  o: true
+
+  # Should we enable this module?
+  p: true
+
+  # Should we enable this module?
+  q: true
+
+  # Should we enable this module?
+  r: true
+
+  # Should we enable this module?
+  s: true
+
+  # Should we enable this module?
+  t: true
+
+  # Should we enable this module?
+  u: true
+
+  # Should we enable this module?
+  v: true
+
+  # Should we enable this module?
+  w: true
+
+  # Should we enable this module?
+  x: true
+
+  # Should we enable this module?
+  y: true
+
+  # Should we enable this module?
+  z: true
+
+  # Should we enable this module?
+  aa: true
+
+  # Should we enable this module?
+  bb: true
+
+  # Should we enable this module?
+  cc: true
+
+  # Should we enable this module?
+  dd: true
+
+## Interact Check
+Interact:
+
+  # Should we enable this module? (FastBreak)
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module? (FastPlace)
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
+  # Should we enable this module?
+  h: true
+
+  # Should we enable this module? (BreakReach)
+  i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module? (PlaceReach)
+  k: true
+
+## Scaffold Check
+Scaffold:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module? (AirPlace)
+  f: true
+
+## Sprint Check
+Sprint:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
+## Elytra Check
+Elytra:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Elytra D Module
+  d:
+
+    # Should we enable this module?
+    enabled: true
+    max_speed: 2.25
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
+  # Should we enable this module?
+  h: true
+
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
+
+  # Should we enable this module?
+  m: true
+
+  # Should we enable this module?
+  n: true
+
+  # Should we enable this module?
+  o: true
+
+  # Should we enable this module?
+  p: true
+
+# Should we eject players when they get close to flagging?
+# It is suggested to leave this option enabled since it can sometimes help prevent issues such as desync
+elytra_eject: true
+
+# Should we eject players when get close inventory on flag?
+# It is suggested to leave this option enabled since it can sometimes help prevent issues such as desync
+inventory_eject: true
+
+# Should the cinematic camera be taken into account?
+# It is highly recommended not to enable this option, as it will make aim checks less effective.
+# In a real combat scenario, none of the opponents will fight using a cinematic camera.
+account_cinematic: false
+
+# Enable logging plugins who have injected into netty on join to debug compatibility issues
+debug_pipeline_on_join: false
+
+# This setting applies only to clients 1.17–1.20.5 on servers 1.8
+cancel_duplicate_packet: true
+
+# Whether or not to ignore the rotation in duplicate packets
+ignore_duplicate_packet_rotation: true
+
+# Enables experimental checks
+experimental_checks: false
+
+# A logger for monitoring packets sent by players, useful for developers.
+packet_logger:
+  enabled: false
+
+  # Specify the players below whose packets will be logged to the console.
+  whitelist:
+    - 1hendex
+
+  # List of packets to ignore.
+  # To find the correct names, open the PacketEvents GitHub and look for the names.
+  # Path: https://github.com/retrooper/packetevents/tree/2.0/api/src/main/java/com/github/retrooper/packetevents/wrapper/play
+  ignore:
+    - WINDOW_CONFIRMATION
+    - KEEP_ALIVE
+    - PONG
+
+# The server name that will be shown in Player Logs and Discord Messages
+server_name: Darkness Server
+
+# Should Darkness command encryption be enabled?
+# Disable it to avoid compatibility issues with other anticheats.
+# Changes are applied only after a server restart.
+enabled_command_obfuscation: true
+
+# Should we disable the bypass permission?
+# If enabled, Darkness will check all players, including operators
+# Disable this for some perfomance gain
+disable_bypass_permission: false
+
+# Darkness sometimes cancels illegal packets such as with timer, after X packets in a second cancelled, when should
+# we simply kick the player? This is required as some packet limiters don't count packets cancelled by darkness.
+packet_spam_threshold: 100
+
+# Darkness is able to enforce that a player set out of flying state cannot have more than X milliseconds of ping
+# This is due to Darkness not currently checking flying players
+max_ping_out_of_flying: 1000
+
+# Maximum ping when a firework boost is removed from the player.
+# This prevents high latency players from being able to use 1 firework boost with an elytra forever.
+max_ping_firework_boost: 1000
+
+config_version: 1

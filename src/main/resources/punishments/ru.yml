@@ -1,0 +1,284 @@
+# +----------------------------------------------------------------------------------------------+
+# |                                                                                              |
+# |                                       Darkness Liquidation                                   |
+# |                                                                                              |
+# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                                                                                              |
+# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                                                                              |
+# +----------------------------------------------------------------------------------------------+
+
+# %check_name% - название проверки
+# %vl% - количество нарушений
+# %verbose% - дополнительная информация
+# %player% - имя игрока
+# [alert] - специальная команда для оповещения
+# [webhook] - специальная команда для оповещения через Discord webhook
+# [log] - специальная команда для записывания флагов игроков в YAML/MYSQL/SQLITE
+# [proxy] - специальная команда для оповещения на другие серверы, подключенные к вашему прокси (BungeeCord/Velocity)
+Punishments:
+
+  Aim:
+    remove-violations-after: 100
+    checks:
+      - 'Aim'
+      - 'Analysis'
+    commands:
+      - '1:1 [alert]'
+      - '1:2 [webhook]'
+      - '1:2 [log]'
+      - '1:1 [proxy]'
+      - '7:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  KillAura:
+    remove-violations-after: 100
+    checks:
+      - 'KillAura'
+    commands:
+      - '1:1 [alert]'
+      - '1:2 [webhook]'
+      - '1:2 [log]'
+      - '1:1 [proxy]'
+      - '1:2 alice bot %player%'
+      - '7:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Interact:
+    remove-violations-after: 300
+    checks:
+      - 'Interact'
+    commands:
+      - '5:5 [alert]'
+      - '5:5 [webhook]'
+      - '5:5 [log]'
+      - '5:5 [proxy]'
+      - '10:5 darkness setback %player%'
+      - '25:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Sprint:
+    remove-violations-after: 300
+    checks:
+      - 'Sprint'
+    commands:
+      - '1:1 [alert]'
+      - '1:1 [webhook]'
+      - '1:1 [log]'
+      - '1:1 [proxy]'
+      - '3:0 darkness punish %player% &cПодозрение в использовании читов'
+      - '5:0 darkness ban %player% &cПодозрение в использовании читов'
+
+  Elytra:
+    remove-violations-after: 300
+    checks:
+      - 'Elytra'
+    commands:
+      - '1:1 [alert]'
+      - '1:1 [webhook]'
+      - '1:1 [log]'
+      - '5:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Chat:
+    remove-violations-after: 300
+    checks:
+      - 'Chat'
+    commands:
+      - '1:1 [alert]'
+      - '1:1 [webhook]'
+      - '1:1 [log]'
+      - '4:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  AutoBlock:
+    remove-violations-after: 300
+    checks:
+      - 'AutoBlock'
+    commands:
+      - '1:2 [alert]'
+      - '4:5 [webhook]'
+      - '2:2 [log]'
+      - '2:5 [proxy]'
+      - '1:2 alice bot %player%'
+      - '3:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  AutoClicker:
+    remove-violations-after: 300
+    checks:
+      - 'AutoClicker'
+    commands:
+      - '5:5 [alert]'
+      - '5:5 [webhook]'
+      - '5:5 [log]'
+      - '6:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Reach:
+    remove-violations-after: 70
+    checks:
+      - 'Reach'
+    commands:
+      - '1:1 [alert]'
+      - '4:4 [webhook]'
+      - '1:1 [log]'
+      - '1:1 [proxy]'
+      - '2:1 darkness rotate %player%'
+      - '4:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  HitBox:
+    remove-violations-after: 70
+    checks:
+      - 'HitBox'
+    commands:
+      - '1:1 [alert]'
+      - '4:4 [webhook]'
+      - '1:1 [log]'
+      - '1:1 [proxy]'
+      - '2:1 darkness rotate %player%'
+      - '6:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Packets:
+    remove-violations-after: 300
+    checks:
+      - 'BadPackets'
+      - 'FreeCam'
+      - 'PingSpoof'
+    commands:
+      - '5:5 [alert]'
+      - '5:5 [webhook]'
+      - '5:5 [log]'
+      - '5:5 [proxy]'
+      - '5:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Interpolation:
+    remove-violations-after: 70
+    checks:
+      - 'Interpolation'
+    commands:
+      - '40:20 [alert]'
+      - '40:20 [webhook]'
+      - '20:20 [log]'
+      - '40:20 [proxy]'
+      - '20:10 darkness rotate %player%'
+      - '50:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Inventory:
+    remove-violations-after: 300
+    checks:
+      - 'Inventory'
+    commands:
+      - '1:1 [alert]'
+      - '2:3 [proxy]'
+      - '1:1 [log]'
+      - '2:3 [webhook]'
+      - '4:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Timer:
+    remove-violations-after: 70
+    checks:
+      - 'Timer'
+    commands:
+      - '1:5 [alert]'
+      - '2:5 [webhook]'
+      - '2:5 [log]'
+      - '1:1 [proxy]'
+      - '15:0 darkness punish %player% &cПодозрение в использовании читов'
+      - '20:0 darkness ban %player% &cПодозрение в использовании читов'
+
+  NoFall:
+    remove-violations-after: 300
+    checks:
+      - 'NoFall' # NoFall A x B
+    commands:
+      - '6:4 [alert]'
+      - '6:4 [webhook]'
+      - '6:4 [log]'
+      - '6:4 [proxy]'
+      - '40:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Velocity:
+    remove-violations-after: 400
+    checks:
+      - 'Velocity' # Velocity A x B
+    commands:
+      - '1:1 [alert]'
+      - '4:2 [webhook]'
+      - '2:2 [log]'
+      - '1:1 [proxy]'
+      - '6:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Protocol:
+    remove-violations-after: 360
+    checks:
+      - 'Protocol'
+    commands:
+      - '1:1 [alert]'
+      - '2:2 [webhook]'
+      - '2:2 [log]'
+      - '1:1 [proxy]'
+      - '5:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  NoSlowDown:
+    remove-violations-after: 340
+    checks:
+      - 'NoSlow'
+    commands:
+      - '5:5 [alert]'
+      - '10:10 [webhook]'
+      - '10:10 [log]'
+      - '5:5 [proxy]'
+      - '5:5 darkness shuffle %player% one'
+      - '25:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Vehicle:
+    remove-violations-after: 600
+    checks:
+      - 'Vehicle'
+    commands:
+      - '5:5 [alert]'
+      - '10:10 [webhook]'
+      - '10:10 [log]'
+      - '5:5 [proxy]'
+      - '15:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  FastBreak:
+    remove-violations-after: 180
+    checks:
+      - 'FastBreak' # FastBreak
+      - 'FastPlace' # Fast Use x Fast Place
+    commands:
+      - '10:5 [alert]'
+      - '25:10 [webhook]'
+      - '10:10 [log]'
+      - '10:5 [proxy]'
+      - '25:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Scaffold:
+    remove-violations-after: 180
+    checks:
+      - 'Scaffold'
+    commands:
+      - '3:3 [alert]'
+      - '4:4 [webhook]'
+      - '4:4 [log]'
+      - '3:3 [proxy]'
+      - '6:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Baritone:
+    remove-violations-after: 500
+    checks:
+      - 'Baritone'
+    commands:
+      - '1:1 [alert]'
+      - '1:1 [webhook]'
+      - '1:1 [log]'
+      - '1:1 [proxy]'
+      - '5:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Crash:
+    remove-violations-after: 360
+    checks:
+      - 'Crash'
+      - 'Exploit' # ExploitA (Log4j), ExploitB (TabComplete), ExploitC (Book Crasher)
+    commands:
+      - '1:1 [alert]'
+      - '3:3 [webhook]'
+      - '3:3 [proxy]'
+      - '3:3 [log]'
+      - '3:0 darkness crash %player% position'
+      - '3:0 darkness ban %player% &cПодозрение в нарушении правил'

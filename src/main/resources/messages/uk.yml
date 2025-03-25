@@ -1,0 +1,145 @@
+# +----------------------------------------------------------------------------------------------+
+# |                                                                                              |
+# |                                       Darkness Liquidation                                   |
+# |                                                                                              |
+# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                                                                                              |
+# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                                                                              |
+# +----------------------------------------------------------------------------------------------+
+
+# \u00BB є » (подвійний >>), ANSI та UTF-8 інтерпретують це по-різному... ви навіть можете бачити ? через це
+prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os§r §8|"
+
+alerts_enabled: "%prefix% &fОповіщення включено"
+alerts_disabled: "%prefix% &fОповіщення вимкнено"
+verbose_enabled: "%prefix% &fVerbose увімкнено"
+verbose_disabled: "%prefix% &fVerbose вимкнено"
+cps_enabled: "%prefix% &fВідображення CPS &aувімкнено"
+cps_disabled: "%prefix% &fВідображення CPS &cвимкнено"
+action_bar: "&e⚡ &fГравець: &c%player%&f, CPS: &c%сps%"
+console_specify_target: "%prefix% &cВи повинні вказати ціль у консолі!"
+player_not_this_server: "%prefix% &cГравець не на цьому сервері!"
+player_not_found: "%prefix% &cВказаний гравець не знайдений!"
+reloading: "%prefix% &7Перезавантаження конфігурації..."
+reload_success: "%prefix% &fУспішно перезавантажено!"
+reload_failed: "%prefix% &cНе вдалося перезавантажити конфігурацію. (Деталі в консолі)"
+rotate_success: "%prefix% &cУспішно повернуто гравця %player%"
+knockback_success: "%prefix% &cУспішно проведено тест відштовхування для гравця %player%"
+client_brand_format: "%prefix% &f%player% приєднався, використовуючи %brand%"
+client_brand_kick: "&c%brand% &fне дозволено на цьому сервері!"
+bot_spawned: "%prefix% &fВи заспавнили бота для &7%player%"
+bot_already_spawned: "%prefix% &fБот вже був заспавнений для цього гравця"
+spectate_return: "\n%prefix% &fНатисніть тут, щоб повернутися до попереднього місця\n"
+cannot_spectate_return: "%prefix% &cВи можете зробити це тільки після спостереження за гравцем"
+cannot_run_on_self: "%prefix% &cВи не можете використовувати цю команду на собі!"
+add_point_success: "%prefix% &cДодано 1 бал для гравця %player%"
+reset_points_success: "%prefix% &cБан-бали скинуті для гравця %player%"
+crash_invalid_mode: "%prefix% &cНевідомий метод! Використовуйте entity, particle, explosion, position або explosion1!"
+crash_player: "%prefix% &cВи, ймовірно, крашнули клієнт гравця &7%player%"
+shuffle_one: "%prefix% &cУспішно перемішано один слот гарячої панелі для гравця %player%"
+shuffle_many: "%prefix% &cУспішно перемішано гарячу панель для гравця %player%"
+shuffle_invalid_mode: "%prefix% &cНевірний режим. Доступні: one, many"
+setback_message: "%prefix% &cВи успішно скинули назад гравця %player%"
+punish_message: "%prefix% &fВи покарали гравця &c%player%&c!"
+kick_message: "%prefix% &fВи вигнали гравця &c%player%&c!"
+upload_log: "%prefix% &fЗавантажено журнал налагодження в: %url%"
+upload_log_start: "%prefix% &fЗавантаження журналу... будь ласка, зачекайте"
+upload_log_not_found: "%prefix% &cНе вдалося знайти цей журнал"
+upload_log_upload_failure: "%prefix% &cЩось пішло не так при завантаженні цього журналу, дивіться консоль для додаткової інформації."
+
+# Доступні плейсхолдери:
+# %time% - Поточний час (Обовзязковий плейсхолдер до логу)
+# %server_name% - Назва сервера
+# %player% - Нікнейм гравця
+# %ip% - IP-адреса гравця
+# %uuid% - Унікальний ідентифікатор гравця
+# %check_name% - Назва перевірки
+# %verbose% - Додаткова інформація з перевірки. Не всі перевірки додають цю інформацію
+# %vl% - Кількість порушень
+# %ping% - Пінг гравця
+# %tps% - Поточний TPS
+# %component% - Модуль вигнаня (Тільки для бренду)
+brand_log_format: "(%time%) %server_name%: %player% (%ip%) був вигнаний за бренд: %brand% | component: %component%"
+log_format: "(%time%) %server_name%: %player% (%ip%) провалив %check% | (%verbose%) | vl: %vl% ping: %ping% tps: %tps%"
+alerts_format: "%prefix% &c%player% &7провалив &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
+alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7провалив &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
+
+profile_command:
+  - ' '
+  - '%prefix%'
+  - ' '
+  - '&8» &7Профіль гравця: &f%player%'
+  - '&8» &7Пінг: &f%ping%'
+  - '&8» &7Версія: &f%version%'
+  - '&8» &7Клієнт: &f%brand%'
+  - '&8» &7Горизонтальна чутливість: &f%h_sensitivity%%'
+  - '&8» &7Вертикальна чутливість: &f%v_sensitivity%%'
+  - '&8» &7Швидка математика: &f%fast_math%'
+  - ' '
+
+lag_command:
+  - ' '
+  - '%prefix%'
+  - ' '
+  - '&8» &7Ядро/Версія: &f%version%'
+  - '&8» &7Система: &f%system%'
+  - '&8» &7TPS: &f%tps%'
+  - '&8» &7Потоки: &f%threads%'
+  - '&8» &7Версія Java: &f%javaversion%'
+  - '&8» &7Вільна пам’ять: &f%freememory%'
+  - '&8» &7Максимальна пам’ять: &f%maxmemory%'
+  - '&8» &7Плагіни: &f%plugins%'
+  - ' '
+
+checks_command:
+  space: ' '
+  type-space: ' '
+  type: "&8» &7Категорія перевірки: &f%checkType%"
+  not-found-total: "&8» &cПеревірки не знайдено."
+  not-found-type: "&8» &cНемає."
+  separator: "&7, "
+  check:
+    enabled: "&a%checkName%%experimental%"
+    disabled: "&c%checkName%%experimental%"
+    exempted: "&e%checkName%%experimental%"
+
+info:
+  - "&6&l&m┏  &7"
+  - "&6&l| &c&lDarkness Liquidation &8| &cВерсія 2.2.1"
+  - "&6&l| &fЗв'язок з розробником: &c&n1hendex&r &7(Discord)"
+  - "&6&l&m┛  &1"
+
+# Плейсхолдери: %prefix% -> (Префікс Даркнесс), %player% -> (Гравець, який був покараний), %reason% -> (Причина, вказана в команді покарання Гріма)
+broadcast:
+  kick:
+    - "%prefix% &cГравець &6&l%player%&r &cбув вигнаний за використання читів!"
+  ban:
+    - "%prefix% &cГравець &6&l%player%&r &cбув забанений за використання читів!"
+
+help:
+  - ' '
+  - '%prefix% &7Список доступних команд Darkness'
+  - ' '
+  - '&8» &c/darkness alerts &f- &7Увімкнути/вимкнути оповіщення.'
+  - '&8» &c/darkness profile <player> &f- &7Переглянути інформацію про гравця.'
+  - '&8» &c/darkness help &f- &7Переглянути список доступних команд.'
+  - '&8» &c/darkness debug <player> &f- &7Налагодження з прогнозом розробника.'
+  - '&8» &c/darkness perf &f- &7Показник продуктивності (ms/prediction).'
+  - '&8» &c/darkness kb <player> <back> &f- &7Перевірка гравця на відштовхування.'
+  - '&8» &c/darkness cps <player> &f- &7Відображення CPS гравця.'
+  - '&8» &c/darkness kick <player> <reason> &f- &7Вигнати гравця з сервера.'
+  - '&8» &c/darkness punish <player> <reason> &f- &7Покарати гравця за використання читів.'
+  - '&8» &c/darkness ban <player> <reason> &f- &7Забанити гравця на сервері.'
+  - '&8» &c/darkness flag <player> &f- &7Сетбек гравця назад.'
+  - '&8» &c/darkness addpoint <player> &f- &7Видати бан-поінт гравцю.'
+  - '&8» &c/darkness resetpoints <player> &f- &7Скинути всі бан-поінти гравця.'
+  - '&8» &c/darkness checks &f- &7Переглянути всі активні перевірки Darkness.'
+  - '&8» &c/darkness shuffle <player> <method> &f- &7Перемішати слоти гравця.'
+  - '&8» &c/darkness crash <player> <method> &f- &7Крашнути клієнт гравця.'
+  - '&8» &c/darkness lag &f- &7Переглянути характеристики сервера.'
+  - '&8» &c/darkness rotate <player> &f- &7Рандомний поворот гравця.'
+  - '&8» &c/darkness reload &f- &7Перезавантажити конфігурацію.'
+  - '&8» &c/darkness spectate <player> &f- &7Спостерігати за гравцем.'
+  - '&8» &c/darkness verbose &f- &7Показати всі прапорці без буферів.'
+  - ' '
