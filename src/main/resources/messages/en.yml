@@ -143,3 +143,8 @@ help:
   - '&8» &c/darkness spectate <player> &f- &7Spectate player.'
   - '&8» &c/darkness verbose &f- &7Show all flags without buffers.'
   - ' '
+
+messages:
+  checks_updates: true
+  lang: en
+  version: 1

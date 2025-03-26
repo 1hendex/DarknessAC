@@ -1093,4 +1093,7 @@ max_ping_out_of_flying: 1000
 # Це не дозволяє гравцям із високою затримкою використовувати одне посилення феєрверка з надкриллями назавжди.
 max_ping_firework_boost: 1000
 
-config_version: 1
+config:
+  checks_updates: true
+  lang: uk
+  version: 1

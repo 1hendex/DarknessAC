@@ -1092,4 +1092,7 @@ max_ping_out_of_flying: 1000
 # This prevents high latency players from being able to use 1 firework boost with an elytra forever.
 max_ping_firework_boost: 1000
 
-config_version: 1
+config:
+  checks_updates: true
+  lang: en
+  version: 1

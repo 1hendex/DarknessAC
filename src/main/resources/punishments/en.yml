@@ -282,3 +282,8 @@ Punishments:
       - '3:3 [log]'
       - '3:0 darkness crash %player% position'
       - '3:0 darkness ban %player% &cSuspicion of using cheats'
+
+punishments:
+  checks_updates: true
+  lang: en
+  version: 1

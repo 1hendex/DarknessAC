@@ -143,3 +143,8 @@ help:
   - '&8» &c/darkness spectate <player> &f- &7Слежка за игроком.'
   - '&8» &c/darkness verbose &f- &7Показ всех флагов без буферов.'
   - ' '
+
+messages:
+  checks_updates: true
+  lang: ru
+  version: 1
