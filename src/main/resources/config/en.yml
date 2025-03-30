@@ -9,7 +9,7 @@
 # +----------------------------------------------------------------------------------------------+
 
 # To run Darkness, a license is required (provided upon purchase)
-your_license: ""
+your_license: "null"
 
 alerts:
   # In addition to broadcasting alerts to players, should they also be sent to the console?
