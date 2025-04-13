@@ -22,13 +22,23 @@ Punishments:
     remove-violations-after: 100
     checks:
       - 'Aim'
+    commands:
+      - '1:1 [alert]'
+      - '3:2 [webhook]'
+      - '1:2 [log]'
+      - '3:1 [proxy]'
+      - '5:0 darkness punish %player% &cПодозрение в использовании читов'
+
+  Analysis:
+    remove-violations-after: 100
+    checks:
       - 'Analysis'
     commands:
       - '1:1 [alert]'
-      - '1:2 [webhook]'
+      - '3:2 [webhook]'
       - '1:2 [log]'
-      - '1:1 [proxy]'
-      - '7:0 darkness punish %player% &cПодозрение в использовании читов'
+      - '3:1 [proxy]'
+      - '6:0 darkness punish %player% &cПодозрение в использовании читов'
 
   KillAura:
     remove-violations-after: 100

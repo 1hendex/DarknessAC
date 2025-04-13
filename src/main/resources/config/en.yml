@@ -243,14 +243,32 @@ Aim:
   # Should we enable this module?
   t: true
 
-  # Should we enable this module?
-  u: true
-
 ## Analysis Check
 Analysis:
 
   # Should we enable this module?
   a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
+  # Should we enable this module?
+  h: true
 
 ## KillAura Check
 KillAura:
@@ -530,7 +548,7 @@ Timer:
     # Should we enable this module?
     enabled: true
     # Minimum timer speed (Normal speed: 1.0), however, lags and other quirks may make it lower (around 0.75)
-    min_speed: 0.75
+    min_speed: 0.66
 
 ## Interpolation Check
 Interpolation:
@@ -886,9 +904,6 @@ BadPackets:
 
   # Should we enable this module?
   cc: true
-
-  # Should we enable this module?
-  dd: true
 
 ## Interact Check
 Interact:
