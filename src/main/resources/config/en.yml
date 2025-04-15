@@ -139,10 +139,13 @@ logs_settings:
   # Enable or disable logging Darkness flags to a file?
   enabled: true
 
-  # Do we need to check data.yml for old logs and delete them?
+  # Use the new log format (separate file for each day)?
+  new_format: false
+
+  # Should old logs be checked and deleted?
   clearing: true
 
-  # Logs older than this value of Days will be cleared by Darkness
+  # Logs older than this value of Days will be cleared
   clear_days: 7
 
 ## InformationHider Check
