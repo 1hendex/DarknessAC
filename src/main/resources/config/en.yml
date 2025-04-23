@@ -171,6 +171,9 @@ InformationHider:
         - ""
       # If enabled, spectators will be hidden regardless of their activity.
       hide_spectators: false
+    # This part hides hunger to prevent it from being visible to cheaters.
+    # Players on vanilla clients won’t notice the spoof.
+    saturation: true
     # This part hides enchantments to prevent showing the correct type and level in cheats.
     # Players on the vanilla version won't notice the difference.
     enchant: true
@@ -1009,7 +1012,7 @@ Elytra:
 
     # Should we enable this module?
     enabled: true
-    max_speed: 2.25
+    max_speed: 2.45
 
   # Should we enable this module?
   e: true
