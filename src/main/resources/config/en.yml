@@ -46,6 +46,7 @@ client_settings:
   # Client brands containing the following names will be blocked from joining the server
   banned_clients:
     - "^1.12.2$"
+    - "^mcp$"
     - "^ForgeOptiFine 1.16.5/forge/modified$"
 
   # Maximum/Minimum client brand name length
@@ -285,9 +286,11 @@ KillAura:
   b:
 
     # Should this module be enabled?
-    # If disabled, the bot can only be spawned using /darkness bot <player>
     enabled: true
-    # Time (in milliseconds, 1000 ms = 1 second) during which the bot is visible after hitting an entity
+    # Should the bot only be created by command? If true, the bot will only appear after using the command,
+    # and not automatically during combat.
+    only_command_trigger: false
+    # Time (in milliseconds, 1000 ms = 1 second) during which the bot is visible after hitting an entity.
     living_time: 5000
     # Should Darkness always create a fake bot? This fixes some compatibility issues,
     # but allows some AntiBot modules to bypass it.
@@ -550,7 +553,7 @@ Timer:
 
     # Should we enable this module?
     enabled: true
-    # Minimum timer speed (Normal speed: 1.0), however, lags and other quirks may make it lower (around 0.75)
+    # Minimum timer speed (Normal speed: 1.0), however, lags and other quirks may make it lower (around 0.66)
     min_speed: 0.66
 
 ## Interpolation Check

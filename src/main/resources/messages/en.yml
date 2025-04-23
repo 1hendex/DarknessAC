@@ -43,10 +43,6 @@ shuffle_invalid_mode: "%prefix% &cInvalid mode. Available: one, many"
 setback_message: "%prefix% &cYou successfully set back player %player%"
 punish_message: "%prefix% &fYou punished player &c%player%&c!"
 kick_message: "%prefix% &fYou kicked player &c%player%&c!"
-upload_log: "%prefix% &fUploaded the debug log to: %url%"
-upload_log_start: "%prefix% &fUploading log... please wait"
-upload_log_not_found: "%prefix% &cFailed to find this log"
-upload_log_upload_failure: "%prefix% &cSomething went wrong while uploading this log, see console for details."
 
 # Valid placeholders:
 # %time% - Current time (Required placeholder for the log)

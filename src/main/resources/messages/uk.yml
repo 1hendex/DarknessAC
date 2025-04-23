@@ -43,10 +43,6 @@ shuffle_invalid_mode: "%prefix% &cНевірний режим. Доступні:
 setback_message: "%prefix% &cВи успішно скинули назад гравця %player%"
 punish_message: "%prefix% &fВи покарали гравця &c%player%&c!"
 kick_message: "%prefix% &fВи вигнали гравця &c%player%&c!"
-upload_log: "%prefix% &fЗавантажено журнал налагодження в: %url%"
-upload_log_start: "%prefix% &fЗавантаження журналу... будь ласка, зачекайте"
-upload_log_not_found: "%prefix% &cНе вдалося знайти цей журнал"
-upload_log_upload_failure: "%prefix% &cЩось пішло не так при завантаженні цього журналу, дивіться консоль для додаткової інформації."
 
 # Доступні плейсхолдери:
 # %time% - Поточний час (Обовзязковий плейсхолдер до логу)

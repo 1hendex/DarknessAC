@@ -27,6 +27,8 @@ Punishments:
       - '3:2 [webhook]'
       - '1:2 [log]'
       - '3:1 [proxy]'
+      - '2:2 darkness bot %player%'
+      - '2:2 darkness cancelhit %player% 3000'
       - '5:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Analysis:
@@ -38,6 +40,8 @@ Punishments:
       - '3:2 [webhook]'
       - '1:2 [log]'
       - '3:1 [proxy]'
+      - '1:2 darkness cancelhit %player% 3000'
+      - '1:2 darkness bot %player%'
       - '6:0 darkness punish %player% &cПодозрение в использовании читов'
 
   KillAura:
@@ -49,8 +53,9 @@ Punishments:
       - '1:2 [webhook]'
       - '1:2 [log]'
       - '1:1 [proxy]'
-      - '1:2 alice bot %player%'
-      - '7:0 darkness punish %player% &cПодозрение в использовании читов'
+      - '1:2 darkness bot %player%'
+      - '1:2 darkness cancelhit %player% 5000'
+      - '5:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Interact:
     remove-violations-after: 300
@@ -73,18 +78,20 @@ Punishments:
       - '1:1 [webhook]'
       - '1:1 [log]'
       - '1:1 [proxy]'
+      - '1:2 darkness bot %player%'
+      - '1:2 darkness cancelhit %player% 5000'
       - '3:0 darkness punish %player% &cПодозрение в использовании читов'
       - '5:0 darkness ban %player% &cПодозрение в использовании читов'
 
   Elytra:
-    remove-violations-after: 300
+    remove-violations-after: 250
     checks:
       - 'Elytra'
     commands:
       - '1:1 [alert]'
       - '1:1 [webhook]'
       - '1:1 [log]'
-      - '5:0 darkness punish %player% &cПодозрение в использовании читов'
+      - '4:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Chat:
     remove-violations-after: 300
@@ -105,7 +112,7 @@ Punishments:
       - '4:5 [webhook]'
       - '2:2 [log]'
       - '2:5 [proxy]'
-      - '1:2 alice bot %player%'
+      - '1:2 darkness bot %player%'
       - '3:0 darkness punish %player% &cПодозрение в использовании читов'
 
   AutoClicker:
@@ -116,6 +123,8 @@ Punishments:
       - '5:5 [alert]'
       - '5:5 [webhook]'
       - '5:5 [log]'
+      - '3:2 darkness bot %player%'
+      - '3:2 darkness cancelhit %player% 5000'
       - '6:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Reach:
@@ -127,6 +136,8 @@ Punishments:
       - '4:4 [webhook]'
       - '1:1 [log]'
       - '1:1 [proxy]'
+      - '1:2 darkness cancelhit %player% 3000'
+      - '1:2 darkness bot %player%'
       - '2:1 darkness rotate %player%'
       - '4:0 darkness punish %player% &cПодозрение в использовании читов'
 
@@ -139,7 +150,9 @@ Punishments:
       - '4:4 [webhook]'
       - '1:1 [log]'
       - '1:1 [proxy]'
-      - '2:1 darkness rotate %player%'
+      - '2:2 darkness cancelhit %player% 3000'
+      - '2:2 darkness bot %player%'
+      - '2:2 darkness rotate %player%'
       - '6:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Packets:
@@ -164,8 +177,7 @@ Punishments:
       - '40:20 [webhook]'
       - '20:20 [log]'
       - '40:20 [proxy]'
-      - '20:10 darkness rotate %player%'
-      - '50:0 darkness punish %player% &cПодозрение в использовании читов'
+      - '60:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Inventory:
     remove-violations-after: 300
@@ -202,7 +214,7 @@ Punishments:
       - '40:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Velocity:
-    remove-violations-after: 400
+    remove-violations-after: 250
     checks:
       - 'Velocity' # Velocity A x B
     commands:
@@ -210,10 +222,12 @@ Punishments:
       - '4:2 [webhook]'
       - '2:2 [log]'
       - '1:1 [proxy]'
-      - '6:0 darkness punish %player% &cПодозрение в использовании читов'
+      - '2:4 darkness bot %player%'
+      - '2:4 darkness cancelhit %player% 3000'
+      - '10:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Protocol:
-    remove-violations-after: 360
+    remove-violations-after: 250
     checks:
       - 'Protocol'
     commands:
@@ -224,7 +238,7 @@ Punishments:
       - '5:0 darkness punish %player% &cПодозрение в использовании читов'
 
   NoSlowDown:
-    remove-violations-after: 340
+    remove-violations-after: 250
     checks:
       - 'NoSlow'
     commands:
@@ -232,11 +246,11 @@ Punishments:
       - '10:10 [webhook]'
       - '10:10 [log]'
       - '5:5 [proxy]'
-      - '5:5 darkness shuffle %player% one'
+      - '5:5 darkness shuffle %player% many'
       - '25:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Vehicle:
-    remove-violations-after: 600
+    remove-violations-after: 360
     checks:
       - 'Vehicle'
     commands:
@@ -270,7 +284,7 @@ Punishments:
       - '6:0 darkness punish %player% &cПодозрение в использовании читов'
 
   Baritone:
-    remove-violations-after: 500
+    remove-violations-after: 300
     checks:
       - 'Baritone'
     commands:
