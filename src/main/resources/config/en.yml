@@ -822,6 +822,7 @@ Exploit:
   # This setting, influenced by the boolean above defines the distance to check for ghost blocks
   # Its valid range is limited from 2 to 4
   distance_to_check_if_ghostblocks: 2
+  allow_offset_boat_collision: 0.47
 
 ## BadPackets Check
 # This will also prevent some types of crashers
