@@ -40,7 +40,7 @@ Punishments:
       - '3:2 [webhook]'
       - '1:2 [log]'
       - '3:1 [proxy]'
-      - '1:2 darkness cancelhit %player% 3000'
+      - '2:2 darkness cancelhit %player% 3000'
       - '1:2 darkness bot %player%'
       - '6:0 darkness punish %player% &cПідозра на використання читі'
 

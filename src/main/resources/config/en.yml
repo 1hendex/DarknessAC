@@ -48,6 +48,28 @@ client_settings:
     - "^1.12.2$"
     - "^mcp$"
     - "^ForgeOptiFine 1.16.5/forge/modified$"
+    - "Remix"
+    - "CRYSTAL"
+    - "matrix"
+    - "CRYSTAL\\|6LAKS0TRIES"
+    - "CrystalWare"
+    - "RYSTAL\\|KZ1LM9TO"
+    - "Misplace"
+    - "reach"
+    - "lmaohax"
+    - "Reach Mod"
+    - "cock"
+    - "Vape v3"
+    - "1946203560"
+    - "#unbanearwax"
+    - "EARWAXWASHERE"
+    - "Cracked Vape"
+    - "EROUAXWASHERE"
+    - "moon:exempt"
+    - "Vape"
+    - "WDL\\|INIT"
+    - "WDL\\|CONTROL"
+    - "Bspkrs Client"
 
   # Maximum/Minimum client brand name length
   brand_max_length: 26
@@ -199,8 +221,13 @@ Aim:
   # Should we enable this module?
   c: true
 
-  # Should we enable this module?
-  d: true
+  # Aim D Module
+  d:
+
+    # Should we enable this module?
+    enabled: true
+    min: 0
+    max: 10000
 
   # Should we enable this module?
   e: true
@@ -601,6 +628,8 @@ Reach:
     # Should we cancel hits that we know are impossible?
     # 3.00-3.03 hits may go through but still be flagged, due to packet order limitations
     block_impossible_hits: true
+    # Should we check for hits on entities that go through other entities?
+    entity_impossible_hits: true
     # This will send an additional packet at the end of every tick to increase the likelihood of catching cheats
     # This injects into server's connection list to send a final packet just before the server flushes
     # Enabling this will increase bandwidth usage for all players
@@ -822,7 +851,7 @@ Exploit:
   # This setting, influenced by the boolean above defines the distance to check for ghost blocks
   # Its valid range is limited from 2 to 4
   distance_to_check_if_ghostblocks: 2
-  allow_offset_boat_collision: 0.47
+  allow_offset_boat_collision: 0.44
 
 ## BadPackets Check
 # This will also prevent some types of crashers
@@ -911,9 +940,6 @@ BadPackets:
 
   # Should we enable this module?
   bb: true
-
-  # Should we enable this module?
-  cc: true
 
 ## Interact Check
 Interact:
@@ -1041,15 +1067,6 @@ Elytra:
 
   # Should we enable this module?
   m: true
-
-  # Should we enable this module?
-  n: true
-
-  # Should we enable this module?
-  o: true
-
-  # Should we enable this module?
-  p: true
 
 # Should we eject players when they get close to flagging?
 # It is suggested to leave this option enabled since it can sometimes help prevent issues such as desync
