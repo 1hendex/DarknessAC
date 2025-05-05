@@ -827,8 +827,29 @@ Chat:
     # Maximum error in the interval of message sending by the player
     maxDelta: 5
 
+  # Chat C Module
+  c:
+
+    # Should message checks for forbidden words be enabled?
+    check_words: true
+    # Should message checks with a randomizer be enabled?
+    check_randomizer: true
+    # List of forbidden words
+    banned_words:
+      - celestial
+      - wintware
+      - clownclient
+      - wildclient
+      - squad
+      - sigma
+      - akrien
+      - liquidbounce
+
   # Should we enable this module?
-  c: true
+  d: true
+
+  # Should we enable this module?
+  e: true
 
 ## Exploit Check
 Exploit:
@@ -841,6 +862,9 @@ Exploit:
 
   # Should we enable this module?
   c: true # Book Crasher
+
+  # Should we enable this module?
+  d: true # AntiSpam bypass
 
   # You can gain high speeds when sprint jumping with an elytra, this prevents the exploit when set to false
   # Mojang screwed up netcode by making elytra start client sided and elytra end server sided
