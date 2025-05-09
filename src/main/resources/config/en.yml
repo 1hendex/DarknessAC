@@ -615,7 +615,7 @@ Timer:
     # Should we enable this module?
     enabled: true
     # Minimum timer speed (Normal speed: 1.0), however, lags and other quirks may make it lower (around 0.66)
-    min_speed: 0.66
+    min_speed: 1200
 
 ## Interpolation Check
 Interpolation:
@@ -703,6 +703,12 @@ NoSlow:
     setbackvl: 5
     # Decay's when the player uses an item AND is slowed by it
     decay: 0.05
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
 
 ## Velocity Check
 Velocity:
@@ -838,6 +844,9 @@ Crash:
 
   # Should we enable this module?
   l: true
+
+  # Should we enable this module?
+  m: true
 
 ## Chat Check
 Chat:
