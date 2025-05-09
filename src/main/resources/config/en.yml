@@ -422,6 +422,27 @@ AutoBlock:
   # Should we enable this module?
   c: true
 
+## AutoTotem Check
+AutoTotem:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
 ## AutoClicker Check
 AutoClicker:
 

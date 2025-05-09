@@ -93,6 +93,18 @@ Punishments:
       - '1:1 [log]'
       - '4:0 darkness punish %player% &cПідозра на використання читі'
 
+  AutoAction:
+    remove-violations-after: 650
+    checks:
+      - 'AutoRespawn'
+      - 'AutoTotem'
+    commands:
+      - '1:1 [alert]'
+      - '1:1 [webhook]'
+      - '1:1 [proxy]'
+      - '1:1 [log]'
+      - '2:0 darkness ban %player% &cSuspicion of using cheats'
+
   Chat:
     remove-violations-after: 300
     checks:
