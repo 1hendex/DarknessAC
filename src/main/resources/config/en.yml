@@ -32,6 +32,11 @@ test_mode: false
 # Client Settings
 client_settings:
 
+  # AutoRespawn Settings
+  auto_respawn:
+    enabled: true
+    maxDelta: 10
+
   # Client Alert Settings
   alert:
 
@@ -185,29 +190,34 @@ InformationHider:
     health:
       spoof: true # (Recommended)
       zero: false # Enabling this breaks movement animations, not recommended for use
-    # This section manages spectator settings. Spectators with the darkness.spectator permission will be hidden in the specified worlds.
-    # If the world list is empty, spectators will be hidden in all worlds.
+    # This part hides enchantments to prevent cheats from showing correct types and levels.
+    enchant: true
+    # This part hides item counts, full inventory contents, and armor.
+    item_count: true
+    # This part hides item names to prevent cheat clients from showing original names.
+    item_name: true
+    # This part hides item durability to prevent cheats from showing exact durability.
+    durability: true
+    # This part hides XP to prevent cheats from showing the exact amount.
+    xp: true
+    # This part hides air ticks to prevent its display in cheat clients.
+    air: true
+    # This part hides absorption level to prevent its display in cheat clients.
+    absorption: true
+    # This part hides saturation level to prevent its display in cheat clients.
+    saturation: true
+    # This part hides scoreboard data to prevent it from being displayed in cheat clients.
+    scoreboard: true
+    # This part hides the world seed to prevent it from being leaked via mods.
+    seed: true
+    # This part hides potion effects to prevent them from being visible to cheat clients.
+    potion: true
+    # This part manages spectator visibility. Spectators with the darkness.spectator permission will be hidden in the listed worlds.
     spectators:
-      # Makes spectators hidden only in the specified worlds. Leave empty to allow all worlds.
+      # Leave empty to apply to all worlds.
       allowed_worlds:
         - ""
-      # If enabled, spectators will be hidden regardless of their activity.
-      hide_spectators: false
-    # This part hides hunger to prevent it from being visible to cheaters.
-    # Players on vanilla clients won’t notice the spoof.
-    saturation: true
-    # This part hides enchantments to prevent showing the correct type and level in cheats.
-    # Players on the vanilla version won't notice the difference.
-    enchant: true
-    # This part hides the amount of items in hands, the inventory contents, and equipment in general.
-    # Players on the vanilla version won't notice the difference.
-    item_count: true
-    # This part hides item durability to prevent displaying the correct durability in cheats.
-    # Players on the vanilla version won't notice the difference.
-    durability: true
-    # This part hides the player's effects to prevent displaying effects for cheats.
-    # Players on the vanilla version won't notice any difference.
-    potion: true
+      hide_spectators: true
 
 ## Aim Check
 Aim:
@@ -834,6 +844,7 @@ Chat:
     check_words: true
     # Should message checks with a randomizer be enabled?
     check_randomizer: true
+    check_liquid: true
     # List of forbidden words
     banned_words:
       - celestial
