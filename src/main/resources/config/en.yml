@@ -212,6 +212,10 @@ InformationHider:
     seed: true
     # This part hides potion effects to prevent them from being visible to cheat clients.
     potion: true
+    # This part hides the real server staff and shows fake ones with random names.
+    fake_staff:
+      enabled: true
+      bots: 60
     # This part manages spectator visibility. Spectators with the darkness.spectator permission will be hidden in the listed worlds.
     spectators:
       # Leave empty to apply to all worlds.
