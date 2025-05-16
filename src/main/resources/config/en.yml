@@ -107,7 +107,7 @@ point_command:
 punish_command:
 
   # What Punish Animation Should Darkness display before executing the below command?
-  # Animations: NONE, THOR, HOLYTHOR, ERROR or RANDOM to let it choose a random animation each time
+  # Animations: NONE, THOR, FIRE, ERROR or RANDOM to let it choose a random animation each time
   animation: NONE
 
   # Should we broadcast in chat when a player gets punished by Darkness?
@@ -162,13 +162,15 @@ discord:
   embed_field: "Information:"
 
 # Log Settings
-logs_settings:
+logs:
 
-  # Enable or disable logging Darkness flags to a file?
-  enabled: true
-
-  # Use the new log format (separate file for each day)?
-  new_format: false
+  # What type of logging should Darkness use?
+  # Types: NONE, OLD, NEW
+  # - NONE: Completely disables logging
+  # - OLD: Logs all flags into a single file data.yml
+  # - NEW: Logs each day into a separate file inside the logs folder
+  # Changes are applied only after a server restart.
+  log_type: OLD
 
   # Should old logs be checked and deleted?
   clearing: true
@@ -619,7 +621,7 @@ Timer:
     # Should we enable this module?
     enabled: true
     # Minimum timer speed (Normal speed: 1.0), however, lags and other quirks may make it lower (around 0.66)
-    min_speed: 1200
+    min_speed: 1300
 
 ## Interpolation Check
 Interpolation:

@@ -58,6 +58,7 @@ kick_message: "%prefix% &fВи вигнали гравця &c%player%&c!"
 # %component% - Модуль вигнаня (Тільки для бренду)
 brand_log_format: "(%time%) %server_name%: %player% (%ip%) був вигнаний за бренд: %brand% | component: %component%"
 log_format: "(%time%) %server_name%: %player% (%ip%) провалив %check% | (%verbose%) | vl: %vl% ping: %ping% tps: %tps%"
+command_log_format: "(%time%) %server_name%: Execute command: %command%"
 alerts_format: "%prefix% &c%player% &7провалив &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
 alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7провалив &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
 
