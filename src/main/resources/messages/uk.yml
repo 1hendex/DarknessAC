@@ -2,14 +2,14 @@
 # |                                                                                              |
 # |                                       Darkness Liquidation                                   |
 # |                                                                                              |
-# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                               Discord: https://dsc.gg/darkness-liquidation                   |
 # |                                                                                              |
-# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                 Authors: 1hendex x clopdisabler                              |
 # |                                                                                              |
 # +----------------------------------------------------------------------------------------------+
 
 # \u00BB є » (подвійний >>), ANSI та UTF-8 інтерпретують це по-різному... ви навіть можете бачити ? через це
-prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os§r §8|"
+prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os §8|"
 
 alerts_enabled: "%prefix% &fОповіщення включено"
 alerts_disabled: "%prefix% &fОповіщення вимкнено"
@@ -30,7 +30,7 @@ client_brand_format: "%prefix% &f%player% приєднався, використ
 client_brand_kick: "&c%brand% &fне дозволено на цьому сервері!"
 bot_spawned: "%prefix% &fВи заспавнили бота для &7%player%"
 bot_already_spawned: "%prefix% &fБот вже був заспавнений для цього гравця"
-spectate_return: "\n%prefix% &fНатисніть тут, щоб повернутися до попереднього місця\n"
+spectate_return: "<click:run_command:/darkness stopspectating><hover:show_text:\"/darkness stopspectating\">\n%prefix% &fНатисніть тут, щоб повернутися до попереднього місця\n</hover></click>"
 cannot_spectate_return: "%prefix% &cВи можете зробити це тільки після спостереження за гравцем"
 cannot_run_on_self: "%prefix% &cВи не можете використовувати цю команду на собі!"
 add_point_success: "%prefix% &cДодано 1 бал для гравця %player%"
@@ -43,6 +43,14 @@ shuffle_invalid_mode: "%prefix% &cНевірний режим. Доступні:
 setback_message: "%prefix% &cВи успішно скинули назад гравця %player%"
 punish_message: "%prefix% &fВи покарали гравця &c%player%&c!"
 kick_message: "%prefix% &fВи вигнали гравця &c%player%&c!"
+transaction_kick: "Internal Exception: io.netty.handler.timeout.ReadTimeoutException"
+
+bar:
+    opening_bracket: '&8['
+    closing_bracket: '&8]'
+    fill: '&f|'
+    empty: '&7|'
+    size: 18
 
 # Доступні плейсхолдери:
 # %time% - Поточний час (Обовзязковий плейсхолдер до логу)
@@ -53,14 +61,32 @@ kick_message: "%prefix% &fВи вигнали гравця &c%player%&c!"
 # %check_name% - Назва перевірки
 # %verbose% - Додаткова інформація з перевірки. Не всі перевірки додають цю інформацію
 # %vl% - Кількість порушень
+# %bar% — кількість порушень у вигляді бара
 # %ping% - Пінг гравця
 # %tps% - Поточний TPS
 # %component% - Модуль вигнаня (Тільки для бренду)
 brand_log_format: "(%time%) %server_name%: %player% (%ip%) був вигнаний за бренд: %brand% | component: %component%"
 log_format: "(%time%) %server_name%: %player% (%ip%) провалив %check% | (%verbose%) | vl: %vl% ping: %ping% tps: %tps%"
 command_log_format: "(%time%) %server_name%: Execute command: %command%"
-alerts_format: "%prefix% &c%player% &7провалив &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
+alerts_format: "%prefix% &c%player% &7провалив &c%check_name%%experimental% &7(x&c%bar%&7)"
+alerts_format_console: "%prefix% &c%player% &7провалив &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
 alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7провалив &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
+
+alert_hover_enabled: true
+alert_hover:
+    - '&7Опис:&r'
+    - '&c%description%'
+    - ' '
+    - '&7Інформація:&r'
+    - '&c%information%'
+    - ' '
+    - '&7Версія: &c&r%version%'
+    - ' '
+    - '&7Пінг: &c&r%ping%'
+    - ' '
+    - '&7TPS: &c&r%tps%'
+    - ' '
+    - '&cНатисніть, щоб почати спостереження'
 
 profile_command:
   - ' '

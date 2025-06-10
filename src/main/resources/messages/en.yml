@@ -2,14 +2,14 @@
 # |                                                                                              |
 # |                                       Darkness Liquidation                                   |
 # |                                                                                              |
-# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                               Discord: https://dsc.gg/darkness-liquidation                   |
 # |                                                                                              |
-# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                 Authors: 1hendex x clopdisabler                              |
 # |                                                                                              |
 # +----------------------------------------------------------------------------------------------+
 
 # \u00BB is » (double >>), ANSI and UTF-8 interpret this differently... you may even see ? due to this
-prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os§r §8|"
+prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os §8|"
 
 alerts_enabled: "%prefix% &fAlerts enabled"
 alerts_disabled: "%prefix% &fAlerts disabled"
@@ -30,7 +30,7 @@ client_brand_format: "%prefix% &f%player% joined using %brand%"
 client_brand_kick: "&c%brand% &fis not allowed on this server!"
 bot_spawned: "%prefix% &fYou spawned a bot for &7%player%"
 bot_already_spawned: "%prefix% &fBot has already been spawned for this player"
-spectate_return: "\n%prefix% &fClick here to return to the previous location\n"
+spectate_return: "<click:run_command:/darkness stopspectating><hover:show_text:\"/darkness stopspectating\">\n%prefix% &fClick here to return to the previous location\n</hover></click>"
 cannot_spectate_return: "%prefix% &cYou can only do this after spectating a player"
 cannot_run_on_self: "%prefix% &cYou cannot use this command on yourself!"
 add_point_success: "%prefix% &cAdded 1 point to player %player%"
@@ -43,6 +43,14 @@ shuffle_invalid_mode: "%prefix% &cInvalid mode. Available: one, many"
 setback_message: "%prefix% &cYou successfully set back player %player%"
 punish_message: "%prefix% &fYou punished player &c%player%&c!"
 kick_message: "%prefix% &fYou kicked player &c%player%&c!"
+transaction_kick: "Internal Exception: io.netty.handler.timeout.ReadTimeoutException"
+
+bar:
+    opening_bracket: '&8['
+    closing_bracket: '&8]'
+    fill: '&f|'
+    empty: '&7|'
+    size: 18
 
 # Valid placeholders:
 # %time% - Current time (Required placeholder for the log)
@@ -53,14 +61,32 @@ kick_message: "%prefix% &fYou kicked player &c%player%&c!"
 # %check_name% - Check name
 # %verbose% - Additional information from the check. Not all checks add this information
 # %vl% - Violation count
+# %bar% - number of violations shown as bars
 # %ping% - Player's ping
 # %tps% - Current TPS
 # %component% - Kick module (Only for brand)
 brand_log_format: "(%time%) %server_name%: %player% (%ip%) was kicked for brand: %brand% | component: %component%"
 log_format: "(%time%) %server_name%: %player% (%ip%) failed %check% | (%verbose%) | vl: %vl% ping: %ping% tps: %tps%"
 command_log_format: "(%time%) %server_name%: Execute command: %command%"
-alerts_format: "%prefix% &c%player% &7failed &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
+alerts_format: "%prefix% &c%player% &7failed &c%check_name%%experimental% &7(x&c%bar%&7)"
+alerts_format_console: "%prefix% &c%player% &7failed &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
 alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7failed &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
+
+alert_hover_enabled: true
+alert_hover:
+    - '&7Description:&r'
+    - '&c%description%'
+    - ' '
+    - '&7Information:&r'
+    - '&c%information%'
+    - ' '
+    - '&7Version: &c&r%version%'
+    - ' '
+    - '&7Ping: &c&r%ping%'
+    - ' '
+    - '&7TPS: &c&r%tps%'
+    - ' '
+    - '&cClick to start spectating'
 
 profile_command:
   - ' '

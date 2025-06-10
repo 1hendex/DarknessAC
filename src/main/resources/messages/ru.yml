@@ -2,14 +2,14 @@
 # |                                                                                              |
 # |                                       Darkness Liquidation                                   |
 # |                                                                                              |
-# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                               Discord: https://dsc.gg/darkness-liquidation                   |
 # |                                                                                              |
-# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                 Authors: 1hendex x clopdisabler                              |
 # |                                                                                              |
 # +----------------------------------------------------------------------------------------------+
 
 # \u00BB is » (double >>), ANSI and UTF-8 interpret this differently... you may even see ? due to this
-prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os§r §8|"
+prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os §8|"
 
 alerts_enabled: "%prefix% &fОповещения включены"
 alerts_disabled: "%prefix% &fОповещения выключены"
@@ -30,7 +30,7 @@ client_brand_format: "%prefix% &f%player% присоединился, испол
 client_brand_kick: "&c%brand% &fне разрешен на этом сервере!"
 bot_spawned: "%prefix% &fВы заспавнили бота для &7%player%"
 bot_already_spawned: "%prefix% &fБот уже был заспавнен для этого игрока"
-spectate_return: "\n%prefix% &fНажмите здесь, чтобы вернуться в предыдущее место\n"
+spectate_return: "<click:run_command:/darkness stopspectating><hover:show_text:\"/darkness stopspectating\">\n%prefix% &fНажмите здесь, чтобы вернуться на предыдущее место\n</hover></click>"
 cannot_spectate_return: "%prefix% &cВы можете сделать это только после наблюдения за игроком"
 cannot_run_on_self: "%prefix% &cВы не можете использовать эту команду на себе!"
 add_point_success: "%prefix% &cДобавлено 1 поинтов игроку %player%"
@@ -43,6 +43,14 @@ shuffle_invalid_mode: "%prefix% &cНеверный режим. Доступны�
 setback_message: "%prefix% &cВы успешно сетбекнули назад игрока %player%"
 punish_message: "%prefix% &fВы наказали игрока &c%player%&c!"
 kick_message: "%prefix% &fВы выгнали игрока &c%player%&c!"
+transaction_kick: "Internal Exception: io.netty.handler.timeout.ReadTimeoutException"
+
+bar:
+    opening_bracket: '&8['
+    closing_bracket: '&8]'
+    fill: '&f|'
+    empty: '&7|'
+    size: 18
 
 # Доступные плейсхолдеры:
 # %time% - Текущее время (Обязательный плейсхолдер к логу)
@@ -53,14 +61,32 @@ kick_message: "%prefix% &fВы выгнали игрока &c%player%&c!"
 # %check_name% - Название проверки
 # %verbose% - Дополнительная информация от проверки. Не все проверки добавляют эту информацию
 # %vl% - Количество нарушений
+# %bar% - количество нарушений в виде бара
 # %ping% - Пинг игрока
 # %tps% - Текущий TPS
 # %component% - Модуль кика (Только для бренда)
 brand_log_format: "(%time%) %server_name%: %player% (%ip%) был исключен за бренд: %brand% | component: %component%"
 log_format: "(%time%) %server_name%: %player% (%ip%) провалил %check% | (%verbose%) | vl: %vl% ping: %ping% tps: %tps%"
 command_log_format: "(%time%) %server_name%: Execute command: %command%"
-alerts_format: "%prefix% &c%player% &7провалил &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
+alerts_format: "%prefix% &c%player% &7провалил &c%check_name%%experimental% &7(x&c%bar%&7)"
+alerts_format_console: "%prefix% &c%player% &7провалил &c%check_name%%experimental% &7(x&c%vl%&7) &c%verbose%"
 alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7провалил &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
+
+alert_hover_enabled: true
+alert_hover:
+    - '&7Описание:&r'
+    - '&c%description%'
+    - ' '
+    - '&7Информация:&r'
+    - '&c%information%'
+    - ' '
+    - '&7Версия: &c&r%version%'
+    - ' '
+    - '&7Ping: &c&r%ping%'
+    - ' '
+    - '&7TPS: &c&r%tps%'
+    - ' '
+    - '&cНажмите, чтобы начать слежку'
 
 profile_command:
   - ' '

@@ -2,9 +2,9 @@
 # |                                                                                              |
 # |                                       Darkness Liquidation                                   |
 # |                                                                                              |
-# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                               Discord: https://dsc.gg/darkness-liquidation                   |
 # |                                                                                              |
-# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                 Authors: 1hendex x clopdisabler                              |
 # |                                                                                              |
 # +----------------------------------------------------------------------------------------------+
 
@@ -35,7 +35,7 @@ client_settings:
   # AutoRespawn Settings
   auto_respawn:
     enabled: true
-    maxDelta: 10
+    maxDelta: 850
 
   # Client Alert Settings
   alert:
@@ -82,8 +82,14 @@ client_settings:
   # Blocking the use of invalid characters in the brand name.
   block_illegal_symbol: true
 
-# How long should players have until we kick them for timing out? Default = 60 seconds
+# How much time players have before we kick them for timeout? Default = 60 seconds
 max_transaction_time: 60
+# Max allowed delay between transactions before kicking the player for timeout
+# Triggers on FreeCam, BackTrack, Blink
+max_transaction_delay: 400
+# Max allowed negative timer value before kicking the player for timeout
+# Triggers on Timer (0.1), Freeze
+max_negative_time: 5000
 
 # Punishment command settings
 point_command:
@@ -181,48 +187,46 @@ logs:
 ## InformationHider Check
 InformationHider:
 
-  # Should this module be enabled?
+  # Enable the info-hiding module?
   enabled: true
-  # The module hides specific player information that is sent to all clients, giving an advantage in information.
-  # Players on the default game version will not notice the difference.
+
+  # Check only players or all entities?
+  onlyForPlayers: true
+
+  # Hides data about players/mobs to block cheat clients from getting extra info.
+  # Regular players won't notice, but cheats will suffer.
   parts:
-    # This part spoofs health for all entities on your server, so mods that display health,
-    # won't be able to show it, and it will also confuse cheat clients trying to display the health of other players.
-    # Don't worry, other plugins on the server can still access the player's accurate health.
+    # Spoofs health — players and mobs always show fake health
+    # Useful against health bars in mods and cheats
     health:
-      spoof: true # (Recommended)
-      zero: false # Enabling this breaks movement animations, not recommended for use
-    # This part hides enchantments to prevent cheats from showing correct types and levels.
-    enchant: true
-    # This part hides item counts, full inventory contents, and armor.
-    item_count: true
-    # This part hides item names to prevent cheat clients from showing original names.
-    item_name: true
-    # This part hides item durability to prevent cheats from showing exact durability.
-    durability: true
-    # This part hides XP to prevent cheats from showing the exact amount.
-    xp: true
-    # This part hides air ticks to prevent its display in cheat clients.
-    air: true
-    # This part hides absorption level to prevent its display in cheat clients.
-    absorption: true
-    # This part hides saturation level to prevent its display in cheat clients.
-    saturation: true
-    # This part hides scoreboard data to prevent it from being displayed in cheat clients.
-    scoreboard: true
-    # This part hides the world seed to prevent it from being leaked via mods.
-    seed: true
-    # This part hides potion effects to prevent them from being visible to cheat clients.
-    potion: true
-    # This part hides the real server staff and shows fake ones with random names.
+      spoof: true  # Recommended
+      zero: false  # Fixes many KillAura clients, but breaks animations — not recommended
+
+    # Other info hiding
+    enchant: true         # Hides enchants
+    item_count: true      # Item count
+    item_name: true       # Item names
+    durability: true      # Item durability
+    xp: true              # XP amount
+    air: true             # Air ticks
+    absorption: true      # Absorption level
+    saturation: true      # Saturation level
+    scoreboard: true      # Scoreboard
+    seed: true            # World seed
+    potion: true          # Effects
+    gamemode: true        # Gamemode
+
+    # Replaces real staff with fake random players
     fake_staff:
       enabled: true
       bots: 60
-    # This part manages spectator visibility. Spectators with the darkness.spectator permission will be hidden in the listed worlds.
+
+    # Spectator settings (requires permission: darkness.spectator)
     spectators:
-      # Leave empty to apply to all worlds.
+      # Worlds where spectators will be hidden. Empty = all worlds
       allowed_worlds:
         - ""
+      # Always hide, even if they do nothing
       hide_spectators: true
 
 ## Aim Check
@@ -408,13 +412,13 @@ KillAura:
   m: true
 
   # Should we enable this module?
-  n: false
+  n: true
 
   # Should we enable this module?
-  o: false
+  o: true
 
   # Should we enable this module?
-  p: false
+  p: true
 
 ## AutoBlock Check
 AutoBlock:
@@ -490,7 +494,7 @@ AutoClicker:
   j: true
 
   # Should we enable this module?
-  k: true
+  k: false
 
   # Should we enable this module?
   l: true
@@ -501,29 +505,8 @@ AutoClicker:
   # Should we enable this module?
   n: true
 
-## Baritone Check
-Baritone:
-
-  # Should we enable this module?
-  a: true
-
-  # Should we enable this module?
-  b: true
-
 ## FreeCam Check
 FreeCam:
-
-  # Should we enable this module?
-  a: true
-
-  # Should we enable this module?
-  b: true
-
-  # Should we enable this module?
-  c: true
-
-## Vehicle Check
-Vehicle:
 
   # Should we enable this module?
   a: true
@@ -594,35 +577,6 @@ PingSpoof:
   # Should we enable this module?
   c: true
 
-## Timer Check
-Timer:
-
-  # Timer A Module
-  a:
-
-    # Should we enable this module?
-    enabled: true
-    # Target 1.005 timer
-    setbackvl: 10
-    # Milliseconds that the player can accumulate for later use when they fall behind
-    # Could potentially allow 1.8 fast use/fast heal/fast bow bypasses if set too high, 120 ms seems like a good balance
-    drift: 120
-    # Ping at which the check will start to limit timer balance, to prevent abuse.
-    # Can cause some setbacks for legitimate players but only if they are over this ping threshold.
-    # -1 to disable
-    ping_abuse_limit_threshold: 1000
-
-  # Should we enable this module?
-  b: true
-
-  # Timer C Module
-  c:
-
-    # Should we enable this module?
-    enabled: true
-    # Minimum timer speed (Normal speed: 1.0), however, lags and other quirks may make it lower (around 0.66)
-    min_speed: 1300
-
 ## Interpolation Check
 Interpolation:
 
@@ -649,6 +603,80 @@ Interpolation:
     # This is to stop the player from gathering too many violations and never being able to clear them all
     # Default advantage ceiling (x axis = seconds, y axis = 1/1000 block): https://www.desmos.com/calculator/4lovswdarj
     max_ceiling: 4
+
+## Baritone Check
+Baritone:
+    
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+## NoSlow Check
+# Prediction-based no slow check
+# Darkness accounts for buggy netcode here... hard to false even when spamming right click and offhand button
+# Much more stable than other anticheats, but please report any falses... I have fixed a ton of netcode issues here.
+NoSlow:
+
+  # NoSlow A Module
+  a:
+        
+    # Should we enable this module?
+    enabled: true
+    # How much of an offset is "cheating"
+    # By default this is lower than other offs
+    # Flags by 0.03-0.2 consistently with NoSlow on
+    buffer: 0.02
+    # Setback fast on the first item to remove any advantage NoSlow gives
+    setbackvl: 5
+    # Decay's when the player uses an item AND is slowed by it
+    decay: 0.05
+    
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+## Sprint Check
+Sprint:
+    
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
+
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
+## Vehicle Check
+Vehicle:
+    
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
+
+  # Should we enable this module?
+  c: true
+
+  # Should we enable this module?
+  d: true
 
 ## Reach Check
 Reach:
@@ -690,32 +718,6 @@ HitBox:
   # Should we enable this module?
   a: true
 
-## NoSlow Check
-# Prediction-based no slow check
-# Darkness accounts for buggy netcode here... hard to false even when spamming right click and offhand button
-# Much more stable than other anticheats, but please report any falses... I have fixed a ton of netcode issues here.
-NoSlow:
-
-  # NoSlow A Module
-  a:
-
-    # Should we enable this module?
-    enabled: true
-    # How much of an offset is "cheating"
-    # By default this is lower than other offs
-    # Flags by 0.03-0.2 consistently with NoSlow on
-    buffer: 0.02
-    # Setback fast on the first item to remove any advantage NoSlow gives
-    setbackvl: 5
-    # Decay's when the player uses an item AND is slowed by it
-    decay: 0.05
-
-  # Should we enable this module?
-  b: true
-
-  # Should we enable this module?
-  c: true
-
 ## Velocity Check
 Velocity:
 
@@ -744,24 +746,14 @@ Velocity:
     # Should we enable this module?
     enabled: true
     buffer: 0.001
-    setbackvl: 3
-
-## NoFall Check
-NoFall:
-
-  # Should we enable this module?
-  a: true
-
-  # Should we enable this module?
-  b: true
 
 ## Inventory Check
 Inventory:
 
-  # Should we enable this module?
+  # Should we enable this module? (XCarry)
   a: true
 
-  # Should we enable this module?
+  # Should we enable this module? (InventoryMove)
   b: true
 
   # Should we enable this module? (AutoPotion)
@@ -811,6 +803,15 @@ Inventory:
 
   # Should we enable this module?
   m: true
+
+## NoFall Check
+NoFall:
+    
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
 
 ## Crash Check
 Crash:
@@ -1012,6 +1013,12 @@ BadPackets:
   # Should we enable this module?
   bb: true
 
+  # Should we enable this module?
+  cc: true
+
+  # Should we enable this module?
+  dd: true
+
 ## Interact Check
 Interact:
 
@@ -1069,29 +1076,32 @@ Scaffold:
   # Should we enable this module? (AirPlace)
   f: true
 
-## Sprint Check
-Sprint:
-
-  # Should we enable this module?
-  a: true
-
+## Timer Check
+Timer:
+    
+  # Timer A Module
+  a:
+        
+    # Should we enable this module?
+    enabled: true
+    # Миллисекунды, которые игрок может накапливать для последующего использования, когда он отстает.
+    # Потенциально может позволить 1.8 обходов: быстрое использование/быстрое исцеление/быстрый лук, если установлено слишком высокое значение, 120 мс кажется хорошим балансом
+    drift: 120
+    # Пинг, при котором проверка начнет ограничивать баланс таймера, чтобы предотвратить злоупотребления.
+    # Может вызвать некоторые задержки для законных игроков, но только если их пинг превышает этот порог.
+    # -1 для отключения
+    ping_abuse_limit_threshold: 1000
+    
   # Should we enable this module?
   b: true
 
-  # Should we enable this module?
-  c: true
-
-  # Should we enable this module?
-  d: true
-
-  # Should we enable this module?
-  e: true
-
-  # Should we enable this module?
-  f: true
-
-  # Should we enable this module?
-  g: true
+  # Timer C Module
+  c:
+        
+    # Should we enable this module?
+    enabled: true
+    # Минимальная скорость таймера (Нормальная скорость: 1.0), однако лаги и другие особенности могут сделать её ниже (около 0.66)
+    min_speed: 1300
 
 ## Elytra Check
 Elytra:
@@ -1138,6 +1148,21 @@ Elytra:
 
   # Should we enable this module?
   m: true
+
+  # Should we enable this module?
+  n: true
+
+  # Should we enable this module?
+  o: true
+
+## AutoFish Check
+AutoFish:
+
+  # Should we enable this module?
+  a: true
+
+  # Should we enable this module?
+  b: true
 
 # Should we eject players when they get close to flagging?
 # It is suggested to leave this option enabled since it can sometimes help prevent issues such as desync

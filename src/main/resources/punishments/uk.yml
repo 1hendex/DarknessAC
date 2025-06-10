@@ -2,9 +2,9 @@
 # |                                                                                              |
 # |                                       Darkness Liquidation                                   |
 # |                                                                                              |
-# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                               Discord: https://dsc.gg/darkness-liquidation                   |
 # |                                                                                              |
-# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                 Authors: 1hendex x clopdisabler                              |
 # |                                                                                              |
 # +----------------------------------------------------------------------------------------------+
 
@@ -55,7 +55,7 @@ Punishments:
       - '1:1 [proxy]'
       - '1:2 darkness bot %player%'
       - '1:2 darkness cancelhit %player% 5000'
-      - '5:0 darkness punish %player% &cПідозра на використання читі'
+      - '3:0 darkness punish %player% &cПідозра на використання читі'
 
   Interact:
     remove-violations-after: 300
@@ -66,22 +66,7 @@ Punishments:
       - '5:5 [webhook]'
       - '5:5 [log]'
       - '5:5 [proxy]'
-      - '10:5 darkness setback %player%'
-      - '25:0 darkness punish %player% &cПідозра на використання читі'
-
-  Sprint:
-    remove-violations-after: 300
-    checks:
-      - 'Sprint'
-    commands:
-      - '1:1 [alert]'
-      - '1:1 [webhook]'
-      - '1:1 [log]'
-      - '1:1 [proxy]'
-      - '1:2 darkness bot %player%'
-      - '1:2 darkness cancelhit %player% 5000'
-      - '3:0 darkness punish %player% &cПідозра на використання читі'
-      - '5:0 darkness ban %player% &cПідозра на використання читі'
+      - '10:0 darkness punish %player% &cПідозра на використання читі'
 
   Elytra:
     remove-violations-after: 250
@@ -98,12 +83,16 @@ Punishments:
     checks:
       - 'AutoRespawn'
       - 'AutoTotem'
+      - 'AutoFish'
+      - 'AutoBlock'
+      - 'Sprint'
     commands:
       - '1:1 [alert]'
       - '1:1 [webhook]'
       - '1:1 [proxy]'
       - '1:1 [log]'
-      - '2:0 darkness ban %player% &cSuspicion of using cheats'
+      - '1:0 darkness cancelhit %player% 10000'
+      - '2:0 darkness ban %player% &cПідозра на використання читі'
 
   Chat:
     remove-violations-after: 300
@@ -114,18 +103,7 @@ Punishments:
       - '1:1 [webhook]'
       - '1:1 [log]'
       - '4:0 darkness punish %player% &cПідозра на використання читі'
-
-  AutoBlock:
-    remove-violations-after: 300
-    checks:
-      - 'AutoBlock'
-    commands:
-      - '1:2 [alert]'
-      - '4:5 [webhook]'
-      - '2:2 [log]'
-      - '2:5 [proxy]'
-      - '1:2 darkness bot %player%'
-      - '3:0 darkness punish %player% &cПідозра на використання читі'
+      - '6:0 darkness ban %player% &cПідозра на використання читі'
 
   AutoClicker:
     remove-violations-after: 300
@@ -139,10 +117,11 @@ Punishments:
       - '3:2 darkness cancelhit %player% 5000'
       - '6:0 darkness punish %player% &cПідозра на використання читі'
 
-  Reach:
+  RangeInteract:
     remove-violations-after: 70
     checks:
       - 'Reach'
+      - 'HitBox'
     commands:
       - '1:1 [alert]'
       - '4:4 [webhook]'
@@ -152,20 +131,6 @@ Punishments:
       - '1:2 darkness bot %player%'
       - '2:1 darkness rotate %player%'
       - '4:0 darkness punish %player% &cПідозра на використання читі'
-
-  HitBox:
-    remove-violations-after: 70
-    checks:
-      - 'HitBox'
-    commands:
-      - '1:1 [alert]'
-      - '4:4 [webhook]'
-      - '1:1 [log]'
-      - '1:1 [proxy]'
-      - '2:2 darkness cancelhit %player% 3000'
-      - '2:2 darkness bot %player%'
-      - '2:2 darkness rotate %player%'
-      - '6:0 darkness punish %player% &cПідозра на використання читі'
 
   Packets:
     remove-violations-after: 300
@@ -201,6 +166,7 @@ Punishments:
       - '1:1 [log]'
       - '2:3 [webhook]'
       - '4:0 darkness punish %player% &cПідозра на використання читі'
+      - '6:0 darkness ban %player% &cПідозра на використання читі'
 
   Timer:
     remove-violations-after: 70
@@ -223,7 +189,7 @@ Punishments:
       - '6:4 [webhook]'
       - '6:4 [log]'
       - '6:4 [proxy]'
-      - '40:0 darkness punish %player% &cПідозра на використання читі'
+      - '35:0 darkness punish %player% &cПідозра на використання читі'
 
   Velocity:
     remove-violations-after: 250
@@ -247,6 +213,7 @@ Punishments:
       - '2:2 [webhook]'
       - '2:2 [log]'
       - '1:1 [proxy]'
+      - '1:2 darkness bot %player%'
       - '5:0 darkness punish %player% &cПідозра на використання читі'
 
   NoSlowDown:
@@ -270,19 +237,7 @@ Punishments:
       - '10:10 [webhook]'
       - '10:10 [log]'
       - '5:5 [proxy]'
-      - '15:0 darkness punish %player% &cПідозра на використання читі'
-
-  FastBreak:
-    remove-violations-after: 180
-    checks:
-      - 'FastBreak' # FastBreak
-      - 'FastPlace' # Fast Use x Fast Place
-    commands:
-      - '10:5 [alert]'
-      - '25:10 [webhook]'
-      - '10:10 [log]'
-      - '10:5 [proxy]'
-      - '25:0 darkness punish %player% &cПідозра на використання читі'
+      - '5:0 darkness punish %player% &cПідозра на використання читі'
 
   Scaffold:
     remove-violations-after: 180

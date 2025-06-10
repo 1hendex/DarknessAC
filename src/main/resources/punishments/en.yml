@@ -2,9 +2,9 @@
 # |                                                                                              |
 # |                                       Darkness Liquidation                                   |
 # |                                                                                              |
-# |                               Discord: https://dsc.gg/darkness-ac                            |
+# |                               Discord: https://dsc.gg/darkness-liquidation                   |
 # |                                                                                              |
-# |                                 Authors: 1hendex x danilgnedin                               |
+# |                                 Authors: 1hendex x clopdisabler                              |
 # |                                                                                              |
 # +----------------------------------------------------------------------------------------------+
 
@@ -55,7 +55,7 @@ Punishments:
       - '1:1 [proxy]'
       - '1:2 darkness bot %player%'
       - '1:2 darkness cancelhit %player% 5000'
-      - '5:0 darkness punish %player% &cSuspicion of using cheats'
+      - '3:0 darkness punish %player% &cSuspicion of using cheats'
 
   Interact:
     remove-violations-after: 300
@@ -66,8 +66,7 @@ Punishments:
       - '5:5 [webhook]'
       - '5:5 [log]'
       - '5:5 [proxy]'
-      - '10:5 darkness setback %player%'
-      - '25:0 darkness punish %player% &cSuspicion of using cheats'
+      - '10:0 darkness punish %player% &cSuspicion of using cheats'
 
   Sprint:
     remove-violations-after: 300
@@ -98,11 +97,15 @@ Punishments:
     checks:
       - 'AutoRespawn'
       - 'AutoTotem'
+      - 'AutoFish'
+      - 'AutoBlock'
+      - 'Sprint'
     commands:
       - '1:1 [alert]'
       - '1:1 [webhook]'
       - '1:1 [proxy]'
       - '1:1 [log]'
+      - '1:0 darkness cancelhit %player% 10000'
       - '2:0 darkness ban %player% &cSuspicion of using cheats'
 
   Chat:
@@ -114,18 +117,7 @@ Punishments:
       - '1:1 [webhook]'
       - '1:1 [log]'
       - '4:0 darkness punish %player% &cSuspicion of using cheats'
-
-  AutoBlock:
-    remove-violations-after: 300
-    checks:
-      - 'AutoBlock'
-    commands:
-      - '1:2 [alert]'
-      - '4:5 [webhook]'
-      - '2:2 [log]'
-      - '2:5 [proxy]'
-      - '1:2 darkness bot %player%'
-      - '3:0 darkness punish %player% &cSuspicion of using cheats'
+      - '6:0 darkness ban %player% &c&cSuspicion of using cheats'
 
   AutoClicker:
     remove-violations-after: 300
@@ -139,10 +131,11 @@ Punishments:
       - '3:2 darkness cancelhit %player% 5000'
       - '6:0 darkness punish %player% &cSuspicion of using cheats'
 
-  Reach:
+  RangeInteract:
     remove-violations-after: 70
     checks:
       - 'Reach'
+      - 'HitBox'
     commands:
       - '1:1 [alert]'
       - '4:4 [webhook]'
@@ -152,20 +145,6 @@ Punishments:
       - '1:2 darkness bot %player%'
       - '2:1 darkness rotate %player%'
       - '4:0 darkness punish %player% &cSuspicion of using cheats'
-
-  HitBox:
-    remove-violations-after: 70
-    checks:
-      - 'HitBox'
-    commands:
-      - '1:1 [alert]'
-      - '4:4 [webhook]'
-      - '1:1 [log]'
-      - '1:1 [proxy]'
-      - '2:2 darkness cancelhit %player% 3000'
-      - '2:2 darkness bot %player%'
-      - '2:2 darkness rotate %player%'
-      - '6:0 darkness punish %player% &cSuspicion of using cheats'
 
   Packets:
     remove-violations-after: 300
@@ -201,6 +180,7 @@ Punishments:
       - '1:1 [log]'
       - '2:3 [webhook]'
       - '4:0 darkness punish %player% &cSuspicion of using cheats'
+      - '6:0 darkness ban %player% &cSuspicion of using cheats'
 
   Timer:
     remove-violations-after: 70
@@ -223,7 +203,7 @@ Punishments:
       - '6:4 [webhook]'
       - '6:4 [log]'
       - '6:4 [proxy]'
-      - '40:0 darkness punish %player% &cSuspicion of using cheats'
+      - '35:0 darkness punish %player% &cSuspicion of using cheats'
 
   Velocity:
     remove-violations-after: 250
@@ -247,6 +227,7 @@ Punishments:
       - '2:2 [webhook]'
       - '2:2 [log]'
       - '1:1 [proxy]'
+      - '1:2 darkness bot %player%'
       - '5:0 darkness punish %player% &cSuspicion of using cheats'
 
   NoSlowDown:
@@ -270,19 +251,7 @@ Punishments:
       - '10:10 [webhook]'
       - '10:10 [log]'
       - '5:5 [proxy]'
-      - '15:0 darkness punish %player% &cSuspicion of using cheats'
-
-  FastBreak:
-    remove-violations-after: 180
-    checks:
-      - 'FastBreak' # FastBreak
-      - 'FastPlace' # Fast Use x Fast Place
-    commands:
-      - '10:5 [alert]'
-      - '25:10 [webhook]'
-      - '10:10 [log]'
-      - '10:5 [proxy]'
-      - '25:0 darkness punish %player% &cSuspicion of using cheats'
+      - '5:0 darkness punish %player% &cSuspicion of using cheats'
 
   Scaffold:
     remove-violations-after: 180
