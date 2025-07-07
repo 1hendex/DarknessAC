@@ -19,10 +19,20 @@
 Punishments:
 
   Aim:
+    # After how many seconds should the violation be removed?
     remove-violations-after: 100
+    # This section will apply to all checks with the specified name.
     checks:
       - 'Aim'
     commands:
+      # Threshold:Interval command
+      #
+      # Example to kick a player with the message "invalid movement!" after 100 violations, with no interval
+      # Commands:
+      # - "100:0 darkness punish %player% invalid movement!"
+      # 0 means execute exactly once.
+      # - "100:50 say %player% is cheating!"
+      # Executes when the user reaches 100 flags, and then every 50 flags after that.
       - '1:1 [alert]'
       - '3:2 [webhook]'
       - '1:2 [log]'
