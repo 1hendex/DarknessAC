@@ -89,11 +89,11 @@ Aim:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS, SLOW,
   # CANCEL_ATTACK, GRIM, SATURN_DRAG, SATURN_TELEPORT, NONE
   #
-  # The "setback_type" setting allows combining multiple setbacks at once
+  # The setback_type setting allows combining multiple setbacks at once
   # by listing them separated by commas, for example:
   # setback_type: CANCEL_ATTACK,DARKNESS
   #
-  # In this case, when "setback_vl" is exceeded, all specified setbacks
+  # In this case, when setback_vl is exceeded, all specified setbacks
   # will be applied in the given order, one after another.
   #
   # Priority of settings:
