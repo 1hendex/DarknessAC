@@ -91,10 +91,7 @@ Punishments:
   AutoAction:
     remove-violations-after: 650
     checks:
-      - 'AutoRespawn'
-      - 'AutoTotem'
-      - 'AutoFish'
-      - 'AutoBlock'
+      - 'AutoAction'
       - 'Sprint'
     commands:
       - '1:1 [alert]'
