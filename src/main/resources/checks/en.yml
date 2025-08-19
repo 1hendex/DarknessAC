@@ -20,13 +20,8 @@ Aim:
   # Should we enable this module?
   c: true
 
-  # Aim D Module
-  d:
-
-    # Should we enable this module?
-    enabled: true
-    min: 0 # Cinematic fix ( 5000 )
-    max: 10000
+  # Should we enable this module?
+  d: true
 
   # Should we enable this module?
   e: true
@@ -73,21 +68,9 @@ Aim:
   # Should we enable this module?
   s: true
 
-  # Should we enable this module?
-  t: true
-
-  # Should we enable this module?
-  u: true
-
-  # Should we enable this module?
-  v: true
-
-  # Should we enable this module?
-  w: true
-
   # List of possible setback types:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS, SLOW,
-  # CANCEL_ATTACK, GRIM, SATURN_DRAG, SATURN_TELEPORT, NONE
+  # CANCEL_ATTACK, GRIM, FOOD, NONE
   #
   # The setback_type setting allows combining multiple setbacks at once
   # by listing them separated by commas, for example:
@@ -362,8 +345,15 @@ Protocol:
   # Should we enable this module?
   a: true
 
-  # Should we enable this module?
-  b: true
+  # Protocol B Module
+  b:
+
+    # Should we enable this module?
+    enabled: true
+    # Flag if the offset is greater than this threshold
+    threshold: 10
+    # Ignore players who joined within this duration in milliseconds
+    joined: 5000
 
   # Should we enable this module?
   c: true
@@ -466,7 +456,7 @@ NoSlow:
     # How much of an offset is "cheating"
     # By default this is lower than other offs
     # Flags by 0.03-0.2 consistently with NoSlow on
-    buffer: 0.02
+    buffer: 0.001
     # Decay's when the player uses an item AND is slowed by it
     decay: 0.05
 
@@ -550,7 +540,7 @@ Reach:
     # 3.00-3.03 hits may go through but still be flagged, due to packet order limitations
     block_impossible_hits: true
     # Should we check for hits on entities that go through other entities?
-    entity_impossible_hits: true
+    entity_impossible_hits: false
     # This will send an additional packet at the end of every tick to increase the likelihood of catching cheats
     # This injects into server's connection list to send a final packet just before the server flushes
     # Enabling this will increase bandwidth usage for all players
@@ -622,7 +612,7 @@ Inventory:
     enabled: true
     # At what deviation from player movement should we trigger a violation?
     # Measured in blocks from the possible movement
-    offset: 0.017
+    offset: 0.040
     # Fixes the desynchronization issue when jumping with an open container or block
     fix_jump_desync: true
 
@@ -638,13 +628,12 @@ Inventory:
   # Should we enable this module? (InventoryCleaner)
   f: true
 
-  # Inventory G Module (FastSwitch)
+  # Inventory G Module
   g:
 
     # Should we enable this module?
     enabled: true
-    maxDelta: 35
-    maxPing: 400
+    setback_vl: 3
 
   # Inventory H Module (ChestStealer)
   h:
@@ -659,7 +648,6 @@ Inventory:
     # Should we enable this module?
     enabled: true
     setback_vl: 5
-    maxPing: 100
 
   # Inventory J Module
   j:
@@ -682,13 +670,6 @@ Inventory:
 
   # Should we enable this module?
   o: true
-
-  # Inventory P Module
-  p:
-
-    # Should we enable this module?
-    enabled: true
-    setback_vl: 3
 
   # Enabled this check if you want to allow "ItemsScroller"
   itemsScroller: false
@@ -775,11 +756,25 @@ Chat:
   # Chat C Module
   c:
 
+   # Should we enable this module?
+    enabled: true
     # Should message checks for forbidden words be enabled?
     check_words: true
+
     # Should message checks with a randomizer be enabled?
     check_randomizer: true
     check_liquid: true
+
+    # Minimum similarity of strings that Darkness will consider as similar
+    max_similarity: 0.8
+    # Maximum difference in string length for similarity check
+    max_similarity_chardiff: 4
+
+    # Maximum percentage of capital letters in messages shorter than 6 characters
+    max_caps_percentage_s: 0.6
+    # Maximum percentage of capital letters in messages longer than 5 characters
+    max_caps_percentage_l: 0.525
+
     # List of forbidden words
     banned_words:
       - celestial
@@ -806,13 +801,13 @@ Exploit:
   a: true # Log4j
 
   # Should we enable this module?
-  b: true # TabComplete
+  b: true # ItemName
 
   # Should we enable this module?
   c: true # Book Crasher
 
   # Should we enable this module?
-  d: true # AntiSpam bypass
+  d: true # Book Exploit
 
   # You can gain high speeds when sprint jumping with an elytra, this prevents the exploit when set to false
   # Mojang screwed up netcode by making elytra start client sided and elytra end server sided
@@ -1044,12 +1039,8 @@ Elytra:
   # Should we enable this module?
   c: true
 
-  # Elytra D Module
-  d:
-
-    # Should we enable this module?
-    enabled: true
-    max_speed: 2.45
+  # Should we enable this module?
+  d: true
 
   # Should we enable this module?
   e: true
@@ -1080,9 +1071,6 @@ Elytra:
 
   # Should we enable this module?
   n: true
-
-  # Should we enable this module?
-  o: true
 
   setback_type: DARKNESS
   setback_vl: 1

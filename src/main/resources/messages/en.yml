@@ -17,7 +17,7 @@ verbose_enabled: "%prefix% &fVerbose enabled"
 verbose_disabled: "%prefix% &fVerbose disabled"
 cps_enabled: "%prefix% &fCPS display &aenabled"
 cps_disabled: "%prefix% &fCPS display &cdisabled"
-action_bar: "&fPlayer: &c%player%&f, CPS: &c%сps%"
+action_bar: "&e⚡ &fPlayer: &c%player%&f, CPS: &c%сps%"
 console_specify_target: "%prefix% &cYou must specify a target in the console!"
 player_not_this_server: "%prefix% &cPlayer is not on this server!"
 player_not_found: "%prefix% &cThe specified player could not be found!"
@@ -35,14 +35,23 @@ cannot_spectate_return: "%prefix% &cYou can only do this after spectating a play
 cannot_run_on_self: "%prefix% &cYou cannot use this command on yourself!"
 add_point_success: "%prefix% &cAdded 1 point to player %player%"
 reset_points_success: "%prefix% &cBan points reset for player %player%"
-crash_invalid_mode: "%prefix% &cUnknown method! Use entity, particle, explosion, position, or explosion1!"
+crash_invalid_mode: "%prefix% &cUnknown method! Use entity, particle, position, explosion, demo, lag!"
 crash_player: "%prefix% &cYou may have crashed the client of player &7%player%"
 shuffle_one: "%prefix% &cSuccessfully shuffled one hotbar slot for player %player%"
 shuffle_many: "%prefix% &cSuccessfully shuffled hotbar for player %player%"
 shuffle_invalid_mode: "%prefix% &cInvalid mode. Available: one, many"
+totem_godmode: "%prefix% &cThe player is in god mode"
+player_no_totem: "%prefix% &cThe player is not holding a totem for inspection!"
+totem_cooldown: "%prefix% &cWe cannot inspect the player yet. Please wait: %time%"
+totem_passed: "%prefix% &aPlayer %player% has successfully passed the check!"
+totem_failed: "%prefix% &cThe player failed the check!"
 setback_message: "%prefix% &cYou successfully set back player %player%"
 punish_message: "%prefix% &fYou punished player &c%player%&c!"
 kick_message: "%prefix% &fYou kicked player &c%player%&c!"
+punishwave_countdown: "%prefix% &fThe punish wave will execute in &c%countdown% &fseconds"
+punishwave_punished: "%prefix% &c%count% &fplayers have been punished for cheating"
+punishwave_added: "%prefix% &c%player% &fHas been added to the punish wave"
+punishwave_exists: "%prefix% &fThat player has already been added to the punish wave"
 transaction_kick: "Internal Exception: io.netty.handler.timeout.ReadTimeoutException"
 
 bar:
@@ -62,6 +71,10 @@ bar:
 # %verbose% - Additional information from the check. Not all checks add this information
 # %vl% - Violation count
 # %bar% - number of violations shown as bars
+# %trust_color% - Violation color code
+# %trust_name% - Colored name of the violation
+# %check% - Name of the check without type
+# %check_type% - Name of the check type
 # %ping% - Player's ping
 # %tps% - Current TPS
 # %component% - Kick module (Only for brand)
@@ -73,6 +86,7 @@ alerts_format_console: "%prefix% &c%player% &7failed &c%check_name%%experimental
 alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7failed &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
 
 alert_hover_enabled: true
+alert_hover_command: "/darkness spectate %player%"
 alert_hover:
     - '&7Description:&r'
     - '&c%description%'
@@ -129,8 +143,8 @@ checks_command:
 
 info:
   - "&6&l&m┏  &7"
-  - "&6&l| &c&lDarkness Liquidation &8| &cVersion 2.2.1"
-  - "&6&l| &fContact developer: &c&n1hendex&r &7(Discord)"
+  - "&6&l| &c&lDarkness Liquidation &8| &cVersion 2.3"
+  - "&6&l| &fContact developer: &c&nhendex_new&r &7(Discord)"
   - "&6&l&m┛  &1"
 
 # Placeholders: %prefix% -> (Darkness Prefix), %player% -> (The player that got punished), %reason% -> (The reason provided by the Darkness punish command)
@@ -154,7 +168,6 @@ help:
   - '&8» &c/darkness kick <player> <reason> &f- &7Kick player from server.'
   - '&8» &c/darkness punish <player> <reason> &f- &7Punish player for cheating.'
   - '&8» &c/darkness ban <player> <reason> &f- &7Ban player from server.'
-  - '&8» &c/darkness flag <player> &f- &7Setback player.'
   - '&8» &c/darkness addpoint <player> &f- &7Give ban point to player.'
   - '&8» &c/darkness resetpoints <player> &f- &7Reset all ban points for player.'
   - '&8» &c/darkness checks &f- &7View all active Darkness checks.'
@@ -162,6 +175,7 @@ help:
   - '&8» &c/darkness crash <player> <method> &f- &7Crash player client.'
   - '&8» &c/darkness lag &f- &7View server stats.'
   - '&8» &c/darkness rotate <player> &f- &7Random player rotation.'
+  - '&8» &c/darkness totem <player> &f- &7Check the player for AutoTotem.'
   - '&8» &c/darkness reload &f- &7Reload configuration.'
   - '&8» &c/darkness spectate <player> &f- &7Spectate player.'
   - '&8» &c/darkness verbose &f- &7Show all flags without buffers.'

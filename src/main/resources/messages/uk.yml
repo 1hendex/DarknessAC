@@ -17,7 +17,7 @@ verbose_enabled: "%prefix% &fVerbose увімкнено"
 verbose_disabled: "%prefix% &fVerbose вимкнено"
 cps_enabled: "%prefix% &fВідображення CPS &aувімкнено"
 cps_disabled: "%prefix% &fВідображення CPS &cвимкнено"
-action_bar: "&fГравець: &c%player%&f, CPS: &c%сps%"
+action_bar: "&e⚡ &fГравець: &c%player%&f, CPS: &c%сps%"
 console_specify_target: "%prefix% &cВи повинні вказати ціль у консолі!"
 player_not_this_server: "%prefix% &cГравець не на цьому сервері!"
 player_not_found: "%prefix% &cВказаний гравець не знайдений!"
@@ -35,14 +35,23 @@ cannot_spectate_return: "%prefix% &cВи можете зробити це тіл
 cannot_run_on_self: "%prefix% &cВи не можете використовувати цю команду на собі!"
 add_point_success: "%prefix% &cДодано 1 бал для гравця %player%"
 reset_points_success: "%prefix% &cБан-бали скинуті для гравця %player%"
-crash_invalid_mode: "%prefix% &cНевідомий метод! Використовуйте entity, particle, explosion, position або explosion1!"
+crash_invalid_mode: "%prefix% &cНевідомий метод! Використовуйте entity, particle, position, explosion, demo, lag!"
 crash_player: "%prefix% &cВи, ймовірно, крашнули клієнт гравця &7%player%"
 shuffle_one: "%prefix% &cУспішно перемішано один слот гарячої панелі для гравця %player%"
 shuffle_many: "%prefix% &cУспішно перемішано гарячу панель для гравця %player%"
 shuffle_invalid_mode: "%prefix% &cНевірний режим. Доступні: one, many"
+totem_godmode: "%prefix% &cГравець знаходиться в режимі невразливості"
+player_no_totem: "%prefix% &cУ гравця в руці немає тотема для перевірки!"
+totem_cooldown: "%prefix% &cМи не можемо зараз перевірити гравця. Зачекайте: %time%"
+totem_passed: "%prefix% &aГравець %player% успішно пройшов перевірку!"
+totem_failed: "%prefix% &cГравець не пройшов перевірку!"
 setback_message: "%prefix% &cВи успішно скинули назад гравця %player%"
 punish_message: "%prefix% &fВи покарали гравця &c%player%&c!"
 kick_message: "%prefix% &fВи вигнали гравця &c%player%&c!"
+punishwave_countdown: "%prefix% &fХвиля покарань розпочнеться через &c%countdown% &fсекунд"
+punishwave_punished: "%prefix% &c%count% &fгравців були покарані за читерство"
+punishwave_added: "%prefix% &c%player% &fбув доданий до хвилі покарань"
+punishwave_exists: "%prefix% &fЦей гравець вже був доданий до хвилі покарань"
 transaction_kick: "Internal Exception: io.netty.handler.timeout.ReadTimeoutException"
 
 bar:
@@ -62,6 +71,10 @@ bar:
 # %verbose% - Додаткова інформація з перевірки. Не всі перевірки додають цю інформацію
 # %vl% - Кількість порушень
 # %bar% — кількість порушень у вигляді бара
+# %trust_color% - Колір порушення
+# %trust_name% - Кольорове ім'я порушення
+# %check% - Назва перевірки без типу
+# %check_type% - Назва типу чеку
 # %ping% - Пінг гравця
 # %tps% - Поточний TPS
 # %component% - Модуль вигнаня (Тільки для бренду)
@@ -73,6 +86,7 @@ alerts_format_console: "%prefix% &c%player% &7провалив &c%check_name%%ex
 alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7провалив &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
 
 alert_hover_enabled: true
+alert_hover_command: "/darkness spectate %player%"
 alert_hover:
     - '&7Опис:&r'
     - '&c%description%'
@@ -129,8 +143,8 @@ checks_command:
 
 info:
   - "&6&l&m┏  &7"
-  - "&6&l| &c&lDarkness Liquidation &8| &cВерсія 2.2.1"
-  - "&6&l| &fЗв'язок з розробником: &c&n1hendex&r &7(Discord)"
+  - "&6&l| &c&lDarkness Liquidation &8| &cВерсія 2.3"
+  - "&6&l| &fЗв'язок з розробником: &c&nhendex_new&r &7(Discord)"
   - "&6&l&m┛  &1"
 
 # Плейсхолдери: %prefix% -> (Префікс Даркнесс), %player% -> (Гравець, який був покараний), %reason% -> (Причина, вказана в команді покарання Гріма)
@@ -154,7 +168,6 @@ help:
   - '&8» &c/darkness kick <player> <reason> &f- &7Вигнати гравця з сервера.'
   - '&8» &c/darkness punish <player> <reason> &f- &7Покарати гравця за використання читів.'
   - '&8» &c/darkness ban <player> <reason> &f- &7Забанити гравця на сервері.'
-  - '&8» &c/darkness flag <player> &f- &7Сетбек гравця назад.'
   - '&8» &c/darkness addpoint <player> &f- &7Видати бан-поінт гравцю.'
   - '&8» &c/darkness resetpoints <player> &f- &7Скинути всі бан-поінти гравця.'
   - '&8» &c/darkness checks &f- &7Переглянути всі активні перевірки Darkness.'
@@ -162,6 +175,7 @@ help:
   - '&8» &c/darkness crash <player> <method> &f- &7Крашнути клієнт гравця.'
   - '&8» &c/darkness lag &f- &7Переглянути характеристики сервера.'
   - '&8» &c/darkness rotate <player> &f- &7Рандомний поворот гравця.'
+  - '&8» &c/darkness totem <player> &f- &7Перевірити гравця на AutoTotem.'
   - '&8» &c/darkness reload &f- &7Перезавантажити конфігурацію.'
   - '&8» &c/darkness spectate <player> &f- &7Спостерігати за гравцем.'
   - '&8» &c/darkness verbose &f- &7Показати всі прапорці без буферів.'

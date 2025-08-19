@@ -35,14 +35,25 @@ cannot_spectate_return: "%prefix% &cВы можете сделать это то
 cannot_run_on_self: "%prefix% &cВы не можете использовать эту команду на себе!"
 add_point_success: "%prefix% &cДобавлено 1 поинтов игроку %player%"
 reset_points_success: "%prefix% &cБан-поинты сброшены для игрока %player%"
-crash_invalid_mode: "%prefix% &cНеизвестный метод! Используйте entity,particle,explosion,position или explosion1!"
+crash_invalid_mode: "%prefix% &cНеизвестный метод! Используйте entity, particle, position, explosion, demo, lag!"
 crash_player: "%prefix% &cВы, возможно, крашнули клиент игрока &7%player%"
 shuffle_one: "%prefix% &cУспешно перемешан один слот Hotbar для игрока %player%"
 shuffle_many: "%prefix% &cУспешно перемешан Hotbar для игрока %player%"
 shuffle_invalid_mode: "%prefix% &cНеверный режим. Доступные: one , many"
+totem_no_damage: "%prefix% &cНе удалось нанести урон игроку!"
+player_not_survival: "%prefix% &cИгрок находится не в режиме выживания"
+totem_godmode: "%prefix% &cИгрок находится в режиме неуязвимости"
+player_no_totem: "%prefix% &cУ игрока в руке нет тотема для проверки!"
+totem_cooldown: "%prefix% &cМы не можем проверить игрока. Подождите: %time%"
+totem_passed: "%prefix% &aИгрок %player% успешно прошел проверку!"
+totem_failed: "%prefix% Игрок не прошел проверку!"
 setback_message: "%prefix% &cВы успешно сетбекнули назад игрока %player%"
 punish_message: "%prefix% &fВы наказали игрока &c%player%&c!"
 kick_message: "%prefix% &fВы выгнали игрока &c%player%&c!"
+punishwave_countdown: "%prefix% &fВолна наказаний начнётся через &c%countdown% &fсекунд"
+punishwave_punished: "%prefix% &c%count% &fигроков были наказаны за читерство"
+punishwave_added: "%prefix% &c%player% &fбыл добавлен в волну наказаний"
+punishwave_exists: "%prefix% &fЭтот игрок уже был добавлен в волну наказаний"
 transaction_kick: "Internal Exception: io.netty.handler.timeout.ReadTimeoutException"
 
 bar:
@@ -58,10 +69,14 @@ bar:
 # %player% - Никнейм игрока
 # %ip% - IP-адрес игрока
 # %uuid% - Уникальный идентификатор игрока
-# %check_name% - Название проверки
+# %check_name% - Название проверки с типом
 # %verbose% - Дополнительная информация от проверки. Не все проверки добавляют эту информацию
 # %vl% - Количество нарушений
 # %bar% - количество нарушений в виде бара
+# %trust_color% - Цветовой код нарушения
+# %trust_name% - Цветовое имя нарушение
+# %check% - Название проверки без типа
+# %check_type% - Название типа чека
 # %ping% - Пинг игрока
 # %tps% - Текущий TPS
 # %component% - Модуль кика (Только для бренда)
@@ -73,6 +88,7 @@ alerts_format_console: "%prefix% &c%player% &7провалил &c%check_name%%ex
 alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7провалил &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
 
 alert_hover_enabled: true
+alert_hover_command: "/darkness spectate %player%"
 alert_hover:
     - '&7Описание:&r'
     - '&c%description%'
@@ -129,8 +145,8 @@ checks_command:
 
 info:
   - "&6&l&m┏  &7"
-  - "&6&l| &c&lDarkness Liquidation &8| &cВерсия 2.2.1"
-  - "&6&l| &fСвязь с разработчиком: &c&n1hendex&r &7(Discord)"
+  - "&6&l| &c&lDarkness Liquidation &8| &cВерсия 2.3"
+  - "&6&l| &fСвязь с разработчиком: &c&nhendex_new&r &7(Discord)"
   - "&6&l&m┗  &1"
 
 # Плейсхолдеры: %prefix% -> (Префикс Даркнесс), %player% -> (Игрок, который был наказан), %reason% -> (Причина, указанная в команде наказания Грима)
@@ -154,7 +170,6 @@ help:
   - '&8» &c/darkness kick <player> <reason> &f- &7Кикнуть игрока с сервера.'
   - '&8» &c/darkness punish <player> <reason> &f- &7Наказать игрока за использование читов.'
   - '&8» &c/darkness ban <player> <reason> &f- &7Забанить игрока на сервере.'
-  - '&8» &c/darkness flag <player> &f- &7Сетбек игрока назад.'
   - '&8» &c/darkness addpoint <player> &f- &7Выдать бан-поинт игроку.'
   - '&8» &c/darkness resetpoints <player> &f- &7Сбросить все бан-поинты игрока.'
   - '&8» &c/darkness checks &f- &7Посмотреть все активные проверки Darkness.'
@@ -162,6 +177,7 @@ help:
   - '&8» &c/darkness crash <player> <method> &f- &7Крашнуть клиент игрока.'
   - '&8» &c/darkness lag &f- &7Просмотреть характеристики сервера.'
   - '&8» &c/darkness rotate <player> &f- &7Рандомный поворот игрока.'
+  - '&8» &c/darkness totem <player> &f- &7Проверить игрока на AutoTotem.'
   - '&8» &c/darkness reload &f- &7Перезагрузить конфигурацию.'
   - '&8» &c/darkness spectate <player> &f- &7Слежка за игроком.'
   - '&8» &c/darkness verbose &f- &7Показ всех флагов без буферов.'

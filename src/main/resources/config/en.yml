@@ -38,53 +38,58 @@ client_settings:
     # Should we send an Alert when a player joins specifying his Client Brand?
     enabled: true
 
+    # Removes the following regex from the brand
+    remove: " \\(Velocity\\)$"
+
     # This means it won't broadcast their brand to operators if the brand matches the following regexes
     ignored_clients:
+      - "^badlion$"
+      - "^optifine$"
       - "^vanilla$"
       - "^fabric$"
+      - "^Feather Fabric$"
+      - "(^lunarclient:v\\d+\\.\\d+\\.\\d+-\\d{4}$)|(^lunarclient:[a-z0-9]{7}/[\\w_/-]{3,32}$)"
+      - "^labymod$"
 
   # Client brands containing the following names will be blocked from joining the server
   banned_clients:
     - "^1.12.2$"
     - "^mcp$"
     - "^ForgeOptiFine 1.16.5/forge/modified$"
-    - "Remix"
-    - "CRYSTAL"
-    - "matrix"
-    - "CRYSTAL\\|6LAKS0TRIES"
-    - "CrystalWare"
-    - "RYSTAL\\|KZ1LM9TO"
-    - "Misplace"
-    - "reach"
-    - "lmaohax"
-    - "Reach Mod"
-    - "cock"
-    - "Vape v3"
-    - "1946203560"
-    - "#unbanearwax"
-    - "EARWAXWASHERE"
-    - "Cracked Vape"
-    - "EROUAXWASHERE"
-    - "moon:exempt"
-    - "Vape"
-    - "WDL\\|INIT"
-    - "WDL\\|CONTROL"
-    - "Bspkrs Client"
 
-  # Maximum/Minimum client brand name length
-  brand_max_length: 26
+  # Darkness will blacklist specific Forge versions that include built-in Reach hacks (Forge 1.18.2 — 1.19.3).
+  # Setting this to false will allow these clients to connect to the server.
+  # Use at your own risk.
+  disconnect_blacklisted_forge_versions: true
+  # Maximum/Minimum client brand name length.
+  brand_max_length: 16
   brand_min_length: 5
   # Blocking the use of invalid characters in the brand name.
   block_illegal_symbol: true
+  # Whether to check the number of caps (recommended not to disable to detect client spoofing like FORGE, VANILLA)
+  block_caps: true
+  max_caps_percentage: 70
+  # Enable checking and blocking of suspicious payload channels.
+  block_illegal_payload: true
+  # Darkness will block clients by brand name using a regex.
+  # If the client name matches this regex, it will not be able to join the server.
+  illegal_payload_pattern: "Remix|CRYSTAL|matrix|CRYSTAL\\|6LAKS0TRIES|CrystalWare|Misplace|reach|lmaohax|Reach Mod|cock|Vape v3|1946203560|#unbanearwax|EARWAXWASHERE|Cracked Vape|EROUAXWASHERE|moon:exempt|Vape|WDL\\|INIT|WDL\\|CONTROL|Bspkrs Client"
 
-# How much time players have before we kick them for timeout? Default = 60 seconds
-max_transaction_time: 60
+# How much time players have before we kick them for timeout? Default = 45 seconds
+max_transaction_time: 45
+
 # Max allowed delay between transactions before kicking the player for timeout
 # Triggers on FreeCam, BackTrack, Blink
 max_transaction_delay: 400
+
 # Max allowed negative timer value before kicking the player for timeout
 # Triggers on Timer (0.1), Freeze
 max_negative_time: 5000
+
+# Enable this to stop Darkness cancelling pongs received from players.
+# This may improve compatibility with other anticheats. It may cause issues with packet limiters.
+# Do not enable this if you are not sure what you are doing.
+disable_pong_cancelling: false
 
 # Punishment command settings // Not recommended for use — will be removed soon
 point_command:
@@ -118,6 +123,28 @@ punish_command:
   # Placeholders: %prefix% -> (Darkness Prefix), %player% -> (The player that got punished), %reason% -> (The reason provided by the Darkness punish command)
   command: darkness kick %player% %prefix% %reason%
 
+# Punish Wave Settings
+punishwave:
+
+  # Should the Punish Wave be enabled?
+  # If the Punish Wave is enabled, Darkness will punish all cheaters at once
+  # If a player is punished using the /darkness punish command while the Punish Wave is enabled,
+  # they will be added to the queue and punished when the Punish Wave starts
+  enabled: false
+
+  # Should Darkness broadcast this event?
+  broadcast: true
+
+  # How often should the Punish Wave be executed? (in minutes)
+  time: 15
+
+  # Countdown before executing the Punish Wave (-1 to disable)
+  countdown: 5
+
+  # Which command should Darkness execute after finishing the punishment animation? (%nl% for a new line)
+  # Placeholders: %prefix% -> (Darkness prefix), %player% -> (Player who was punished), %reason% -> (Reason given in the Darkness punish command)
+  command: darkness kick %player% %prefix% %reason%
+
 # Ban Command Settings
 ban_command:
 
@@ -142,22 +169,22 @@ discord:
   violation_content:
     - "%player%"
     - ""
-    - "**Server Name:**"
+    - "🛡️ **Server Name:**"
     - "%server_name%"
     - ""
-    - "**Cheat Type:**"
+    - "📦 **Cheat Type:**"
     - "%check%"
     - ""
-    - "**VL**"
+    - "📊 **VL**"
     - "%violations%"
     - ""
-    - "**Client:**"
+    - "🖥️ **Client:**"
     - "%brand%"
     - ""
-    - "**Version:**"
+    - "📌 **Version:**"
     - "%version%"
     - ""
-    - "**PING | TPS:**"
+    - "📶 **PING | TPS:**"
     - "%ping% | %tps%"
   # Title of the additional field in the embed
   embed_field: "Information:"
@@ -284,7 +311,7 @@ packet_spam_threshold: 100
 
 # Darkness is able to enforce that a player set out of flying state cannot have more than X milliseconds of ping
 # This is due to Darkness not currently checking flying players
-max_ping_out_of_flying: 1000
+max_ping_out_of_flying: 300
 
 # Maximum ping when a firework boost is removed from the player.
 # This prevents high latency players from being able to use 1 firework boost with an elytra forever.
