@@ -21,6 +21,10 @@ action_bar: "&e⚡ &fPlayer: &c%player%&f, CPS: &c%сps%"
 console_specify_target: "%prefix% &cYou must specify a target in the console!"
 player_not_this_server: "%prefix% &cPlayer is not on this server!"
 player_not_found: "%prefix% &cThe specified player could not be found!"
+no_permission: "%prefix% &cYou don't have permission!"
+invalid_syntax: "%prefix% &cCorrect syntax: %syntax%"
+unknown_command: "%prefix% &cUnknown command!"
+cant_execute_from_console: "%prefix% &cThis command can only be executed by players!"
 reloading: "%prefix% &7Reloading configuration..."
 reload_success: "%prefix% &fSuccessfully reloaded!"
 reload_failed: "%prefix% &cFailed to reload configuration. (Details in console)"
@@ -107,6 +111,7 @@ profile_command:
   - '%prefix%'
   - ' '
   - '&8» &7Player Profile: &f%player%'
+  - '&8» &7Lag Status: &f%lagstatus%'
   - '&8» &7Ping: &f%ping%'
   - '&8» &7Version: &f%version%'
   - '&8» &7Client: &f%brand%'
@@ -140,12 +145,6 @@ checks_command:
     enabled: "&a%checkName%%experimental%"
     disabled: "&c%checkName%%experimental%"
     exempted: "&e%checkName%%experimental%"
-
-info:
-  - "&6&l&m┏  &7"
-  - "&6&l| &c&lDarkness Liquidation &8| &cVersion 2.3"
-  - "&6&l| &fContact developer: &c&nhendex_new&r &7(Discord)"
-  - "&6&l&m┛  &1"
 
 # Placeholders: %prefix% -> (Darkness Prefix), %player% -> (The player that got punished), %reason% -> (The reason provided by the Darkness punish command)
 broadcast:

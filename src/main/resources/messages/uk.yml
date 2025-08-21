@@ -21,6 +21,10 @@ action_bar: "&e⚡ &fГравець: &c%player%&f, CPS: &c%сps%"
 console_specify_target: "%prefix% &cВи повинні вказати ціль у консолі!"
 player_not_this_server: "%prefix% &cГравець не на цьому сервері!"
 player_not_found: "%prefix% &cВказаний гравець не знайдений!"
+no_permission: "%prefix% &cУ вас немає прав!"
+invalid_syntax: "%prefix% &cПравильний синтаксис: %syntax%"
+unknown_command: "%prefix% &cНевідома команда!"
+cant_execute_from_console: "%prefix% &cЦя команда доступна лише для гравців!"
 reloading: "%prefix% &7Перезавантаження конфігурації..."
 reload_success: "%prefix% &fУспішно перезавантажено!"
 reload_failed: "%prefix% &cНе вдалося перезавантажити конфігурацію. (Деталі в консолі)"
@@ -107,6 +111,7 @@ profile_command:
   - '%prefix%'
   - ' '
   - '&8» &7Профіль гравця: &f%player%'
+  - '&8» &7Стан лагів: &f%lagstatus%'
   - '&8» &7Пінг: &f%ping%'
   - '&8» &7Версія: &f%version%'
   - '&8» &7Клієнт: &f%brand%'
@@ -140,12 +145,6 @@ checks_command:
     enabled: "&a%checkName%%experimental%"
     disabled: "&c%checkName%%experimental%"
     exempted: "&e%checkName%%experimental%"
-
-info:
-  - "&6&l&m┏  &7"
-  - "&6&l| &c&lDarkness Liquidation &8| &cВерсія 2.3"
-  - "&6&l| &fЗв'язок з розробником: &c&nhendex_new&r &7(Discord)"
-  - "&6&l&m┛  &1"
 
 # Плейсхолдери: %prefix% -> (Префікс Даркнесс), %player% -> (Гравець, який був покараний), %reason% -> (Причина, вказана в команді покарання Гріма)
 broadcast:

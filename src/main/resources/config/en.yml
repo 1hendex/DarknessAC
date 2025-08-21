@@ -165,6 +165,18 @@ discord:
   embed_title: "**:fire: NEW CHEATER DETECTED!**"
   # Color of the stripe on the left side of the message
   embed_color: "#ff0000"
+  # Would you like Darkness to send Discord Messages
+  # When players get punished from the Punish Wave?
+  punishwawe: false
+  punishwawe_title: "**:fire: A WAVE OF NEW CHEATERS DETECTED!**"
+  # Message content
+  punishwawe_content:
+    - "🛡️ **Server**"
+    - "%server_name%"
+    - ""
+    - "👥 **Players Punished**"
+    - "%players_punishwawe%"
+    - ""
   # Message content
   violation_content:
     - "%player%"
@@ -294,11 +306,6 @@ packet_logger:
 
 # The server name that will be shown in Player Logs and Discord Messages
 server_name: Darkness Server
-
-# Should Darkness command encryption be enabled?
-# Disable it to avoid compatibility issues with other anticheats.
-# Changes are applied only after a server restart.
-enabled_command_obfuscation: true
 
 # Should we disable the bypass permission?
 # If enabled, Darkness will check all players, including operators

@@ -38,7 +38,7 @@ Punishments:
       - '1:2 [log]'
       - '3:1 [proxy]'
       - '2:2 darkness bot %player%'
-      - '2:2 darkness cancelhit %player% 3000'
+      - '2:2 darkness rotate %player%'
       - '5:0 darkness punish %player% &cSuspicion of using cheats'
 
   Analysis:
@@ -50,7 +50,7 @@ Punishments:
       - '3:2 [webhook]'
       - '1:2 [log]'
       - '3:1 [proxy]'
-      - '2:2 darkness cancelhit %player% 3000'
+      - '2:2 darkness rotate %player%'
       - '1:2 darkness bot %player%'
       - '6:0 darkness punish %player% &cSuspicion of using cheats'
 
@@ -64,7 +64,7 @@ Punishments:
       - '1:2 [log]'
       - '1:1 [proxy]'
       - '1:2 darkness bot %player%'
-      - '1:2 darkness cancelhit %player% 5000'
+      - '2:2 darkness rotate %player%'
       - '3:0 darkness punish %player% &cSuspicion of using cheats'
 
   Interact:
@@ -77,20 +77,6 @@ Punishments:
       - '5:5 [log]'
       - '5:5 [proxy]'
       - '10:0 darkness punish %player% &cSuspicion of using cheats'
-
-  Sprint:
-    remove-violations-after: 300
-    checks:
-      - 'Sprint'
-    commands:
-      - '1:1 [alert]'
-      - '1:1 [webhook]'
-      - '1:1 [log]'
-      - '1:1 [proxy]'
-      - '1:2 darkness bot %player%'
-      - '1:2 darkness cancelhit %player% 5000'
-      - '3:0 darkness punish %player% &cSuspicion of using cheats'
-      - '5:0 darkness ban %player% &cSuspicion of using cheats'
 
   Elytra:
     remove-violations-after: 250
@@ -112,7 +98,6 @@ Punishments:
       - '1:1 [webhook]'
       - '1:1 [proxy]'
       - '1:1 [log]'
-      - '1:0 darkness cancelhit %player% 10000'
       - '2:0 darkness ban %player% &cSuspicion of using cheats'
 
   Chat:
@@ -134,8 +119,8 @@ Punishments:
       - '5:5 [alert]'
       - '5:5 [webhook]'
       - '5:5 [log]'
-      - '3:2 darkness bot %player%'
-      - '3:2 darkness cancelhit %player% 5000'
+      - '2:2 darkness bot %player%'
+      - '2:2 darkness rotate %player%'
       - '6:0 darkness punish %player% &cSuspicion of using cheats'
 
   RangeInteract:
@@ -148,7 +133,6 @@ Punishments:
       - '4:4 [webhook]'
       - '1:1 [log]'
       - '1:1 [proxy]'
-      - '1:2 darkness cancelhit %player% 3000'
       - '1:2 darkness bot %player%'
       - '2:1 darkness rotate %player%'
       - '4:0 darkness punish %player% &cSuspicion of using cheats'
@@ -222,7 +206,6 @@ Punishments:
       - '2:2 [log]'
       - '1:1 [proxy]'
       - '2:4 darkness bot %player%'
-      - '2:4 darkness cancelhit %player% 3000'
       - '10:0 darkness punish %player% &cSuspicion of using cheats'
 
   Protocol:
