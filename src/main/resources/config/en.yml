@@ -148,10 +148,6 @@ punishwave:
   # Countdown before executing the Punish Wave (-1 to disable)
   countdown: 5
 
-  # Which command should Darkness execute after finishing the punishment animation? (%nl% for a new line)
-  # Placeholders: %prefix% -> (Darkness prefix), %player% -> (Player who was punished), %reason% -> (Reason given in the Darkness punish command)
-  command: darkness kick %player% %prefix% %reason%
-
 # Ban Command Settings
 ban_command:
 
