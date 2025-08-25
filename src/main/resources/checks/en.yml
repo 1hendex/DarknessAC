@@ -11,6 +11,38 @@
 ## Aim Check
 Aim:
 
+  # Enable/Disable check types and subtypes
+  #
+  # There are two formats:
+  # 1) Short:
+  #    a: true / false   # controls the whole type (all subtypes together)
+  #
+  # 2) Expanded:
+  #    a:
+  #      enabled: true   # base state of the type
+  #      a: false        # specific subtype
+  #      b: true         # another subtype
+  #
+  # Priority:
+  # - Expanded format overrides short format.
+  # - Subtype always overrides enabled.
+  # - If the type is not specified — default value is used.
+  #
+  # Example:
+  # Aim:
+  #
+  #   # Should this module be enabled?
+  #   a: true          # category type enabled along with its subtypes
+  #
+  #   # Should this module be enabled?
+  #   b: false         # same, but now disabled
+  #
+  #   # Aim C Module
+  #   c:
+  #
+  #     # Should this module be enabled?
+  #     enabled: true  # type "c" enabled
+  #     a: false       # but subtype "a" disabled
   # Should we enable this module?
   a: true
 
@@ -271,6 +303,16 @@ AutoAction:
 
   # Should we enable this module? ( AutoBlock )
   l: true
+
+  # Should we enable this module? ( AutoRespawn )
+  n: true
+
+  # AutoAction O Module ( AutoArmor )
+  o:
+
+    # Should we enable this module?
+    enabled: true
+    maxDelta: 100
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -766,11 +808,13 @@ Chat:
     check_liquid: true
 
     # Minimum similarity of strings that Darkness will consider as similar
+    # -1 to disable
     max_similarity: 0.8
     # Maximum difference in string length for similarity check
     max_similarity_chardiff: 4
 
     # Maximum percentage of capital letters in messages shorter than 6 characters
+    # -1 to disable
     max_caps_percentage_s: 0.6
     # Maximum percentage of capital letters in messages longer than 5 characters
     max_caps_percentage_l: 0.525
