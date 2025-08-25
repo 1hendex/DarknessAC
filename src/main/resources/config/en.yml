@@ -75,21 +75,28 @@ client_settings:
   # If the client name matches this regex, it will not be able to join the server.
   illegal_payload_pattern: "Remix|CRYSTAL|matrix|CRYSTAL\\|6LAKS0TRIES|CrystalWare|Misplace|reach|lmaohax|Reach Mod|cock|Vape v3|1946203560|#unbanearwax|EARWAXWASHERE|Cracked Vape|EROUAXWASHERE|moon:exempt|Vape|WDL\\|INIT|WDL\\|CONTROL|Bspkrs Client"
 
-# How much time players have before we kick them for timeout? Default = 45 seconds
-max_transaction_time: 45
+# Packet Settings
+packet_settings:
 
-# Max allowed delay between transactions before kicking the player for timeout
-# Triggers on FreeCam, BackTrack, Blink
-max_transaction_delay: 400
-
-# Max allowed negative timer value before kicking the player for timeout
-# Triggers on Timer (0.1), Freeze
-max_negative_time: 5000
-
-# Enable this to stop Darkness cancelling pongs received from players.
-# This may improve compatibility with other anticheats. It may cause issues with packet limiters.
-# Do not enable this if you are not sure what you are doing.
-disable_pong_cancelling: false
+  # Maximum number of skipped transactions before the player is kicked
+  # Triggers on FreeCam, BackTrack, Blink
+  transaction_skip: 400
+  # How much time players have before being kicked for a timeout? Default = 45 seconds
+  transaction_time: 45
+  # Maximum allowed negative timer offset of the player before kicking (in milliseconds)
+  # Triggers on Timer (0.1), Freeze
+  negative_timer: 5000
+  # This setting applies only to clients 1.17–1.20.5 on 1.8 servers
+  cancel_duplicate_packet: true
+  # Should rotation be ignored in duplicate packets?
+  ignore_duplicate_packet_rotation: true
+  # Enable this to prevent Darkness from cancelling pong packets received from players
+  # Can improve compatibility with other anti-cheats. May cause issues with packet limiters
+  # Do not enable this if you are unsure what you are doing
+  disable_pong_cancelling: false
+  # Darkness sometimes cancels illegal packets, e.g., with Timer, after X cancelled packets per second
+  # Should we just kick the player instead? This is needed because some packet limiters don’t account for packets cancelled by Darkness
+  packet_spam_threshold: 100
 
 # Punishment command settings // Not recommended for use — will be removed soon
 point_command:
@@ -279,12 +286,6 @@ account_cinematic: false
 # Enable logging plugins who have injected into netty on join to debug compatibility issues
 debug_pipeline_on_join: false
 
-# This setting applies only to clients 1.17–1.20.5 on servers 1.8
-cancel_duplicate_packet: true
-
-# Whether or not to ignore the rotation in duplicate packets
-ignore_duplicate_packet_rotation: true
-
 # Enables experimental checks
 experimental_checks: false
 
@@ -311,10 +312,6 @@ server_name: Darkness Server
 # If enabled, Darkness will check all players, including operators
 # Disable this for some perfomance gain
 disable_bypass_permission: false
-
-# Darkness sometimes cancels illegal packets such as with timer, after X packets in a second cancelled, when should
-# we simply kick the player? This is required as some packet limiters don't count packets cancelled by darkness.
-packet_spam_threshold: 100
 
 # Darkness is able to enforce that a player set out of flying state cannot have more than X milliseconds of ping
 # This is due to Darkness not currently checking flying players
