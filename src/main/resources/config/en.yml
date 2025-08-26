@@ -57,23 +57,40 @@ client_settings:
     - "^mcp$"
     - "^ForgeOptiFine 1.16.5/forge/modified$"
 
+  # Minimum/Maximum client brand name length.
+  symbol_limiter: 5:16
+  # Whether to check the number of caps (recommended not to disable to detect client spoofing like FORGE, VANILLA) (-1 to disable)
+  caps_percentage: 70
+  # Blocking the use of invalid characters in the brand name.
+  whitelist_regex: "^[a-zA-Z0-9:_/, .-]+$"
+  # Darkness will block clients by brand name using a regex.
+  # If the client name matches this regex, it will not be able to join the server.
+  payload:
+    - "Remix"
+    - "CRYSTAL"
+    - "matrix"
+    - "CrystalWare"
+    - "Misplace"
+    - "reach"
+    - "lmaohax"
+    - "Reach Mod"
+    - "cock"
+    - "Vape v3"
+    - "1946203560"
+    - "#unbanearwax"
+    - "EARWAXWASHERE"
+    - "Cracked Vape"
+    - "EROUAXWASHERE"
+    - "moon:exempt"
+    - "Vape"
+    - "WDL|INIT"
+    - "WDL|CONTROL"
+    - "Bspkrs Client"
+
   # Darkness will blacklist specific Forge versions that include built-in Reach hacks (Forge 1.18.2 — 1.19.3).
   # Setting this to false will allow these clients to connect to the server.
   # Use at your own risk.
   disconnect_blacklisted_forge_versions: true
-  # Maximum/Minimum client brand name length.
-  brand_max_length: 16
-  brand_min_length: 5
-  # Blocking the use of invalid characters in the brand name.
-  block_illegal_symbol: true
-  # Whether to check the number of caps (recommended not to disable to detect client spoofing like FORGE, VANILLA)
-  block_caps: true
-  max_caps_percentage: 70
-  # Enable checking and blocking of suspicious payload channels.
-  block_illegal_payload: true
-  # Darkness will block clients by brand name using a regex.
-  # If the client name matches this regex, it will not be able to join the server.
-  illegal_payload_pattern: "Remix|CRYSTAL|matrix|CRYSTAL\\|6LAKS0TRIES|CrystalWare|Misplace|reach|lmaohax|Reach Mod|cock|Vape v3|1946203560|#unbanearwax|EARWAXWASHERE|Cracked Vape|EROUAXWASHERE|moon:exempt|Vape|WDL\\|INIT|WDL\\|CONTROL|Bspkrs Client"
 
 # Packet Settings
 packet_settings:

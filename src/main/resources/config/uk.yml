@@ -57,23 +57,40 @@ client_settings:
     - "^mcp$"
     - "^ForgeOptiFine 1.16.5/forge/modified$"
 
+  # Мінімальна/Максимальна довжина назви бренду клієнта.
+  symbol_limiter: 5:16
+  # Блокування використання неприпустимих символів у назві бренду.
+  whitelist_regex: "^[a-zA-Z0-9:_/, .-]+$"
+  # Чи перевіряти кількість капсу (рекомендовано не вимикати, щоб виявляти підміни типу FORGE, VANILLA) (-1 щоб вимкнути)
+  caps_percentage: 70
+  # Darkness блокуватиме клієнтів за назвою бренду за допомогою регексу.
+  # Якщо назва клієнта співпадає з цим регексом, він не зможе зайти на сервер.
+  payload:
+    - "Remix"
+    - "CRYSTAL"
+    - "matrix"
+    - "CrystalWare"
+    - "Misplace"
+    - "reach"
+    - "lmaohax"
+    - "Reach Mod"
+    - "cock"
+    - "Vape v3"
+    - "1946203560"
+    - "#unbanearwax"
+    - "EARWAXWASHERE"
+    - "Cracked Vape"
+    - "EROUAXWASHERE"
+    - "moon:exempt"
+    - "Vape"
+    - "WDL|INIT"
+    - "WDL|CONTROL"
+    - "Bspkrs Client"
+
   # Даркнесс вносит у чорний список певні версії Forge, які містять вбудовані чіти на дальність удару (Reach) (Forge 1.18.2 — 1.19.3).
   # Встановлення цього параметра в false дозволить таким клієнтам підключатися до сервера.
   # Виключайте на свій страх і ризик.
   disconnect_blacklisted_forge_versions: true
-  # Максимальна/Мінімальна довжина назви бренду клієнта.
-  brand_max_length: 16
-  brand_min_length: 5
-  # Блокування використання неприпустимих символів у назві бренду.
-  block_illegal_symbol: true
-  # Чи перевіряти кількість капсу (рекомендовано не вимикати, щоб виявляти підміни типу FORGE, VANILLA)
-  block_caps: true
-  max_caps_percentage: 70
-  # Увімкнення перевірки та блокування підозрілих payload-каналів.
-  block_illegal_payload: true
-  # Darkness блокуватиме клієнтів за назвою бренду за допомогою регексу.
-  # Якщо назва клієнта співпадає з цим регексом, він не зможе зайти на сервер.
-  illegal_payload_pattern: "Remix|CRYSTAL|matrix|CRYSTAL\\|6LAKS0TRIES|CrystalWare|Misplace|reach|lmaohax|Reach Mod|cock|Vape v3|1946203560|#unbanearwax|EARWAXWASHERE|Cracked Vape|EROUAXWASHERE|moon:exempt|Vape|WDL\\|INIT|WDL\\|CONTROL|Bspkrs Client"
 
 # Packet Settings
 packet_settings:
