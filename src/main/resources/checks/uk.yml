@@ -43,61 +43,61 @@ Aim:
   #     # Чи потрібно ввімкнути цей модуль?
   #     enabled: true  # тип "c" ввімкнений
   #     a: false       # але підтип "a" вимкнений
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   f: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   g: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   h: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   i: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   j: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   k: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   l: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   m: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   n: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   o: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   p: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   q: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   r: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   s: true
 
   # Список можливих типів сетбеків:
@@ -129,29 +129,35 @@ Aim:
 ## Analysis Check
 Analysis:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   f: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   g: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   h: true
+
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 2
@@ -159,7 +165,7 @@ Analysis:
 ## KillAura Check
 KillAura:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
   # KillAura B Module
@@ -167,7 +173,7 @@ KillAura:
   # Не хвилюйтеся, гравець буде бачити тільки свого власного бота
   b:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Чи слід створювати бота лише за командою? Якщо true, бот з’явиться лише після використання команди,
     # а не автоматично під час бою.
@@ -184,6 +190,14 @@ KillAura:
     copy_attack_type: true
     # Чи має Darkness завжди копіювати спорядження гравця? Це виправляє деякі обхідні маневри.
     copy_inventory: true
+    # Чи повинен бот отримувати пошкодження від гравця? Якщо true, бот втрачає HP при ударі.
+    bot_hit_damage: false
+    # Чи повинен бот сам атакувати гравця? Якщо true, бот буде імітувати атаки на гравця.
+    bot_attack: true
+    # Режим корекції бота:
+    # 1. free - Бот слідує за рухом гравця, може йти під землю
+    # 2. strong - Бот залишається на фіксованій висоті, ніколи не йде під землю
+    correction_mode: free
     # На якій висоті має бути бот? Все нижче 2.7 може впливати на PvP, все вище 4.5 може бути поза досяжністю.
     min_height: -4.4
     max_height: -6
@@ -196,25 +210,25 @@ KillAura:
     # Встановіть значення >= 100, щоб вимкнути спуск бота, це усуне деякі обхідні маневри.
     down_probability: 150
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
   # KillAura D Module
   d:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # На якій відстані потрібно бути гравцю для перевірки?
     min_distance: 0.7
     combat_time: 10
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
   # KillAura F Module
   f:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Як Даркнесс має обробляти удари через люки, двері та інші об'єкти (багаюз)?
     # 1. none - нічого не робити
@@ -222,29 +236,32 @@ KillAura:
     # 3. flag - встановити шкоду на нуль і флагати гравця
     cancel_way: cancel
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   g: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   h: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   i: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   j: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   k: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   l: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   m: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   n: true
+
+  # Увімкніть цю перевірку, якщо хочете дозволити "TapeMouse"
+  tapeMouse: false
 
   setback_type: CANCEL_ATTACK
   setback_vl: 2
@@ -255,7 +272,7 @@ AutoAction:
   # AutoAction A Module ( AutoRespawn )
   a:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     maxDelta: 850
     setback_type: NONE
@@ -264,7 +281,7 @@ AutoAction:
   # AutoAction B Module ( AutoFish )
   b:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     setback_type: NONE
     setback_vl: -1
@@ -272,45 +289,45 @@ AutoAction:
   # AutoAction C Module ( AutoFish )
   c:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     setback_type: NONE
     setback_vl: -1
 
-  # Чи потрібно увімкнути цей модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   d: true
 
-  # Чи потрібно увімкнути цей модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   e: true
 
-  # Чи потрібно увімкнути цей модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   f: true
 
-  # Чи потрібно увімкнути цей модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   g: true
 
-  # Чи потрібно увімкнути цей модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   h: true
 
-  # Чи потрібно увімкнути цей модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   i: true
 
-  # Чи потрібно увімкнути цей модуль? ( AutoBlock )
+  # Should we enable this module? ( AutoBlock )
   j: true
 
-  # Чи потрібно увімкнути цей модуль? ( AutoBlock )
+  # Should we enable this module? ( AutoBlock )
   k: true
 
-  # Чи потрібно увімкнути цей модуль? ( AutoBlock )
+  # Should we enable this module? ( AutoBlock )
   l: true
 
-  # Чи потрібно увімкнути цей модуль? ( AutoRespawn )
+  # Should we enable this module? ( AutoRespawn )
   n: true
 
   # AutoAction O Module ( AutoArmor )
   o:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     maxDelta: 100
 
@@ -323,44 +340,44 @@ AutoClicker:
   # AutoClicker A Module
   a:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
 
     # Скільки кліків за секунду гравцеві потрібно перевищити, щоб провалити цю перевірку?
     # Можливо, варто збільшити це значення до 24, якщо ви хочете дозволити "drag clicking"
     maxCPS: 19
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   f: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   g: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   h: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   i: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   j: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   k: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   l: true
 
   setback_type: CANCEL_ATTACK
@@ -369,13 +386,13 @@ AutoClicker:
 ## FreeCam Check
 FreeCam:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
   setback_type: DARKNESS
@@ -384,53 +401,53 @@ FreeCam:
 ## Protocol Check
 Protocol:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
   # Protocol B Module
   b:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Позначка, якщо зсув перевищує цей поріг
     threshold: 10
     # Ігнорувати гравців, які приєдналися протягом цього часу у мілісекундах
     joined: 5000
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   f: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   g: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   h: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   i: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   j: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   k: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   l: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   m: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   n: true
 
   setback_type: NONE
@@ -442,7 +459,7 @@ Interpolation:
   # Interpolation A Module
   a:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # На скільки ми повинні помножити загальну перевагу, коли гравець легальний.
     # Ось як виглядає конфігурація за замовчуванням (вісь x = секунди, вісь y = 1/1000 блоку): https://www.desmos.com/calculator/d4ufgxrxer
@@ -469,17 +486,14 @@ Interpolation:
 ## Baritone Check
 Baritone:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
-
-  # Чи потрібно увімкнути цей модуль?
-  d: true
 
   setback_type: DARKNESS
   setback_vl: 1
@@ -493,7 +507,7 @@ NoSlow:
   # NoSlow A Module
   a:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Наскільки велике зсув є "читерством".
     # За замовчуванням це менше, ніж інші зсуви
@@ -505,15 +519,15 @@ NoSlow:
   # NoSlow B Module
   b:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Вмикає вертикальну перевірку на прискорений рух вгору/вниз у павутині
     vertical_check: true
     # Для якого відхилення від руху гравця ми маємо створити порушення?
     # Вимірюється в блоках від можливого руху
-    offset: 0.0315
+    offset: 0.001
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
   setback_type: DARKNESS
@@ -522,26 +536,23 @@ NoSlow:
 ## Sprint Check
 Sprint:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   f: true
-
-  # Чи потрібно увімкнути цей модуль?
-  g: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -549,16 +560,16 @@ Sprint:
 ## Vehicle Check
 Vehicle:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
   setback_type: NONE
@@ -570,7 +581,7 @@ Reach:
   # Reach A Module
   a:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     setback_type: CANCEL_ATTACK
     setback_vl: 1
@@ -603,7 +614,7 @@ Reach:
 ## HitBox Check
 HitBox:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
   setback_type: CANCEL_ATTACK
@@ -615,7 +626,7 @@ Velocity:
   # Velocity A Module
   a:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Наскільки ми повинні помножити загальну перевагу, коли гравець легітимний.
     multiple: 0.999
@@ -635,7 +646,7 @@ Velocity:
   # Velocity B Module
   b:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     buffer: 0.001
 
@@ -645,13 +656,14 @@ Velocity:
 ## Inventory Check
 Inventory:
 
-  # Чи потрібно увімкнути цей модуль? (XCarry)
+  # Should we enable this module? (XCarry)
   a: true
 
-  # Чи потрібно увімкнути цей модуль? (InventoryMove)
+  # Should we enable this module? (InventoryMove)
   b:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
+    # Компоненти чеку можна вимикати: move, sprint, sneak, jump, vehicle просто додати ключ. Приклад: move: false
     enabled: true
     # Для якого відхилення від руху гравця ми маємо створити порушення?
     # Вимірюється в блоках від можливого руху
@@ -659,59 +671,59 @@ Inventory:
     # Виправляє проблему десинхронізації при стрибку з відкритим контейнером або блоками
     fix_jump_desync: true
 
-  # Чи потрібно увімкнути цей модуль? (AutoPotion)
+  # Should we enable this module? (AutoPotion)
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль? (InventoryCleaner)
+  # Should we enable this module? (InventoryCleaner)
   f: true
 
   # Inventory G Module
   g:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     setback_vl: 3
 
   # Inventory H Module (ChestStealer)
   h:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     delta: 65
 
   # Inventory I Module (InventoryCleaner)
   i:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     setback_vl: 5
 
   # Inventory J Module
   j:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     setback_type: DARKNESS
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   k: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   l: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   m: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   n: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   o: true
 
   # Увімкніть цю перевірку, якщо ви хочете дозволити "ItemsScroller"
@@ -723,10 +735,10 @@ Inventory:
 ## NoFall Check
 NoFall:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
   setback_type: NONE
@@ -735,43 +747,43 @@ NoFall:
 ## Crash Check
 Crash:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   f: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   g: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   h: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   i: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   j: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   k: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   l: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   m: true
 
   setback_type: NONE
@@ -783,7 +795,7 @@ Chat:
   # Chat A Module
   a:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Максимальна швидкість відправлення повідомлення гравцем
     maxDelta: 115
@@ -791,7 +803,7 @@ Chat:
   # Chat B Module
   b:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Максимальна похибка в інтервалі відправлення повідомлення гравцем
     maxDelta: 5
@@ -799,7 +811,7 @@ Chat:
   # Chat C Module
   c:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Чи потрібно увімкнути перевірку повідомлень на заборонені слова?
     check_words: true
@@ -830,11 +842,17 @@ Chat:
       - akrien
       - liquidbounce
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
 
   setback_type: NONE
   setback_vl: -1
@@ -842,16 +860,16 @@ Chat:
 ## Exploit Check
 Exploit:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true # Log4j
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true # ItemName
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true # Book Crasher
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true # Book Exploit
 
   # Вы можете достигать высоких скоростей, прыгая в спринте с элитрой. Это предотвращает эксплуатацию, если параметр установлен в значение false.
@@ -865,7 +883,7 @@ Exploit:
   distance_to_check_if_ghostblocks: 2
   # Максимальна допустима висота, на яку гравець може піднятись при зіткненні з човном, 
   # перш ніж Даркнесс вважатиме це спробою використання BoatFly
-  allow_offset_boat_collision: 0.44
+  allow_offset_boat_collision: 0.012
 
   setback_type: NONE
   setback_vl: -1
@@ -874,101 +892,104 @@ Exploit:
 # Це також запобіжить деяким видам крашерів
 BadPackets:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   f: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   g: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   h: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   i: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   j: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   k: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   l: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   m: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   n: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   o: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   p: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   q: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   r: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   s: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   t: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   u: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   v: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   w: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   x: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   y: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   z: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   aa: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   bb: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   cc: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   dd: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   ee: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   ff: true
+
+  # Should we enable this module?
+  gg: true
 
   # Чи потрібно перевіряти аномальні затримки та різке надсилання пакетів позиції?
   blink: true
@@ -979,37 +1000,37 @@ BadPackets:
 ## Interact Check
 Interact:
 
-  # Чи потрібно увімкнути цей модуль? (FastBreak)
+  # Should we enable this module? (FastBreak)
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль? (FastPlace)
+  # Should we enable this module? (FastPlace)
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   f: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   g: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   h: true
 
-  # Чи потрібно увімкнути цей модуль? (BreakReach)
+  # Should we enable this module? (BreakReach)
   i: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   j: true
 
-  # Чи потрібно увімкнути цей модуль? (PlaceReach)
+  # Should we enable this module? (PlaceReach)
   k: true
 
   setback_type: DARKNESS
@@ -1018,23 +1039,26 @@ Interact:
 ## Scaffold Check
 Scaffold:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль? (AirPlace)
+  # Should we enable this module? (AirPlace)
   f: true
+
+  # Should we enable this module?
+  g: true
 
   setback_type: DARKNESS
   setback_vl: 1
@@ -1045,7 +1069,7 @@ Timer:
   # Timer A Module
   a:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Мілісекунди, які гравець може накопичувати для подальшого використання, коли він відстає.
     # Потенційно може дозволити обхід 1.8: швидке використання/швидке лікування/швидкий лук, якщо значення занадто високе — 120 мс здається хорошим балансом
@@ -1055,18 +1079,18 @@ Timer:
     # -1 для вимкнення
     ping_abuse_limit_threshold: 1000
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
   # Timer C Module
   c:
 
-    # Чи потрібно увімкнути цей модуль?
+    # Should we enable this module?
     enabled: true
     # Мінімальна швидкість таймера (Звичайна швидкість: 1200), однак лаги та інші особливості можуть знизити її (приблизно до 1300)
     min_speed: 1300
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
   setback_type: NONE
@@ -1075,49 +1099,49 @@ Timer:
 ## Elytra Check
 Elytra:
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   a: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   b: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   c: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   d: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   e: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   f: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   g: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   h: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   i: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   j: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   k: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   l: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   m: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   n: true
 
-  # Чи потрібно увімкнути цей модуль?
+  # Should we enable this module?
   o: true
 
   setback_type: DARKNESS

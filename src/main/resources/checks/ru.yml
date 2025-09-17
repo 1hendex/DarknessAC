@@ -31,73 +31,73 @@ Aim:
   # Пример:
   # Aim:
   #
-  #   # Нужно ли включить этот модуль?
+  #   # Should we enable this module?
   #   a: true          # тип категории включен как и его подтипы
   #
-  #   # Нужно ли включить этот модуль?
+  #   # Should we enable this module?
   #   b: false         # то же самое, но теперь выключено
   #
   #   # Aim C Module
   #   c:
   #
-  #     # Нужно ли включить этот модуль?
+  #     # Should we enable this module?
   #     enabled: true  # включён тип "c"
   #     a: false       # но подтип "a" отключён
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   f: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   g: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   h: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   i: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   j: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   k: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   l: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   m: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   n: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   o: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   p: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   q: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   r: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   s: true
 
   # Список возможных типов сетбека:
@@ -129,29 +129,35 @@ Aim:
 ## Analysis Check
 Analysis:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   f: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   g: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   h: true
+
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 2
@@ -159,7 +165,7 @@ Analysis:
 ## KillAura Check
 KillAura:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
   # KillAura B Module
@@ -167,7 +173,7 @@ KillAura:
   # Не переживайте, игрок будет видеть только своего собственного бота.
   b:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Нужно ли создавать бота только по команде? Если true, бот появится только после использования команды,
     # а не автоматически при бою.
@@ -184,6 +190,14 @@ KillAura:
     copy_attack_type: true
     # Должна ли Даркнесс всегда копировать снаряжение игрока? Это исправляет некоторые обходы.
     copy_inventory: true
+    # Должен ли бот получать урон от игрока? Если true, бот теряет ХП при ударе.
+    bot_hit_damage: true
+    # Должен ли бот сам атаковать игрока? Если true, бот будет симулировать атаки по игроку.
+    bot_attack: true
+    # Режим коррекции бота:
+    # 1. free - Бот следует за движением игрока, может уходить под землю
+    # 2. strong - Бот остается на фиксированной высоте, никогда не уходит под землю
+    correction_mode: free
     # На какой высоте должен быть бот, всё ниже 2.7 может повлиять на PvP, всё выше 4.5 может быть вне досягаемости.
     min_height: -4.4
     max_height: -6
@@ -196,25 +210,25 @@ KillAura:
     # Установите значение >= 100, чтобы отключить спуск бота, это устранит некоторые обходы.
     down_probability: 150
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
   # KillAura D Module
   d:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # На каком расстоянии должен быть игрок для проверки?
     min_distance: 0.7
     combat_time: 10
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
   # KillAura F Module
   f:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Как следует Даркнесс обрабатывать удары через люки, двери и другие объекты (багаюз)?
     # 1. none - ничего не делать
@@ -222,29 +236,32 @@ KillAura:
     # 3. flag - установить урон в ноль и флагировать
     cancel_way: cancel
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   g: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   h: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   i: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   j: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   k: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   l: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   m: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   n: true
+
+  # Включите эту проверку, если вы хотите разрешить "TapeMouse"
+  tapeMouse: false
 
   setback_type: CANCEL_ATTACK
   setback_vl: 2
@@ -255,7 +272,7 @@ AutoAction:
   # AutoAction A Module ( AutoRespawn )
   a:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     maxDelta: 850
     setback_type: NONE
@@ -264,7 +281,7 @@ AutoAction:
   # AutoAction B Module ( AutoFish )
   b:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     setback_type: NONE
     setback_vl: -1
@@ -272,45 +289,45 @@ AutoAction:
   # AutoAction C Module ( AutoFish )
   c:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     setback_type: NONE
     setback_vl: -1
 
-  # Нужно ли включить этот модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   d: true
 
-  # Нужно ли включить этот модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   e: true
 
-  # Нужно ли включить этот модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   f: true
 
-  # Нужно ли включить этот модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   g: true
 
-  # Нужно ли включить этот модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   h: true
 
-  # Нужно ли включить этот модуль? ( AutoTotem )
+  # Should we enable this module? ( AutoTotem )
   i: true
 
-  # Нужно ли включить этот модуль? ( AutoBlock )
+  # Should we enable this module? ( AutoBlock )
   j: true
 
-  # Нужно ли включить этот модуль? ( AutoBlock )
+  # Should we enable this module? ( AutoBlock )
   k: true
 
-  # Нужно ли включить этот модуль? ( AutoBlock )
+  # Should we enable this module? ( AutoBlock )
   l: true
 
-  # Нужно ли включить этот модуль? ( AutoRespawn )
+  # Should we enable this module? ( AutoRespawn )
   n: true
 
   # AutoAction O Module ( AutoArmor )
   o:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     maxDelta: 100
 
@@ -323,44 +340,44 @@ AutoClicker:
   # AutoClicker A Module
   a:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
 
     # Сколько кликов в секунду нужно превысить игроку, чтобы провалить эту проверку?
     # Возможно, стоит увеличить это значение до 24, если вы хотите разрешить "drag clicking"
     maxCPS: 19
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   f: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   g: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   h: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   i: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   j: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   k: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   l: true
 
   setback_type: CANCEL_ATTACK
@@ -369,13 +386,13 @@ AutoClicker:
 ## FreeCam Check
 FreeCam:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
   setback_type: DARKNESS
@@ -384,53 +401,53 @@ FreeCam:
 ## Protocol Check
 Protocol:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
   # Protocol B Module
   b:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Флаг, если смещение превышает этот порог
     threshold: 10
     # Игнорировать игроков, которые присоединились в течение этого времени в миллисекундах
     joined: 5000
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   f: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   g: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   h: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   i: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   j: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   k: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   l: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   m: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   n: true
 
   setback_type: NONE
@@ -442,7 +459,7 @@ Interpolation:
   # Interpolation A Module
   a:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # На сколько мы должны умножить общее преимущество, когда игрок легален.
     # Вот как выглядит конфигурация по умолчанию (ось x = секунды, ось y = 1/1000 блока): https://www.desmos.com/calculator/d4ufgxrxer
@@ -469,17 +486,14 @@ Interpolation:
 ## Baritone Check
 Baritone:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
-
-  # Нужно ли включить этот модуль?
-  d: true
 
   setback_type: DARKNESS
   setback_vl: 1
@@ -493,7 +507,7 @@ NoSlow:
   # NoSlow A Module
   a:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Насколько большое смещение является "читерством".
     # По умолчанию это меньше, чем другие смещения
@@ -506,15 +520,15 @@ NoSlow:
   # NoSlow B Module
   b:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Включает вертикальную проверку на ускоренное движение вверх/вниз в паутине
     vertical_check: true
     # Для какого смещения от движения игрока мы должны создать нарушение?
     # Измеряется в блоках от возможного движения
-    offset: 0.0315
+    offset: 0.001
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
   setback_type: DARKNESS
@@ -523,26 +537,23 @@ NoSlow:
 ## Sprint Check
 Sprint:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   f: true
-
-  # Нужно ли включить этот модуль?
-  g: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -550,16 +561,16 @@ Sprint:
 ## Vehicle Check
 Vehicle:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
   setback_type: NONE
@@ -571,7 +582,7 @@ Reach:
   # Reach A Module
   a:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     setback_type: CANCEL_ATTACK
     setback_vl: 1
@@ -604,7 +615,7 @@ Reach:
 ## HitBox Check
 HitBox:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
   setback_type: CANCEL_ATTACK
@@ -616,7 +627,7 @@ Velocity:
   # Velocity A Module
   a:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # На сколько мы должны умножить общее преимущество, когда игрок легален.
     multiple: 0.999
@@ -635,7 +646,7 @@ Velocity:
   # Velocity B Module
   b:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     buffer: 0.001
 
@@ -645,13 +656,14 @@ Velocity:
 ## Inventory Check
 Inventory:
 
-  # Нужно ли включить этот модуль? (XCarry)
+  # Should we enable this module? (XCarry)
   a: true
 
-  # Нужно ли включить этот модуль? (InventoryMove)
+  # Should we enable this module? (InventoryMove)
   b:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
+    # Компоненты чека можно отключать: move, sprint, sneak, jump, vehicle просто дописать ключ. Пример: move: false
     enabled: true
     # Для какого смещения от движения игрока мы должны создать нарушение?
     # Измеряется в блоках от возможного движения
@@ -659,59 +671,59 @@ Inventory:
     # Исправляет проблему рассинхронизации при прыжке с открытым контейнерамы блоков.
     fix_jump_desync: true
 
-  # Нужно ли включить этот модуль? (AutoPotion)
+  # Should we enable this module? (AutoPotion)
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль? (InventoryCleaner)
+  # Should we enable this module? (InventoryCleaner)
   f: true
 
   # Inventory G Module
   g:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     setback_vl: 3
 
   # Inventory H Module (ChestStealer)
   h:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     delta: 65
 
   # Inventory I Module (InventoryCleaner)
   i:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     setback_vl: 5
 
   # Inventory J Module
   j:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     setback_type: DARKNESS
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   k: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   l: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   m: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   n: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   o: true
 
   # Включите эту проверку, если вы хотите разрешить "ItemsScroller"
@@ -723,10 +735,10 @@ Inventory:
 ## NoFall Check
 NoFall:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
   setback_type: NONE
@@ -735,43 +747,43 @@ NoFall:
 ## Crash Check
 Crash:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   f: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   g: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   h: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   i: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   j: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   k: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   l: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   m: true
 
   setback_type: NONE
@@ -783,7 +795,7 @@ Chat:
   # Chat A Module
   a:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Максимальная скорость отправки сообщения игроком
     maxDelta: 115
@@ -791,7 +803,7 @@ Chat:
   # Chat B Module
   b:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Максимальная погрешность в интервале отправки сообщения игроком
     maxDelta: 5
@@ -799,7 +811,7 @@ Chat:
   # Chat C Module
   c:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Нужно ли включить проверку сообщений на запрещённые слова?
     check_words: true
@@ -830,11 +842,17 @@ Chat:
       - akrien
       - liquidbounce
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
+
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
 
   setback_type: NONE
   setback_vl: -1
@@ -842,16 +860,16 @@ Chat:
 ## Exploit Check
 Exploit:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true # Log4j
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true # ItemName
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true # Book Crasher
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true # Book Exploit
 
   # Вы можете достигать высоких скоростей, прыгая в спринте с элитрой. Это предотвращает эксплуатацию, если параметр установлен в значение false.
@@ -865,7 +883,7 @@ Exploit:
   distance_to_check_if_ghostblocks: 2
   # Максимальная допустимая высота, на которую игрок может подняться при столкновении с лодкой,
   # прежде чем Darkness сочтет это попыткой использования BoatFly
-  allow_offset_boat_collision: 0.44
+  allow_offset_boat_collision: 0.012
 
   setback_type: NONE
   setback_vl: -1
@@ -874,101 +892,104 @@ Exploit:
 # Это также предотвратит некоторые виды крашеров
 BadPackets:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   f: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   g: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   h: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   i: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   j: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   k: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   l: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   m: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   n: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   o: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   p: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   q: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   r: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   s: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   t: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   u: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   v: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   w: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   x: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   y: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   z: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   aa: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   bb: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   cc: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   dd: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   ee: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   ff: true
+
+  # Should we enable this module?
+  gg: true
 
   # Нужно ли проверять ли аномальные задержки и резкую отправку пакетов позиции
   blink: true
@@ -979,37 +1000,37 @@ BadPackets:
 ## Interact Check
 Interact:
 
-  # Нужно ли включить этот модуль? (FastBreak)
+  # Should we enable this module? (FastBreak)
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль? (FastPlace)
+  # Should we enable this module? (FastPlace)
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   f: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   g: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   h: true
 
-  # Нужно ли включить этот модуль? (BreakReach)
+  # Should we enable this module? (BreakReach)
   i: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   j: true
 
-  # Нужно ли включить этот модуль? (PlaceReach)
+  # Should we enable this module? (PlaceReach)
   k: true
 
   setback_type: DARKNESS
@@ -1018,23 +1039,26 @@ Interact:
 ## Scaffold Check
 Scaffold:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль? (AirPlace)
+  # Should we enable this module? (AirPlace)
   f: true
+
+  # Should we enable this module?
+  g: true
 
   setback_type: DARKNESS
   setback_vl: 1
@@ -1045,7 +1069,7 @@ Timer:
   # Timer A Module
   a:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Миллисекунды, которые игрок может накапливать для последующего использования, когда он отстает.
     # Потенциально может позволить 1.8 обходов: быстрое использование/быстрое исцеление/быстрый лук, если установлено слишком высокое значение, 120 мс кажется хорошим балансом
@@ -1055,18 +1079,18 @@ Timer:
     # -1 для отключения
     ping_abuse_limit_threshold: 1000
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
   # Timer C Module
   c:
 
-    # Нужно ли включить этот модуль?
+    # Should we enable this module?
     enabled: true
     # Минимальная скорость таймера (Нормальная скорость: 1200), однако лаги и другие особенности могут сделать её ниже (около 1300)
     min_speed: 1300
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
   setback_type: NONE
@@ -1075,46 +1099,46 @@ Timer:
 ## Elytra Check
 Elytra:
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   a: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   b: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   c: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   d: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   e: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   f: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   g: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   h: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   i: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   j: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   k: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   l: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   m: true
 
-  # Нужно ли включить этот модуль?
+  # Should we enable this module?
   n: true
 
   setback_type: DARKNESS

@@ -137,7 +137,7 @@ point_command:
 punish_command:
 
   # Яку анімацію покарання повинна показувати Даркнесс перед киком гравця?
-  # Анімації: NONE, THOR, FIRE, ERROR, RANDOM для вибору випадкової анімації кожен раз
+  # Анімації: NONE, THOR, FIRE, ERROR, SHAME або RANDOM для вибору випадкової анімації кожен раз
   animation: NONE
 
   # Чи повинні ми надсилати повідомлення в чат, коли гравець карається Даркнесс?
@@ -225,18 +225,33 @@ discord:
 logs:
 
   # Який тип логування використовувати Darkness?
-  # Типи: NONE, OLD, NEW
-  # - NONE: Повністю вимикає логування
-  # - OLD: Логує всі флаги в один файл data.yml
-  # - NEW: Логує кожен день в окремий файл у папці logs
-  # Зміни застосовуються лише після перезавантаження сервера.
-  log_type: OLD
-
-  # Чи потрібно перевіряти лог на наявність старих і видаляти їх?
-  clearing: true
+  # Типи: YAML_ONE, YAML_DAYS, MYSQL, SQLITE
+  # - YAML_ONE: Логує всі флаги в один файл data.yml
+  # - YAML_DAYS: Логує кожен день в окремий файл у папці logs
+  # - SQLITE: Логує в базу даних SQLite
+  # - MYSQL: Логує в базу даних MySQL
+  type: YAML_ONE
 
   # Логи, старші за це значення в днях, будуть видалені
   clear_days: 7
+
+  # Налаштування MySQL (потребує тип MYSQL)
+  mysql:
+    host: localhost
+    port: 3306
+    database: database
+    user: root
+    password: ''
+    use_ssl: false
+
+    # Налаштування пулу з'єднань MySQL
+    # Не змінюйте, якщо не знаєте, що робите
+    pool_settings:
+      maximum_pool_size: 50
+      minimum_idle: 30
+      maximum_lifetime: 1800000
+      connection_timeout: 30000
+      leak_detection_threshold: 0
 
 ## InformationHider Check
 InformationHider:
@@ -269,6 +284,7 @@ InformationHider:
     seed: true            # Сід світу
     potion: true          # Ефекти
     gamemode: true        # Режим гри
+    ping: true            # Пінг
 
     # Підмінює стафф на фейкових гравців
     fake_staff:

@@ -153,6 +153,12 @@ Analysis:
   # Should we enable this module?
   h: true
 
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
+
   setback_type: CANCEL_ATTACK
   setback_vl: 2
 
@@ -184,6 +190,14 @@ KillAura:
     copy_attack_type: true
     # Should Darkness always copy the player's equipment? This fixes some bypasses.
     copy_inventory: true
+    # Should the bot take damage from the player? If true, the bot loses HP when hit.
+    bot_hit_damage: true
+    # Should the bot attack the player? If true, the bot will simulate attacks on the player.
+    bot_attack: true
+    # Bot correction mode:
+    # 1. free - The bot follows the player’s movement, may go underground
+    # 2. strong - The bot stays at a fixed height, never goes underground
+    correction_mode: free
     # At what height should the bot be? Anything below 2.7 may affect PvP, anything above 4.5 may be out of reach.
     min_height: -4.4
     max_height: -6
@@ -245,6 +259,9 @@ KillAura:
 
   # Should we enable this module?
   n: true
+
+  # Enable this check if you want to allow "TapeMouse"
+  tapeMouse: false
 
   setback_type: CANCEL_ATTACK
   setback_vl: 2
@@ -478,9 +495,6 @@ Baritone:
   # Should we enable this module?
   c: true
 
-  # Should we enable this module?
-  d: true
-
   setback_type: DARKNESS
   setback_vl: 1
 
@@ -511,7 +525,7 @@ NoSlow:
     vertical_check: true
     # At what deviation from player movement should we trigger a violation?
     # Measured in blocks from the possible movement
-    offset: 0.0315
+    offset: 0.001
 
   # Should we enable this module?
   c: true
@@ -539,9 +553,6 @@ Sprint:
 
   # Should we enable this module?
   f: true
-
-  # Should we enable this module?
-  g: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -651,6 +662,7 @@ Inventory:
   b:
 
     # Should we enable this module?
+    # Check components can be disabled: move, sprint, sneak, jump, vehicle just add the key. Example: move: false
     enabled: true
     # At what deviation from player movement should we trigger a violation?
     # Measured in blocks from the possible movement
@@ -835,6 +847,12 @@ Chat:
   # Should we enable this module?
   e: true
 
+  # Should we enable this module?
+  f: true
+
+  # Should we enable this module?
+  g: true
+
   setback_type: NONE
   setback_vl: -1
 
@@ -864,7 +882,7 @@ Exploit:
   distance_to_check_if_ghostblocks: 2
   # Максимальная допустимая высота, на которую игрок может подняться при столкновении с лодкой,
   # прежде чем Darkness сочтет это попыткой использования BoatFly
-  allow_offset_boat_collision: 0.44
+  allow_offset_boat_collision: 0.012
 
   setback_type: NONE
   setback_vl: -1
@@ -969,6 +987,9 @@ BadPackets:
   # Should we enable this module?
   ff: true
 
+  # Should we enable this module?
+  gg: true
+
   # Should we check for abnormal delays and sudden position packet bursts?
   blink: true
 
@@ -1034,6 +1055,9 @@ Scaffold:
 
   # Should we enable this module? (AirPlace)
   f: true
+
+  # Should we enable this module? (AirPlace)
+  g: true
 
   setback_type: DARKNESS
   setback_vl: 1

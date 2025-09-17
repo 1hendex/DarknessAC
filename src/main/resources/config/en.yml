@@ -137,7 +137,7 @@ point_command:
 punish_command:
 
   # What Punish Animation Should Darkness display before executing the below command?
-  # Animations: NONE, THOR, FIRE, ERROR or RANDOM to let it choose a random animation each time
+  # Animations: NONE, THOR, FIRE, ERROR, SHAME or RANDOM to let it choose a random animation each time
   animation: NONE
 
   # Should we broadcast in chat when a player gets punished by Darkness?
@@ -225,18 +225,34 @@ discord:
 logs:
 
   # What type of logging should Darkness use?
-  # Types: NONE, OLD, NEW
-  # - NONE: Completely disables logging
-  # - OLD: Logs all flags into a single file data.yml
-  # - NEW: Logs each day into a separate file inside the logs folder
+  # Types: YAML_ONE, YAML_DAYS, MYSQL, SQLITE
+  # - YAML_ONE: Logs all flags into a single file data.yml
+  # - YAML_DAYS: Logs each day into a separate file inside the logs folder
+  # - SQLITE: Logs into SQLite database
+  # - MYSQL: Logs into MySQL database
   # Changes are applied only after a server restart.
-  log_type: OLD
-
-  # Should old logs be checked and deleted?
-  clearing: true
+  type: YAML_ONE
 
   # Logs older than this value of Days will be cleared
   clear_days: 7
+
+  # MySQL Settings (Requires MySQL Type)
+  mysql:
+    host: localhost
+    port: 3306
+    database: database
+    user: root
+    password: ''
+    use_ssl: false
+
+    # MySQL Connection Pool Settings
+    # Do not change unless you know what you're doing
+    pool_settings:
+      maximum_pool_size: 50
+      minimum_idle: 30
+      maximum_lifetime: 1800000
+      connection_timeout: 30000
+      leak_detection_threshold: 0
 
 ## InformationHider Check
 InformationHider:
@@ -269,6 +285,7 @@ InformationHider:
     seed: true            # World seed
     potion: true          # Effects
     gamemode: true        # Gamemode
+    ping: true            # Ping
 
     # Replaces real staff with fake random players
     fake_staff:
