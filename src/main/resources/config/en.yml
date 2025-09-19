@@ -185,18 +185,6 @@ discord:
   embed_title: "**:fire: NEW CHEATER DETECTED!**"
   # Color of the stripe on the left side of the message
   embed_color: "#ff0000"
-  # Would you like Darkness to send Discord Messages
-  # When players get punished from the Punish Wave?
-  punishwawe: false
-  punishwawe_title: "**:fire: A WAVE OF NEW CHEATERS DETECTED!**"
-  # Message content
-  punishwawe_content:
-    - "🛡️ **Server**"
-    - "%server_name%"
-    - ""
-    - "👥 **Players Punished**"
-    - "%players_punishwawe%"
-    - ""
   # Message content
   violation_content:
     - "%player%"
@@ -218,6 +206,20 @@ discord:
     - ""
     - "📶 **PING | TPS:**"
     - "%ping% | %tps%"
+
+  # Would you like Darkness to send Discord Messages
+  # When players get punished from the Punish Wave?
+  punishwawe: false
+  punishwawe_title: "**:fire: A WAVE OF NEW CHEATERS DETECTED!**"
+  # Message content
+  punishwawe_content:
+    - "🛡️ **Server**"
+    - "%server_name%"
+    - ""
+    - "👥 **Players Punished**"
+    - "%players_punishwawe%"
+    - ""
+
   # Title of the additional field in the embed
   embed_field: "Information:"
 
@@ -226,10 +228,10 @@ logs:
 
   # What type of logging should Darkness use?
   # Types: YAML_ONE, YAML_DAYS, MYSQL, SQLITE
-  # - YAML_ONE: Logs all flags into a single file data.yml
-  # - YAML_DAYS: Logs each day into a separate file inside the logs folder
-  # - SQLITE: Logs into SQLite database
-  # - MYSQL: Logs into MySQL database
+  # 1. YAML_ONE - Logs all flags into a single file data.yml
+  # 2. YAML_DAYS - Logs each day into a separate file inside the logs folder
+  # 3. SQLITE - Logs into SQLite database
+  # 4. MYSQL - Logs into MySQL database
   # Changes are applied only after a server restart.
   type: YAML_ONE
 
@@ -272,32 +274,43 @@ InformationHider:
       spoof: true  # Recommended
       zero: false  # Fixes many KillAura clients, but breaks animations — not recommended
 
-    # Other info hiding
-    enchant: true         # Hides enchants
-    item_count: true      # Item count
-    item_name: true       # Item names
-    durability: true      # Item durability
-    xp: true              # XP amount
-    air: true             # Air ticks
-    absorption: true      # Absorption level
-    saturation: true      # Saturation level
-    scoreboard: true      # Scoreboard
-    seed: true            # World seed
-    potion: true          # Effects
-    gamemode: true        # Gamemode
-    ping: true            # Ping
-
-    # Replaces real staff with fake random players
+    # This part replaces staff with fake players to prevent cheats from detecting real administrators.
     fake_staff:
       enabled: true
       bots: 60
 
+    # This part hides enchantments to prevent cheats from showing the correct type and level.
+    enchant: true
+    # This part hides item counts in hands, inventory contents, and equipment to prevent cheats from obtaining accurate item information.
+    item_count: true
+    item_name: true
+    # This part hides item durability to prevent cheats from showing the correct durability.
+    durability: true
+    # This part hides player XP to prevent cheats from showing the exact experience level.
+    xp: true
+    # This part hides player air to prevent cheats from showing the exact air level.
+    air: true
+    # This part hides absorption effects to prevent cheats from showing the correct value.
+    absorption: true
+    # This part hides player saturation to prevent cheats from showing the exact level.
+    saturation: true
+    # This part hides scoreboard data to prevent cheats from accessing stats information.
+    scoreboard: true
+    # This part hides chunk seeds to prevent cheats from determining the exact location of structures.
+    seed: true
+    # This part hides potion effects to prevent cheats from showing the exact type and duration of effects.
+    potion: true
+    # This part hides player gamemode to prevent cheats from determining the current mode.
+    gamemode: true
+    # This part hides player ping to prevent cheats from showing the exact value.
+    ping: true
+
     # Spectator settings (requires permission: darkness.spectator)
     spectators:
-      # Worlds where spectators will be hidden. Empty = all worlds
+      # Only hide spectators in these worlds. Leave empty to allow all worlds
       allowed_worlds:
-        - ""
-      # Always hide, even if they do nothing
+       - ""
+      # Hide all spectators with darkness.spectator permission, regardless of activity.
       hide_spectators: true
 
 # Should we eject players when they get close to flagging?
