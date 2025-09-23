@@ -573,6 +573,12 @@ Vehicle:
   # Should we enable this module?
   d: true
 
+  # Should we enable this module?
+  e: true
+
+  # Should we enable this module?
+  f: true
+
   setback_type: NONE
   setback_vl: -1
 
@@ -845,8 +851,13 @@ Chat:
   # Should we enable this module?
   d: true
 
-  # Should we enable this module?
-  e: true
+  # Chat E Module
+  e:
+
+    # Should we enable this module?
+    enabled: true
+    # Включите эту проверку, если вы хотите разрешить "KeyBind"
+    bind_mods: false
 
   # Should we enable this module?
   f: true

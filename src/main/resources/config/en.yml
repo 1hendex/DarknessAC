@@ -284,6 +284,7 @@ InformationHider:
     # This part hides item counts in hands, inventory contents, and equipment to prevent cheats from obtaining accurate item information.
     item_count: true
     item_name: true
+    item_drop: true
     # This part hides item durability to prevent cheats from showing the correct durability.
     durability: true
     # This part hides player XP to prevent cheats from showing the exact experience level.
