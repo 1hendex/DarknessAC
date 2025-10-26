@@ -63,6 +63,8 @@ client_settings:
   caps_percentage: 70
   # Blocking the use of invalid characters in the brand name.
   whitelist_regex: "^[a-zA-Z0-9:_/, .-]+$"
+  # Should we block cheat clients by suspicious signs (e.g., Delta Client and others)
+  cheat_detector: true
   # Darkness will block clients by brand name using a regex.
   # If the client name matches this regex, it will not be able to join the server.
   payload:
@@ -227,11 +229,12 @@ discord:
 logs:
 
   # What type of logging should Darkness use?
-  # Types: YAML_ONE, YAML_DAYS, MYSQL, SQLITE
+  # Types: YAML_ONE, YAML_DAYS, MYSQL, SQLITE, NONE
   # 1. YAML_ONE - Logs all flags into a single file data.yml
   # 2. YAML_DAYS - Logs each day into a separate file inside the logs folder
   # 3. SQLITE - Logs into SQLite database
   # 4. MYSQL - Logs into MySQL database
+  # 5. NONE - Disables logging
   # Changes are applied only after a server restart.
   type: YAML_ONE
 
@@ -271,12 +274,29 @@ InformationHider:
     # Spoofs health — players and mobs always show fake health
     # Useful against health bars in mods and cheats
     health:
-      spoof: true  # Recommended
-      zero: false  # Fixes many KillAura clients, but breaks animations — not recommended
+      # Specify the value Darkness should spoof for players from 0 to 20.
+      # A value of 0 will break many KillAura hacks, but also breaks walking animations.
+      # Not recommended if you don't want players to walk like they're "moonwalking".
+      value: 20
+      # If enabled, a random value from 0 to 20 will be used.
+      # Less noticeable to players and better preserves gameplay.
+      random: false
 
-    # This part replaces staff with fake players to prevent cheats from detecting real administrators.
+    # This module creates fake staff members in the tab list to hide real moderators from cheats.
+    # Don’t worry these bots exist only on the client side, real players can’t see them.
     fake_staff:
+      # Should we create fake bots to mask real staff members?
       enabled: true
+      # If true, Darkness will always generate bots with random names.
+      # Helps with compatibility on some servers but can sometimes bypass StaffList checks.
+      only_random_name: false
+      # Specify the real staff prefixes that will be shown on fake bots.
+      roles:
+        - "&cAdmin"
+        - "&cStaff"
+        - "&cHelper"
+        - "&cModer"
+      # Recommended to set bots >= 60 to prevent cheats from detecting real moderators.
       bots: 60
 
     # This part hides enchantments to prevent cheats from showing the correct type and level.
@@ -343,7 +363,7 @@ packet_logger:
 
   # List of packets to ignore.
   # To find the correct names, open the PacketEvents GitHub and look for the names.
-  # Path: https://github.com/retrooper/packetevents/tree/2.0/api/src/main/java/com/github/retrooper/packetevents/wrapper/play
+  # Path: https://github.com/retrooper/packetevents/blob/2.0/api/src/main/java/com/github/retrooper/packetevents/protocol/packettype/PacketType.java
   ignore:
     - WINDOW_CONFIRMATION
     - KEEP_ALIVE

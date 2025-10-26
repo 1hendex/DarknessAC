@@ -159,6 +159,21 @@ Analysis:
   # Should we enable this module?
   j: true
 
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
+
+  # Should we enable this module?
+  m: true
+
+  # Should we enable this module?
+  n: true
+
+  # Should we enable this module?
+  o: true
+
   setback_type: CANCEL_ATTACK
   setback_vl: 2
 
@@ -380,6 +395,9 @@ AutoClicker:
   # Should we enable this module?
   l: true
 
+  # Should we enable this module?
+  n: true
+
   setback_type: CANCEL_ATTACK
   setback_vl: 1
 
@@ -525,7 +543,7 @@ NoSlow:
     vertical_check: true
     # At what deviation from player movement should we trigger a violation?
     # Measured in blocks from the possible movement
-    offset: 0.001
+    offset: 0.004
 
   # Should we enable this module?
   c: true
@@ -594,7 +612,7 @@ Reach:
     # How much should we expand hitboxes by? 0.0005 should detect 3.0005+ reach
     # There is 0.03 forced expansion with 1.9-1.18.1 (not 1.18.2), or some client/server combinations due to
     # protocol changes and limitations. This check is most powerful with 1.7/1.8 clients on 1.8 servers.
-    buffer: 0.0005
+    buffer: 0.003
     # Should we cancel hits that we know are impossible?
     # 3.00-3.03 hits may go through but still be flagged, due to packet order limitations
     block_impossible_hits: true
@@ -1098,7 +1116,7 @@ Timer:
     # Should we enable this module?
     enabled: true
     # Minimum timer speed (Normal speed: 1200), but lag and other factors can make it lower (around 1300)
-    min_speed: 1300
+    min_speed: 2100
 
   # Should we enable this module?
   d: true

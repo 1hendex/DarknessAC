@@ -159,6 +159,21 @@ Analysis:
   # Should we enable this module?
   j: true
 
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
+
+  # Should we enable this module?
+  m: true
+
+  # Should we enable this module?
+  n: true
+
+  # Should we enable this module?
+  o: true
+
   setback_type: CANCEL_ATTACK
   setback_vl: 2
 
@@ -380,6 +395,9 @@ AutoClicker:
   # Should we enable this module?
   l: true
 
+  # Should we enable this module?
+  n: true
+
   setback_type: CANCEL_ATTACK
   setback_vl: 1
 
@@ -525,7 +543,7 @@ NoSlow:
     vertical_check: true
     # Для якого відхилення від руху гравця ми маємо створити порушення?
     # Вимірюється в блоках від можливого руху
-    offset: 0.001
+    offset: 0.004
 
   # Should we enable this module?
   c: true
@@ -1099,7 +1117,7 @@ Timer:
     # Should we enable this module?
     enabled: true
     # Мінімальна швидкість таймера (Звичайна швидкість: 1200), однак лаги та інші особливості можуть знизити її (приблизно до 1300)
-    min_speed: 1300
+    min_speed: 2100
 
   # Should we enable this module?
   d: true
