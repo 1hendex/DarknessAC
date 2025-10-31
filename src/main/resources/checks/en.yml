@@ -275,6 +275,15 @@ KillAura:
   # Should we enable this module?
   n: true
 
+  # Should we enable this module?
+  o: true
+
+  # Should we enable this module?
+  p: true
+
+  # Should we enable this module?
+  q: true
+
   # Enable this check if you want to allow "TapeMouse"
   tapeMouse: false
 
@@ -486,10 +495,10 @@ Interpolation:
     # Measured in blocks from the possible movement
     # We account for Optifine by switching trig tables but dropping this to 0.001 will reduce FastMath
     # flagging the anticheat if this compensation doesn't work...
-    buffer: 0.023
+    offset: 0.023
     # How large of a violation in a tick before the player gets immediately setback?
     # -1 to disable
-    setback_buffer: 0.23
+    setback_offset: 0.23
     # How large of an advantage over all ticks before we start to setback?
     # -1 to disable
     max_advantage: 1
@@ -513,6 +522,9 @@ Baritone:
   # Should we enable this module?
   c: true
 
+  # Should we enable this module?
+  d: true
+
   setback_type: DARKNESS
   setback_vl: 1
 
@@ -530,7 +542,7 @@ NoSlow:
     # How much of an offset is "cheating"
     # By default this is lower than other offs
     # Flags by 0.03-0.2 consistently with NoSlow on
-    buffer: 0.001
+    offset: 0.001
     # Decay's when the player uses an item AND is slowed by it
     decay: 0.05
 
@@ -612,7 +624,7 @@ Reach:
     # How much should we expand hitboxes by? 0.0005 should detect 3.0005+ reach
     # There is 0.03 forced expansion with 1.9-1.18.1 (not 1.18.2), or some client/server combinations due to
     # protocol changes and limitations. This check is most powerful with 1.7/1.8 clients on 1.8 servers.
-    buffer: 0.003
+    offset: 0.003
     # Should we cancel hits that we know are impossible?
     # 3.00-3.03 hits may go through but still be flagged, due to packet order limitations
     block_impossible_hits: true
@@ -656,10 +668,10 @@ Velocity:
     multiple: 0.999
     # How large of an offset from the player's velocity should we create a violation for?
     # Measured in blocks from the possible velocity
-    buffer: 0.075
+    offset: 0.075
     # How large of a violation in a tick before the player gets immediately setback?
     # -1 to disable
-    setback_buffer: 0.1
+    setback_offset: 0.1
     # How large of an advantage over all ticks before we start to setback?
     # -1 to disable
     max_advantage: 1
@@ -671,7 +683,7 @@ Velocity:
 
     # Should we enable this module?
     enabled: true
-    buffer: 0.001
+    offset: 0.001
 
   setback_type: NONE
   setback_vl: -1
@@ -808,6 +820,9 @@ Crash:
 
   # Should we enable this module?
   m: true
+
+  # Should we enable this module?
+  n: true
 
   setback_type: NONE
   setback_vl: -1
@@ -1115,7 +1130,7 @@ Timer:
 
     # Should we enable this module?
     enabled: true
-    # Minimum timer speed (Normal speed: 1200), but lag and other factors can make it lower (around 1300)
+    # Minimum timer speed (Normal speed: 1200), but lag and other factors can make it higher (around 2100)
     min_speed: 2100
 
   # Should we enable this module?
@@ -1162,12 +1177,6 @@ Elytra:
 
   # Should we enable this module?
   l: true
-
-  # Should we enable this module?
-  m: true
-
-  # Should we enable this module?
-  n: true
 
   setback_type: DARKNESS
   setback_vl: 1

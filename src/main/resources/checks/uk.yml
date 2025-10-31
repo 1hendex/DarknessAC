@@ -275,6 +275,15 @@ KillAura:
   # Should we enable this module?
   n: true
 
+  # Should we enable this module?
+  o: true
+
+  # Should we enable this module?
+  p: true
+
+  # Should we enable this module?
+  q: true
+
   # Увімкніть цю перевірку, якщо хочете дозволити "TapeMouse"
   tapeMouse: false
 
@@ -486,10 +495,10 @@ Interpolation:
     # Вимірюється в блоках від можливого руху
     # Ми враховуємо Optifine, перемикаючи таблиці тригерів, але зменшення цього значення до 0.001 зменшить FastMath
     # будемо відзначати античит, якщо ця компенсація не спрацює...
-    buffer: 0.023
+    offset: 0.023
     # Наскільки велике порушення в тіку, перш ніж гравець отримає негайний відкат?
     # -1 для відключення
-    setback_buffer: 0.23
+    setback_offset: 0.23
     # Насколько велико преимущество над всеми тиками, прежде чем мы начнем делать откат?
     # -1 для отключения
     max_advantage: 1
@@ -513,6 +522,9 @@ Baritone:
   # Should we enable this module?
   c: true
 
+  # Should we enable this module?
+  d: true
+
   setback_type: DARKNESS
   setback_vl: 1
 
@@ -530,7 +542,7 @@ NoSlow:
     # Наскільки велике зсув є "читерством".
     # За замовчуванням це менше, ніж інші зсуви
     # Флаги на 0.03-0.2 послідовно при увімкненому NoSlow
-    buffer: 0.001
+    offset: 0.001
     # Розпад відбувається, коли гравець використовує предмет І сповільнюється ним
     decay: 0.05
 
@@ -612,7 +624,7 @@ Reach:
     # На скільки ми повинні розширити хитбокси? 0.0005 повинно визначати 3.0005+ додаткове досягнення
     # Існує 0.03 примусове розширення з 1.9-1.18.1 (не 1.18.2), або деякими комбінаціями клієнт/сервер через
     # зміни та обмеження протоколу. Ця перевірка найбільш ефективна з клієнтами 1.7/1.8 на серверах 1.8.
-    buffer: 0.003
+    offset: 0.003
     # Чи повинні ми скасовувати удари, які, як ми знаємо, неможливі?
     # Удари 3.00-3.03 можуть пройти, але все одно будуть помічені через обмеження порядку пакетів.
     block_impossible_hits: true
@@ -656,10 +668,10 @@ Velocity:
     multiple: 0.999
     # Для якого зсуву від руху гравця ми повинні створити порушення?
     # Вимірюється в блоках від можливого руху
-    buffer: 0.075
+    offset: 0.075
     # Наскільки велике порушення в тіку, перш ніж гравець отримає негайний відкат?
     # -1 для вимкнення
-    setback_buffer: 0.1
+    setback_offset: 0.1
     # Наскільки велике перевага над усіма тиками, перш ніж ми почнемо робити відкат?
     # -1 для вимкнення
     max_advantage: 1
@@ -672,7 +684,7 @@ Velocity:
 
     # Should we enable this module?
     enabled: true
-    buffer: 0.001
+    offset: 0.001
 
   setback_type: NONE
   setback_vl: -1
@@ -809,6 +821,9 @@ Crash:
 
   # Should we enable this module?
   m: true
+
+  # Should we enable this module?
+  n: true
 
   setback_type: NONE
   setback_vl: -1
@@ -1116,7 +1131,7 @@ Timer:
 
     # Should we enable this module?
     enabled: true
-    # Мінімальна швидкість таймера (Звичайна швидкість: 1200), однак лаги та інші особливості можуть знизити її (приблизно до 1300)
+    # Мінімальна швидкість таймера (Звичайна швидкість: 1200), однак лаги та інші особливості можуть повисити її (приблизно до 2100)
     min_speed: 2100
 
   # Should we enable this module?
@@ -1163,15 +1178,6 @@ Elytra:
 
   # Should we enable this module?
   l: true
-
-  # Should we enable this module?
-  m: true
-
-  # Should we enable this module?
-  n: true
-
-  # Should we enable this module?
-  o: true
 
   setback_type: DARKNESS
   setback_vl: 1

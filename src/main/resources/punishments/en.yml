@@ -39,7 +39,7 @@ Punishments:
       - '3:1 [proxy]'
       - '2:2 darkness bot %player%'
       - '2:2 darkness rotate %player%'
-      - '5:0 darkness punish %player% &cSuspicion of using cheats'
+      - '5:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   Analysis:
     remove-violations-after: 100
@@ -52,7 +52,7 @@ Punishments:
       - '3:1 [proxy]'
       - '2:2 darkness rotate %player%'
       - '1:2 darkness bot %player%'
-      - '6:0 darkness punish %player% &cSuspicion of using cheats'
+      - '4:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   KillAura:
     remove-violations-after: 100
@@ -65,7 +65,7 @@ Punishments:
       - '1:1 [proxy]'
       - '1:2 darkness bot %player%'
       - '2:2 darkness rotate %player%'
-      - '3:0 darkness punish %player% &cSuspicion of using cheats'
+      - '5:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   Interact:
     remove-violations-after: 300
@@ -76,7 +76,7 @@ Punishments:
       - '5:5 [webhook]'
       - '5:5 [log]'
       - '5:5 [proxy]'
-      - '10:0 darkness punish %player% &cSuspicion of using cheats'
+      - '10:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   Elytra:
     remove-violations-after: 250
@@ -86,19 +86,19 @@ Punishments:
       - '1:1 [alert]'
       - '1:1 [webhook]'
       - '1:1 [log]'
-      - '4:0 darkness punish %player% &cSuspicion of using cheats'
+      - '4:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   AutoAction:
     remove-violations-after: 650
     checks:
       - 'AutoAction'
-      - 'Sprint'
     commands:
       - '1:1 [alert]'
       - '1:1 [webhook]'
       - '1:1 [proxy]'
       - '1:1 [log]'
-      - '2:0 darkness ban %player% &cSuspicion of using cheats'
+      - '1:0 darkness rotate %player%'
+      - '2:0 darkness ban %player% &cYou were banned for suspected cheating.'
 
   Chat:
     remove-violations-after: 300
@@ -108,8 +108,8 @@ Punishments:
       - '1:1 [alert]'
       - '1:1 [webhook]'
       - '1:1 [log]'
-      - '4:0 darkness punish %player% &cSuspicion of using cheats'
-      - '6:0 darkness ban %player% &c&cSuspicion of using cheats'
+      - '4:0 darkness punish %player% &cYou were kicked for suspected cheating.'
+      - '6:0 darkness ban %player% &cYou were banned for suspected cheating.'
 
   AutoClicker:
     remove-violations-after: 300
@@ -121,7 +121,7 @@ Punishments:
       - '5:5 [log]'
       - '2:2 darkness bot %player%'
       - '2:2 darkness rotate %player%'
-      - '6:0 darkness punish %player% &cSuspicion of using cheats'
+      - '6:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   RangeInteract:
     remove-violations-after: 70
@@ -134,20 +134,24 @@ Punishments:
       - '1:1 [log]'
       - '1:1 [proxy]'
       - '1:2 darkness bot %player%'
-      - '2:1 darkness rotate %player%'
-      - '4:0 darkness punish %player% &cSuspicion of using cheats'
+      - '2:2 darkness rotate %player%'
+      - '7:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   Packets:
     remove-violations-after: 300
     checks:
       - 'BadPackets'
       - 'FreeCam'
+      - 'Protocol'
+      - 'Vehicle'
+      - 'Sprint'
     commands:
-      - '5:5 [alert]'
-      - '5:5 [webhook]'
-      - '5:5 [log]'
-      - '5:5 [proxy]'
-      - '5:0 darkness punish %player% &cSuspicion of using cheats'
+      - '1:2 [alert]'
+      - '1:2 [webhook]'
+      - '1:2 [log]'
+      - '1:2 [proxy]'
+      - '1:2 darkness bot %player%'
+      - '5:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   Interpolation:
     remove-violations-after: 70
@@ -158,7 +162,7 @@ Punishments:
       - '40:20 [webhook]'
       - '20:20 [log]'
       - '40:20 [proxy]'
-      - '60:0 darkness punish %player% &cSuspicion of using cheats'
+      - '60:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   Inventory:
     remove-violations-after: 300
@@ -169,8 +173,8 @@ Punishments:
       - '2:3 [proxy]'
       - '1:1 [log]'
       - '2:3 [webhook]'
-      - '4:0 darkness punish %player% &cSuspicion of using cheats'
-      - '6:0 darkness ban %player% &cSuspicion of using cheats'
+      - '4:0 darkness punish %player% &cYou were kicked for suspected cheating.'
+      - '6:0 darkness ban %player% &cYou were banned for suspected cheating.'
 
   Timer:
     remove-violations-after: 70
@@ -181,8 +185,8 @@ Punishments:
       - '2:5 [webhook]'
       - '2:5 [log]'
       - '1:1 [proxy]'
-      - '15:0 darkness punish %player% &cSuspicion of using cheats'
-      - '20:0 darkness ban %player% &cSuspicion of using cheats'
+      - '20:0 darkness punish %player% &cYou were kicked for suspected cheating.'
+      - '30:0 darkness ban %player% &cYou were banned for suspected cheating.'
 
   NoFall:
     remove-violations-after: 300
@@ -193,7 +197,7 @@ Punishments:
       - '6:4 [webhook]'
       - '6:4 [log]'
       - '6:4 [proxy]'
-      - '35:0 darkness punish %player% &cSuspicion of using cheats'
+      - '35:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   Velocity:
     remove-violations-after: 250
@@ -205,19 +209,7 @@ Punishments:
       - '2:2 [log]'
       - '1:1 [proxy]'
       - '2:4 darkness bot %player%'
-      - '10:0 darkness punish %player% &cSuspicion of using cheats'
-
-  Protocol:
-    remove-violations-after: 250
-    checks:
-      - 'Protocol'
-    commands:
-      - '1:1 [alert]'
-      - '2:2 [webhook]'
-      - '2:2 [log]'
-      - '1:1 [proxy]'
-      - '1:2 darkness bot %player%'
-      - '5:0 darkness punish %player% &cSuspicion of using cheats'
+      - '10:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   NoSlowDown:
     remove-violations-after: 250
@@ -228,19 +220,8 @@ Punishments:
       - '10:10 [webhook]'
       - '10:10 [log]'
       - '5:5 [proxy]'
-      - '5:5 darkness shuffle %player% many'
-      - '25:0 darkness punish %player% &cSuspicion of using cheats'
-
-  Vehicle:
-    remove-violations-after: 360
-    checks:
-      - 'Vehicle'
-    commands:
-      - '5:5 [alert]'
-      - '10:10 [webhook]'
-      - '10:10 [log]'
-      - '5:5 [proxy]'
-      - '5:0 darkness punish %player% &cSuspicion of using cheats'
+      - '4:3 darkness shuffle %player% many'
+      - '25:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   Scaffold:
     remove-violations-after: 180
@@ -251,10 +232,10 @@ Punishments:
       - '4:4 [webhook]'
       - '4:4 [log]'
       - '3:3 [proxy]'
-      - '6:0 darkness punish %player% &cSuspicion of using cheats'
+      - '6:0 darkness punish %player% &cYou were kicked for suspected cheating.'
 
   Baritone:
-    remove-violations-after: 300
+    remove-violations-after: 500
     checks:
       - 'Baritone'
     commands:
@@ -262,7 +243,32 @@ Punishments:
       - '1:1 [webhook]'
       - '1:1 [log]'
       - '1:1 [proxy]'
-      - '5:0 darkness punish %player% &cSuspicion of using cheats'
+      - '5:0 darkness punish %player% &cYou were kicked for suspected cheating.'
+
+  AutoBan:
+    remove-violations-after: 300
+    checks:
+      - 'Aim (H)'
+      - 'Aim (S)'
+      - 'Analysis (C)'
+      - 'Analysis (J)'
+      - 'Analysis (L)'
+      - 'Analysis (M)'
+      - 'Analysis (N)'
+      - 'Analysis (O)'
+      - 'KillAura (E)'
+      - 'KillAura (M)'
+      - 'KillAura (Q)'
+      - 'BadPackets (D)'
+      - 'Sprint (D)'
+      - 'Inventory (J)'
+      - 'Inventory (F)'
+    commands:
+      - '1:1 [alert]'
+      - '2:3 [proxy]'
+      - '1:1 [log]'
+      - '1:2 [webhook]'
+      - '1:0 darkness ban %player% &cYou were banned for suspected cheating.'
 
   Crash:
     remove-violations-after: 360
@@ -275,7 +281,7 @@ Punishments:
       - '3:3 [proxy]'
       - '3:3 [log]'
       - '3:0 darkness crash %player% position'
-      - '3:0 darkness ban %player% &cSuspicion of using cheats'
+      - '3:0 darkness ban %player% &cYou were banned for suspected cheating.'
 
 punishments:
   checks_updates: true
