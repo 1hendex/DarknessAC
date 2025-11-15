@@ -715,8 +715,12 @@ Inventory:
   # Should we enable this module?
   e: true
 
-  # Should we enable this module? (InventoryCleaner)
-  f: true
+  # Inventory F Module
+  f:
+
+    # Should we enable this module?
+    enabled: true
+    delta: 37.2
 
   # Inventory G Module
   g:
@@ -758,8 +762,12 @@ Inventory:
   # Should we enable this module?
   n: true
 
-  # Should we enable this module?
-  o: true
+  # Inventory O Module
+  o:
+
+    # Should we enable this module?
+    enabled: true
+    delta: 32.5
 
   # Enabled this check if you want to allow "ItemsScroller"
   itemsScroller: false
@@ -912,9 +920,6 @@ Exploit:
   # Should we enable this module?
   c: true # Book Crasher
 
-  # Should we enable this module?
-  d: true # Book Exploit
-
   # You can gain high speeds when sprint jumping with an elytra, this prevents the exploit when set to false
   # Mojang screwed up netcode by making elytra start client sided and elytra end server sided
   # Elytras take 0.99 horizontal friction, so constantly adding 0.2 horizontal speeds results in very high speeds.
@@ -924,8 +929,8 @@ Exploit:
   # This setting, influenced by the boolean above defines the distance to check for ghost blocks
   # Its valid range is limited from 2 to 4
   distance_to_check_if_ghostblocks: 2
-  # Максимальная допустимая высота, на которую игрок может подняться при столкновении с лодкой,
-  # прежде чем Darkness сочтет это попыткой использования BoatFly
+  # The maximum allowed height a player can rise to when colliding with a boat
+  # before Darkness considers it an attempt to use BoatFly
   allow_offset_boat_collision: 0.012
 
   setback_type: NONE

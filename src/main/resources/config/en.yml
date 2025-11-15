@@ -303,7 +303,9 @@ InformationHider:
     enchant: true
     # This part hides item counts in hands, inventory contents, and equipment to prevent cheats from obtaining accurate item information.
     item_count: true
+    # This part hides the real names of items in the player's hands to prevent cheats from obtaining accurate information about them.
     item_name: true
+    # This part hides the real names of items on the ground to prevent cheats from obtaining accurate information about them.
     item_drop: true
     # This part hides item durability to prevent cheats from showing the correct durability.
     durability: true
@@ -319,6 +321,8 @@ InformationHider:
     scoreboard: true
     # This part hides chunk seeds to prevent cheats from determining the exact location of structures.
     seed: true
+    # This part hides the player's actual effects to prevent them from being displayed in PotionList or cheat Notifications.
+    end_effect: true
     # This part hides potion effects to prevent cheats from showing the exact type and duration of effects.
     potion: true
     # This part hides player gamemode to prevent cheats from determining the current mode.

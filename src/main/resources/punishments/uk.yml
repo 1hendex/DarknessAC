@@ -20,7 +20,7 @@ Punishments:
 
   Aim:
     # Через скільки секунд порушення має бути видалене?
-    remove-violations-after: 100
+    remove_violations_after: 250
     # Цей розділ застосовуватиметься до всіх перевірок з вказаною назвою.
     checks:
       - 'Aim'
@@ -42,7 +42,7 @@ Punishments:
       - '5:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   Analysis:
-    remove-violations-after: 100
+    remove_violations_after: 250
     checks:
       - 'Analysis'
     commands:
@@ -55,7 +55,7 @@ Punishments:
       - '4:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   KillAura:
-    remove-violations-after: 100
+    remove_violations_after: 250
     checks:
       - 'KillAura'
     commands:
@@ -68,7 +68,7 @@ Punishments:
       - '5:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   Interact:
-    remove-violations-after: 300
+    remove_violations_after: 300
     checks:
       - 'Interact'
     commands:
@@ -79,7 +79,7 @@ Punishments:
       - '10:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   Elytra:
-    remove-violations-after: 250
+    remove_violations_after: 250
     checks:
       - 'Elytra'
     commands:
@@ -89,7 +89,7 @@ Punishments:
       - '4:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   AutoAction:
-    remove-violations-after: 650
+    remove_violations_after: 300
     checks:
       - 'AutoAction'
     commands:
@@ -101,7 +101,7 @@ Punishments:
       - '2:0 darkness ban %player% &cВас забанили через підозру у використанні чітів'
 
   Chat:
-    remove-violations-after: 300
+    remove_violations_after: 300
     checks:
       - 'Chat'
     commands:
@@ -112,7 +112,7 @@ Punishments:
       - '6:0 darkness ban %player% &cВас забанили через підозру у використанні чітів'
 
   AutoClicker:
-    remove-violations-after: 300
+    remove_violations_after: 300
     checks:
       - 'AutoClicker'
     commands:
@@ -124,7 +124,7 @@ Punishments:
       - '6:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   RangeInteract:
-    remove-violations-after: 70
+    remove_violations_after: 70
     checks:
       - 'Reach'
       - 'HitBox'
@@ -138,7 +138,7 @@ Punishments:
       - '7:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   Packets:
-    remove-violations-after: 300
+    remove_violations_after: 300
     checks:
       - 'BadPackets'
       - 'FreeCam'
@@ -154,7 +154,7 @@ Punishments:
       - '5:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   Interpolation:
-    remove-violations-after: 70
+    remove_violations_after: 70
     checks:
       - 'Interpolation'
     commands:
@@ -165,7 +165,7 @@ Punishments:
       - '60:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   Inventory:
-    remove-violations-after: 300
+    remove_violations_after: 300
     checks:
       - 'Inventory'
     commands:
@@ -177,7 +177,7 @@ Punishments:
       - '6:0 darkness ban %player% &cВас забанили через підозру у використанні чітів'
 
   Timer:
-    remove-violations-after: 70
+    remove_violations_after: 70
     checks:
       - 'Timer'
     commands:
@@ -189,7 +189,7 @@ Punishments:
       - '30:0 darkness ban %player% &cВас забанили через підозру у використанні чітів'
 
   NoFall:
-    remove-violations-after: 300
+    remove_violations_after: 300
     checks:
       - 'NoFall' # NoFall A x B
     commands:
@@ -200,7 +200,7 @@ Punishments:
       - '35:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   Velocity:
-    remove-violations-after: 250
+    remove_violations_after: 250
     checks:
       - 'Velocity' # Velocity A x B
     commands:
@@ -212,7 +212,7 @@ Punishments:
       - '10:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   NoSlowDown:
-    remove-violations-after: 250
+    remove_violations_after: 250
     checks:
       - 'NoSlow'
     commands:
@@ -224,7 +224,7 @@ Punishments:
       - '25:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   Scaffold:
-    remove-violations-after: 180
+    remove_violations_after: 180
     checks:
       - 'Scaffold'
     commands:
@@ -235,7 +235,7 @@ Punishments:
       - '6:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   Baritone:
-    remove-violations-after: 500
+    remove_violations_after: 500
     checks:
       - 'Baritone'
     commands:
@@ -246,7 +246,7 @@ Punishments:
       - '5:0 darkness punish %player% &cВас кікнули через підозру у використанні чітів.'
 
   AutoBan:
-    remove-violations-after: 300
+    remove_violations_after: 300
     checks:
       - 'Aim (H)'
       - 'Aim (S)'
@@ -271,7 +271,7 @@ Punishments:
       - '1:0 darkness ban %player% &cВас забанили через підозру у використанні чітів'
 
   Crash:
-    remove-violations-after: 360
+    remove_violations_after: 360
     checks:
       - 'Crash'
       - 'Exploit' # ExploitA (Log4j), ExploitB (TabComplete), ExploitC (Book Crasher)

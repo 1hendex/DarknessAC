@@ -1,4 +1,4 @@
- # +----------------------------------------------------------------------------------------------+
+# +----------------------------------------------------------------------------------------------+
 # |                                                                                              |
 # |                                       Darkness Liquidation                                   |
 # |                                                                                              |
@@ -716,8 +716,12 @@ Inventory:
   # Should we enable this module?
   e: true
 
-  # Should we enable this module? (InventoryCleaner)
-  f: true
+  # Inventory F Module
+  f:
+
+    # Should we enable this module?
+    enabled: true
+    delta: 37.2
 
   # Inventory G Module
   g:
@@ -759,8 +763,12 @@ Inventory:
   # Should we enable this module?
   n: true
 
-  # Should we enable this module?
-  o: true
+  # Inventory O Module
+  o:
+
+    # Should we enable this module?
+    enabled: true
+    delta: 32.5
 
   # Включите эту проверку, если вы хотите разрешить "ItemsScroller"
   itemsScroller: false
@@ -912,9 +920,6 @@ Exploit:
 
   # Should we enable this module?
   c: true # Book Crasher
-
-  # Should we enable this module?
-  d: true # Book Exploit
 
   # Вы можете достигать высоких скоростей, прыгая в спринте с элитрой. Это предотвращает эксплуатацию, если параметр установлен в значение false.
   # Mojang испортили сетевой код, сделав начало полета на элитрах клиентским, а его завершение серверным.
