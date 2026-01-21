@@ -194,22 +194,22 @@ discord:
   violation_content:
     - "%player%"
     - ""
-    - "🛡️ **Режим:**"
+    - ":shield: **Режим:**"
     - "%server_name%"
     - ""
-    - "📦 **Тип чіту:**"
+    - ":package: **Тип чіту:**"
     - "%check%"
     - ""
-    - "📊 **Рівень:**"
+    - ":bar_chart: **Рівень:**"
     - "%violations%"
     - ""
-    - "🖥️ **Клієнт:**"
+    - ":desktop: **Клієнт:**"
     - "%brand%"
     - ""
-    - "📌 **Версія:**"
+    - ":pushpin: **Версія:**"
     - "%version%"
     - ""
-    - "📶 **PING | TPS:**"
+    - ":signal_strength: **PING | TPS:**"
     - "%ping% | %tps%"
 
   # Бажаєте, щоб Darkness надсилала повідомлення в Discord,
@@ -218,10 +218,10 @@ discord:
   punishwawe_title: "**:fire: ВИЯВЛЕНО ХВИЛЮ НОВИХ ЧИТЕРІВ!**"
   # Зміст повідомлення
   punishwawe_content:
-    - "🛡️ **Режим**"
+    - ":shield: **Режим**"
     - "%server_name%"
     - ""
-    - "👥 **Покарані гравці**"
+    - ":busts_in_silhouette: **Покарані гравці**"
     - "%players_punishwawe%"
     - ""
 

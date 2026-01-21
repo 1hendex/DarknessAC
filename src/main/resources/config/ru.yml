@@ -196,22 +196,22 @@ discord:
   violation_content:
     - "%player%"
     - ""
-    - "🛡️ **Режим:**"
+    - ":shield: **Режим:**"
     - "%server_name%"
     - ""
-    - "📦 **Тип чита:**"
+    - ":package: **Тип чита:**"
     - "%check%"
     - ""
-    - "📊 **Уровень:**"
+    - ":bar_chart: **Уровень:**"
     - "%violations%"
     - ""
-    - "🖥️ **Клиент:**"
+    - ":desktop: **Клиент:**"
     - "%brand%"
     - ""
-    - "📌 **Версия:**"
+    - ":pushpin: **Версия:**"
     - "%version%"
     - ""
-    - "📶 **PING | TPS:**"
+    - ":signal_strength: **PING | TPS:**"
     - "%ping% | %tps%"
 
   # Хотите, чтобы Даркнесс отправляла сообщения в Discord,
@@ -220,10 +220,10 @@ discord:
   punishwawe_title: "**:fire: ОБНАРУЖЕНА ВОЛНА НОВЫХ ЧИТЕРОВ!**"
   # Содержимое сообщения
   punishwawe_content:
-    - "🛡️ **Режим**"
+    - ":shield: **Режим**"
     - "%server_name%"
     - ""
-    - "👥 **Игроки, которых наказали**"
+    - ":busts_in_silhouette: **Игроки, которых наказали**"
     - "%players_punishwawe%"
     - ""
 

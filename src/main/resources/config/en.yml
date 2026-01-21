@@ -194,22 +194,22 @@ discord:
   violation_content:
     - "%player%"
     - ""
-    - "🛡️ **Server Name:**"
+    - ":shield: **Server Name:**"
     - "%server_name%"
     - ""
-    - "📦 **Cheat Type:**"
+    - ":package: **Cheat Type:**"
     - "%check%"
     - ""
-    - "📊 **VL**"
+    - ":bar_chart: **VL**"
     - "%violations%"
     - ""
-    - "🖥️ **Client:**"
+    - ":desktop: **Client:**"
     - "%brand%"
     - ""
-    - "📌 **Version:**"
+    - ":pushpin: **Version:**"
     - "%version%"
     - ""
-    - "📶 **PING | TPS:**"
+    - ":signal_strength: **PING | TPS:**"
     - "%ping% | %tps%"
 
   # Would you like Darkness to send Discord Messages
@@ -218,10 +218,10 @@ discord:
   punishwawe_title: "**:fire: A WAVE OF NEW CHEATERS DETECTED!**"
   # Message content
   punishwawe_content:
-    - "🛡️ **Server**"
+    - ":shield: **Server**"
     - "%server_name%"
     - ""
-    - "👥 **Players Punished**"
+    - ":busts_in_silhouette: **Players Punished**"
     - "%players_punishwawe%"
     - ""
 
