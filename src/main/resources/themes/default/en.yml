@@ -10,6 +10,7 @@
 
 # \u00BB is » (double >>), ANSI and UTF-8 interpret this differently... you may even see ? due to this
 prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os §8|"
+theme_author: 1hendex
 
 alerts_enabled: "%prefix% &fAlerts enabled"
 alerts_disabled: "%prefix% &fAlerts disabled"
@@ -24,6 +25,7 @@ player_not_found: "%prefix% &cThe specified player could not be found!"
 no_permission: "%prefix% &cYou don't have permission!"
 invalid_syntax: "%prefix% &cCorrect syntax: %syntax%"
 unknown_command: "%prefix% &cUnknown command!"
+unsupported_version: "%prefix% &cFeature unavailable on this server version!"
 cant_execute_from_console: "%prefix% &cThis command can only be executed by players!"
 reloading: "%prefix% &7Reloading configuration..."
 reload_success: "%prefix% &fSuccessfully reloaded!"

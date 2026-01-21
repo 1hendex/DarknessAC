@@ -102,7 +102,7 @@ Aim:
 
   # Список возможных типов сетбека:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS,
-  # CANCEL_ATTACK, GRIM, FOOD, NONE
+  # CANCEL_ATTACK, GRIM, FOOD, DAMAGE_REDUCE, NONE
   #
   # Настройка setback_type позволяет комбинировать несколько сетбеков одновременно,
   # перечисляя их через запятую, например:
@@ -217,6 +217,8 @@ KillAura:
     min_height: -4.4
     max_height: -6
     jump_multiple: 0.75
+    # Какая скорость движения будет у бота? Значение ниже 0.7 может повлиять на PvP (максимум: 1.0).
+    motion_speed: 1.0
     # На каком расстоянии должен быть бот (по осям x и y)?
     min_distance: -3.3
     max_distance: -5
@@ -768,7 +770,7 @@ Inventory:
 
     # Should we enable this module?
     enabled: true
-    delta: 32.5
+    delta: 39.2
 
   # Включите эту проверку, если вы хотите разрешить "ItemsScroller"
   itemsScroller: false

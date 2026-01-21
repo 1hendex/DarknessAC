@@ -102,7 +102,7 @@ Aim:
 
   # List of possible setback types:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS, SLOW,
-  # CANCEL_ATTACK, GRIM, FOOD, NONE
+  # CANCEL_ATTACK, GRIM, FOOD, DAMAGE_REDUCE, NONE
   #
   # The setback_type setting allows combining multiple setbacks at once
   # by listing them separated by commas, for example:
@@ -217,6 +217,8 @@ KillAura:
     min_height: -4.4
     max_height: -6
     jump_multiple: 0.75
+    # What movement speed will the bot have? Values below 0.7 may affect PvP (maximum: 1.0).
+    motion_speed: 1.0
     # At what distance should the bot be (on the x and y axes)?
     min_distance: -3.3
     max_distance: -5
@@ -767,7 +769,7 @@ Inventory:
 
     # Should we enable this module?
     enabled: true
-    delta: 32.5
+    delta: 39.2
 
   # Enabled this check if you want to allow "ItemsScroller"
   itemsScroller: false

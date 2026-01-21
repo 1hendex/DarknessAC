@@ -29,6 +29,9 @@ verbose:
 # If this mode is enabled, the punish, rotate, and slot shuffle commands will not work.
 test_mode: false
 
+# The theme that Darkness is going to use
+theme: default
+
 # Client Settings
 client_settings:
 
@@ -282,8 +285,40 @@ InformationHider:
       # Less noticeable to players and better preserves gameplay.
       random: false
 
+    # Mask internal player data to prevent cheat modules from utilizing it.
+    # Hides the real experience level to prevent it from being displayed in cheats.
+    xp: true
+    # Hides the oxygen level to prevent cheats from displaying the exact amount of air.
+    air: true
+    # Hides the hunger level. Breaks AutoEat functions in cheat clients.
+    saturation: true
+    # Hides the real ping in the tab list. Prevents certain bypasses in AntiBot modules.
+    ping: true
+    # Hides the game mode. Cheats will always see the player in Creative.
+    gamemode: true
+    # Sends a fake world seed to prevent cheats from locating ores and structures.
+    seed: true
+    # Hides health and statistics data from scoreboards and the tab list.
+    scoreboard: true
+
+    # Masks equipment and character visual effects.
+    # Hides enchantments on armor and items so cheats cannot see their type or level.
+    enchant: true
+    # Hides the exact count of items in hands and inventory.
+    item_count: true
+    # Replaces actual item names in hands with randomized ones.
+    item_name: true
+    # Hides the names and quantities of items dropped on the ground.
+    item_drop: true
+    # Always shows full item durability to prevent cheats from seeing armor wear.
+    durability: true
+    # Hides potion effects from others (prevents seeing Strength, Speed, etc.).
+    potion: true
+    # Spams the cheat with fake effect packets, completely cluttering its PotionList with trash.
+    end_effect: true
+
     # This module creates fake staff members in the tab list to hide real moderators from cheats.
-    # Don’t worry these bots exist only on the client side, real players can’t see them.
+    # Don’t worry these bots exist only on the cheat client side, real players can’t see them.
     fake_staff:
       # Should we create fake bots to mask real staff members?
       enabled: true
@@ -299,37 +334,6 @@ InformationHider:
       # Recommended to set bots >= 60 to prevent cheats from detecting real moderators.
       bots: 60
 
-    # This part hides enchantments to prevent cheats from showing the correct type and level.
-    enchant: true
-    # This part hides item counts in hands, inventory contents, and equipment to prevent cheats from obtaining accurate item information.
-    item_count: true
-    # This part hides the real names of items in the player's hands to prevent cheats from obtaining accurate information about them.
-    item_name: true
-    # This part hides the real names of items on the ground to prevent cheats from obtaining accurate information about them.
-    item_drop: true
-    # This part hides item durability to prevent cheats from showing the correct durability.
-    durability: true
-    # This part hides player XP to prevent cheats from showing the exact experience level.
-    xp: true
-    # This part hides player air to prevent cheats from showing the exact air level.
-    air: true
-    # This part hides absorption effects to prevent cheats from showing the correct value.
-    absorption: true
-    # This part hides player saturation to prevent cheats from showing the exact level.
-    saturation: true
-    # This part hides scoreboard data to prevent cheats from accessing stats information.
-    scoreboard: true
-    # This part hides chunk seeds to prevent cheats from determining the exact location of structures.
-    seed: true
-    # This part hides the player's actual effects to prevent them from being displayed in PotionList or cheat Notifications.
-    end_effect: true
-    # This part hides potion effects to prevent cheats from showing the exact type and duration of effects.
-    potion: true
-    # This part hides player gamemode to prevent cheats from determining the current mode.
-    gamemode: true
-    # This part hides player ping to prevent cheats from showing the exact value.
-    ping: true
-
     # Spectator settings (requires permission: darkness.spectator)
     spectators:
       # Only hide spectators in these worlds. Leave empty to allow all worlds
@@ -338,12 +342,9 @@ InformationHider:
       # Hide all spectators with darkness.spectator permission, regardless of activity.
       hide_spectators: true
 
-# Should we eject players when they get close to flagging?
+# Should the close elytra or player inventory upon a flag?
 # It is suggested to leave this option enabled since it can sometimes help prevent issues such as desync
 elytra_eject: true
-
-# Should we eject players when get close inventory on flag?
-# It is suggested to leave this option enabled since it can sometimes help prevent issues such as desync
 inventory_eject: true
 
 # Should the cinematic camera be taken into account?
