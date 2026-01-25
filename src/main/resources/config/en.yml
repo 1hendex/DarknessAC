@@ -316,6 +316,8 @@ InformationHider:
     potion: true
     # Spams the cheat with fake effect packets, completely cluttering its PotionList with trash.
     end_effect: true
+    # Shuffles inventory items while moving, breaking AutoTotem and InvWalk features in cheats.
+    inventory: true
 
     # This module creates fake staff members in the tab list to hide real moderators from cheats.
     # Don’t worry these bots exist only on the cheat client side, real players can’t see them.
@@ -376,6 +378,11 @@ packet_logger:
 
 # The server name that will be shown in Player Logs and Discord Messages
 server_name: Darkness Server
+
+# Specify the name or names for the Darkness commands.
+# The first name in the list will become the main command of the plugin.
+# Changes are applied only after a server restart.
+command_name: darkness,dl
 
 # Should we disable the bypass permission?
 # If enabled, Darkness will check all players, including operators

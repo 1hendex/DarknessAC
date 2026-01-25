@@ -100,6 +100,9 @@ Aim:
   # Should we enable this module?
   s: true
 
+  # Should we enable this module?
+  t: true
+
   # Список возможных типов сетбека:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS,
   # CANCEL_ATTACK, GRIM, FOOD, DAMAGE_REDUCE, NONE
@@ -479,6 +482,15 @@ Protocol:
   # Should we enable this module?
   n: true
 
+  # Should we enable this module?
+  o: true
+
+  # Should we enable this module?
+  p: true
+
+  # Should we enable this module?
+  q: true
+
   setback_type: NONE
   setback_vl: -1
 
@@ -586,6 +598,9 @@ Sprint:
 
   # Should we enable this module?
   f: true
+
+  # Should we enable this module?
+  g: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -1042,6 +1057,9 @@ BadPackets:
   # Should we enable this module?
   gg: true
 
+  # Should we enable this module?
+  hh: true
+
   # Нужно ли проверять ли аномальные задержки и резкую отправку пакетов позиции
   blink: true
 
@@ -1060,7 +1078,7 @@ Interact:
   # Should we enable this module? (FastPlace)
   c: true
 
-  # Should we enable this module?
+  # Should we enable this module? (GhostHand)
   d: true
 
   # Should we enable this module?
@@ -1083,6 +1101,12 @@ Interact:
 
   # Should we enable this module? (PlaceReach)
   k: true
+
+  # Should we enable this module? (BedFucker)
+  l: true
+
+  # Should we enable this module?
+  m: true
 
   setback_type: DARKNESS
   setback_vl: 3
@@ -1110,6 +1134,12 @@ Scaffold:
 
   # Should we enable this module?
   g: true
+
+  # Should we enable this module?
+  h: true
+
+  # Should we enable this module?
+  i: true
 
   setback_type: DARKNESS
   setback_vl: 1

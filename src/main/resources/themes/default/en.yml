@@ -61,11 +61,11 @@ punishwave_exists: "%prefix% &fThat player has already been added to the punish 
 transaction_kick: "Internal Exception: io.netty.handler.timeout.ReadTimeoutException"
 
 bar:
-    opening_bracket: '&8['
-    closing_bracket: '&8]'
-    fill: '&f|'
-    empty: '&7|'
-    size: 18
+  opening_bracket: '&8['
+  closing_bracket: '&8]'
+  fill: '&f|'
+  empty: '&7|'
+  size: 18
 
 # Valid placeholders:
 # %time% - Current time (Required placeholder for the log)
