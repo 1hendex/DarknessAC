@@ -12,13 +12,13 @@
 prefix: "&x&8&8&0&0&0&0&l&oD&x&A&C&0&2&0&2&l&oa&x&C&F&0&4&0&4&l&or&x&E&F&0&3&0&3&l&ok&x&D&E&0&2&0&2&l&on&x&9&C&0&0&0&0&l&oe&x&7&D&0&0&0&0&l&os&x&6&A&0&0&0&0&l&os §8|"
 theme_author: 1hendex
 
-alerts_enabled: "%prefix% &fОповіщення включено"
+alerts_enabled: "%prefix% &fОповіщення увімкнено"
 alerts_disabled: "%prefix% &fОповіщення вимкнено"
 verbose_enabled: "%prefix% &fVerbose увімкнено"
 verbose_disabled: "%prefix% &fVerbose вимкнено"
 cps_enabled: "%prefix% &fВідображення CPS &aувімкнено"
 cps_disabled: "%prefix% &fВідображення CPS &cвимкнено"
-action_bar: "&e⚡ &fГравець: &c%player%&f, CPS: &c%сps%"
+action_bar: "&e⚡ &fГравець: &c%player%&f, CPS: &c%cps%"
 console_specify_target: "%prefix% &cВи повинні вказати ціль у консолі!"
 player_not_this_server: "%prefix% &cГравець не на цьому сервері!"
 player_not_found: "%prefix% &cВказаний гравець не знайдений!"
@@ -28,7 +28,7 @@ unknown_command: "%prefix% &cНевідома команда!"
 unsupported_version: "%prefix% &cЦя функція не підтримується поточною версією сервера!"
 cant_execute_from_console: "%prefix% &cЦя команда доступна лише для гравців!"
 reloading: "%prefix% &7Перезавантаження конфігурації..."
-reload_success: "%prefix% &fУспішно перезавантажено!"
+reload_success: "%prefix% &fЯ була перезавантажена!"
 reload_failed: "%prefix% &cНе вдалося перезавантажити конфігурацію. (Деталі в консолі)"
 rotate_success: "%prefix% &cУспішно повернуто гравця %player%"
 knockback_success: "%prefix% &cУспішно проведено тест відштовхування для гравця %player%"
@@ -83,7 +83,7 @@ bar:
 # %check_type% - Назва типу чеку
 # %ping% - Пінг гравця
 # %tps% - Поточний TPS
-# %component% - Модуль вигнаня (Тільки для бренду)
+# %component% - Модуль вигнання (Тільки для клієнта)
 brand_log_format: "(%time%) %server_name%: %player% (%ip%) був вигнаний за бренд: %brand% | component: %component%"
 log_format: "(%time%) %server_name%: %player% (%ip%) провалив %check% | (%verbose%) | vl: %vl% ping: %ping% tps: %tps%"
 command_log_format: "(%time%) %server_name%: Execute command: %command%"
@@ -138,10 +138,10 @@ lag_command:
 
 checks_command:
   space: ' '
-  type-space: ' '
+  type_space: ' '
   type: "&8» &7Категорія перевірки: &f%checkType%"
-  not-found-total: "&8» &cПеревірки не знайдено."
-  not-found-type: "&8» &cНемає."
+  not_found_total: "&8» &cПеревірки не знайдено."
+  not_found_type: "&8» &cВідсутні."
   separator: "&7, "
   check:
     enabled: "&a%checkName%%experimental%"

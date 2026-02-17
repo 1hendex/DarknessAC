@@ -194,14 +194,14 @@ KillAura:
     # Should we enable this module?
     enabled: true
     # Нужно ли создавать бота только по команде? Если true, бот появится только после использования команды,
-    # а не автоматически при бою.
+    # а не автоматически во время боя.
     only_command_trigger: true
     # Время (в миллисекундах, 1000 мс = 1 секунда), в течение которого бот видим после удара по сущности.
     living_time: 5000
     # Должна ли Даркнесс всегда создавать поддельного бота, это исправляет некоторые проблемы с несовместимостью,
     # но позволяет обходить некоторым AntiBot модулям.
     only_random_name: false
-    # Должен ли Даркнесс копировать атакуемую сущность?
+    # Должна ли Даркнесс копировать атакуемую сущность?
     # Используется для исправления KillAura с триггером только по мобам.
     # Если установлено в false, бот всегда будет атаковать игрока.
     # Чтобы функция работала, нужно установить false в only_random_name, чтобы применить это значение!
@@ -250,7 +250,7 @@ KillAura:
 
     # Should we enable this module?
     enabled: true
-    # Как следует Даркнесс обрабатывать удары через люки, двери и другие объекты (багаюз)?
+    # Как Даркнесс должна обрабатывать удары через люки, двери и другие объекты (багаюз)?
     # 1. none - ничего не делать
     # 2. cancel - отменить атаку и оповещать (Рекомендуется)
     # 3. flag - установить урон в ноль и флагировать
@@ -288,9 +288,6 @@ KillAura:
 
   # Should we enable this module?
   q: true
-
-  # Включите эту проверку, если вы хотите разрешить "TapeMouse"
-  tapeMouse: false
 
   setback_type: CANCEL_ATTACK
   setback_vl: 2
@@ -721,7 +718,7 @@ Inventory:
     # Для какого смещения от движения игрока мы должны создать нарушение?
     # Измеряется в блоках от возможного движения
     offset: 0.040
-    # Исправляет проблему рассинхронизации при прыжке с открытым контейнерамы блоков.
+    # Исправляет проблему рассинхронизации при прыжке с открытыми контейнерами блоков.
     fix_jump_desync: true
 
   # Should we enable this module? (AutoPotion)
@@ -786,9 +783,6 @@ Inventory:
     # Should we enable this module?
     enabled: true
     delta: 39.2
-
-  # Включите эту проверку, если вы хотите разрешить "ItemsScroller"
-  itemsScroller: false
 
   setback_type: DARKNESS, INVENTORY_CLOSE
   setback_vl: 1
@@ -909,13 +903,8 @@ Chat:
   # Should we enable this module?
   d: true
 
-  # Chat E Module
-  e:
-
-    # Should we enable this module?
-    enabled: true
-    # Включите эту проверку, если вы хотите разрешить "KeyBind"
-    bind_mods: false
+  # Should we enable this module?
+  e: true
 
   # Should we enable this module?
   f: true
@@ -1060,7 +1049,7 @@ BadPackets:
   # Should we enable this module?
   hh: true
 
-  # Нужно ли проверять ли аномальные задержки и резкую отправку пакетов позиции
+  # Нужно ли проверять аномальные задержки и резкую отправку пакетов позиции
   blink: true
 
   setback_type: GRIM

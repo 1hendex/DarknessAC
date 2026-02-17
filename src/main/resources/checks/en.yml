@@ -104,7 +104,7 @@ Aim:
   t: true
 
   # List of possible setback types:
-  # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS, SLOW,
+  # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS,
   # CANCEL_ATTACK, GRIM, FOOD, DAMAGE_REDUCE, NONE
   #
   # The setback_type setting allows combining multiple setbacks at once
@@ -557,7 +557,7 @@ NoSlow:
     # By default this is lower than other offs
     # Flags by 0.03-0.2 consistently with NoSlow on
     offset: 0.001
-    # Decay's when the player uses an item AND is slowed by it
+    # Decays when the player uses an item AND is slowed by it
     decay: 0.05
 
   # NoSlow B Module
@@ -720,7 +720,7 @@ Inventory:
     # At what deviation from player movement should we trigger a violation?
     # Measured in blocks from the possible movement
     offset: 0.040
-    # Fixes the desynchronization issue when jumping with an open container or block
+    # Fixes the desynchronization issue when jumping with an open container or block menu
     fix_jump_desync: true
 
   # Should we enable this module? (AutoPotion)
@@ -1167,7 +1167,7 @@ Timer:
 
     # Should we enable this module?
     enabled: true
-    # Minimum timer speed (Normal speed: 1200), but lag and other factors can make it higher (around 2100)
+    # Minimum timer speed (Normal speed: 1200), but lag and other factors can increase it (around 2100)
     min_speed: 2100
 
   # Should we enable this module?

@@ -38,7 +38,7 @@ client_settings:
   # Client Alert Settings
   alert:
 
-    # Should we send an Alert when a player joins specifying his Client Brand?
+    # Should we send an Alert when a player joins specifying their Client Brand?
     enabled: true
 
     # Removes the following regex from the brand
@@ -103,7 +103,7 @@ packet_settings:
   # Maximum number of skipped transactions before the player is kicked
   # Triggers on FreeCam, BackTrack, Blink
   transaction_skip: 400
-  # How much time players have before being kicked for a timeout? Default = 45 seconds
+  # How much time players have before being kicked due to timeout? Default = 45 seconds
   transaction_time: 45
   # Maximum allowed negative timer offset of the player before kicking (in milliseconds)
   # Triggers on Timer (0.1), Freeze
@@ -119,6 +119,12 @@ packet_settings:
   # Darkness sometimes cancels illegal packets, e.g., with Timer, after X cancelled packets per second
   # Should we just kick the player instead? This is needed because some packet limiters don’t account for packets cancelled by Darkness
   packet_spam_threshold: 100
+  # Darkness is able to enforce that a player set out of flying state cannot have more than X milliseconds of ping
+  # This is due to Darkness not currently checking flying players
+  max_ping_out_of_flying: 300
+  # Maximum ping when a firework boost is removed from the player.
+  # This prevents high latency players from being able to use 1 firework boost with an elytra forever.
+  max_ping_firework_boost: 1000
 
 # Punishment command settings // Not recommended for use — will be removed soon
 point_command:
@@ -184,12 +190,14 @@ discord:
 
   # Would you like to Sync Darkness to your Discord Server?
   enabled: false
+
   # Insert the Channel Webhook URL
   webhook_url: ""
   # Message title
   embed_title: "**:fire: NEW CHEATER DETECTED!**"
   # Color of the stripe on the left side of the message
   embed_color: "#ff0000"
+
   # Message content
   violation_content:
     - "%player%"
@@ -214,15 +222,16 @@ discord:
 
   # Would you like Darkness to send Discord Messages
   # When players get punished from the Punish Wave?
-  punishwawe: false
-  punishwawe_title: "**:fire: A WAVE OF NEW CHEATERS DETECTED!**"
+  punishwave: false
+  punishwave_title: "**:fire: A WAVE OF NEW CHEATERS DETECTED!**"
+
   # Message content
-  punishwawe_content:
+  punishwave_content:
     - ":shield: **Server**"
     - "%server_name%"
     - ""
     - ":busts_in_silhouette: **Players Punished**"
-    - "%players_punishwawe%"
+    - "%players_punishwave%"
     - ""
 
   # Title of the additional field in the embed
@@ -274,7 +283,7 @@ InformationHider:
   # Hides data about players/mobs to block cheat clients from getting extra info.
   # Regular players won't notice, but cheats will suffer.
   parts:
-    # Spoofs health — players and mobs always show fake health
+    # Spoofs health — players and mobs always show spoofed health
     # Useful against health bars in mods and cheats
     health:
       # Specify the value Darkness should spoof for players from 0 to 20.
@@ -296,7 +305,7 @@ InformationHider:
     ping: true
     # Hides the game mode. Cheats will always see the player in Creative.
     gamemode: true
-    # Sends a fake world seed to prevent cheats from locating ores and structures.
+    # Sends a spoofed world seed to prevent cheats from locating ores and structures.
     seed: true
     # Hides health and statistics data from scoreboards and the tab list.
     scoreboard: true
@@ -314,7 +323,7 @@ InformationHider:
     durability: true
     # Hides potion effects from others (prevents seeing Strength, Speed, etc.).
     potion: true
-    # Spams the cheat with fake effect packets, completely cluttering its PotionList with trash.
+    # Spams the cheat with spoofed effect packets, completely cluttering its PotionList with trash.
     end_effect: true
     # Shuffles inventory items while moving, breaking AutoTotem and InvWalk features in cheats.
     inventory: true
@@ -340,19 +349,33 @@ InformationHider:
     spectators:
       # Only hide spectators in these worlds. Leave empty to allow all worlds
       allowed_worlds:
-       - ""
+        - ""
       # Hide all spectators with darkness.spectator permission, regardless of activity.
       hide_spectators: true
 
-# Should the close elytra or player inventory upon a flag?
-# It is suggested to leave this option enabled since it can sometimes help prevent issues such as desync
-elytra_eject: true
-inventory_eject: true
+# Compatibility Settings
+compatibility:
 
-# Should the cinematic camera be taken into account?
-# It is highly recommended not to enable this option, as it will make aim checks less effective.
-# In a real combat scenario, none of the opponents will fight using a cinematic camera.
-account_cinematic: false
+  # Enable if you have a cross-platform project. This will exclude Bedrock players
+  # from checks to avoid false positives.
+  geyser: true
+
+  # Enable if you allow the ItemsScroller mod. This will prevent false
+  # positives during fast item movement.
+  itemsScroller: false
+
+  # Enable if you allow the TapeMouse mod. This will prevent flags
+  # on AFK farms where hits occur at the same timing.
+  tapeMouse: false
+
+  # Enable if you allow key macros. This will help avoid false
+  # positives when entering commands while walking.
+  keybind: false
+
+  # Should cinematic camera be taken into account?
+  # Highly recommended to keep this disabled as it makes aim checks less effective.
+  # In a real combat scenario, no player will fight using cinematic camera.
+  account_cinematic: false
 
 # Enable logging plugins who have injected into netty on join to debug compatibility issues
 debug_pipeline_on_join: false
@@ -386,16 +409,8 @@ command_name: darkness,dl
 
 # Should we disable the bypass permission?
 # If enabled, Darkness will check all players, including operators
-# Disable this for some perfomance gain
+# Disable this for some performance gain
 disable_bypass_permission: false
-
-# Darkness is able to enforce that a player set out of flying state cannot have more than X milliseconds of ping
-# This is due to Darkness not currently checking flying players
-max_ping_out_of_flying: 300
-
-# Maximum ping when a firework boost is removed from the player.
-# This prevents high latency players from being able to use 1 firework boost with an elytra forever.
-max_ping_firework_boost: 1000
 
 config:
   checks_updates: true
