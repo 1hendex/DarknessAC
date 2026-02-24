@@ -103,6 +103,12 @@ Aim:
   # Should we enable this module?
   t: true
 
+  # Should we enable this module?
+  u: true
+
+  # Should we enable this module?
+  v: true
+
   # List of possible setback types:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS,
   # CANCEL_ATTACK, GRIM, FOOD, DAMAGE_REDUCE, NONE
@@ -206,6 +212,17 @@ KillAura:
     # If set to false, the bot will always attack the player.
     # For the function to work, you need to set false in only_random_name to apply this value!
     copy_attack_type: true
+    # Should the bot smoothly fly to the player when spawning?
+    # The bot will spawn at a distance and quickly fly up behind the player's back.
+    # If false, the bot will instantly appear directly behind the back.
+    # This prevents certain AntiBot module bypasses.
+    spawn_glide: true
+    # Should the bot use realistic strafes?
+    # The bot will stop shaking chaotically and start moving smoothly,
+    # mimicking the momentum and movement logic of a real player.
+    # This makes the bot's path look natural, preventing smart
+    # AntiBot modules from bypassing it.
+    move_strafe: true
     # Should Darkness always copy the player's equipment? This fixes some bypasses.
     copy_inventory: true
     # Should the bot take damage from the player? If true, the bot loses HP when hit.
@@ -289,9 +306,6 @@ KillAura:
   # Should we enable this module?
   q: true
 
-  # Enable this check if you want to allow "TapeMouse"
-  tapeMouse: false
-
   setback_type: CANCEL_ATTACK
   setback_vl: 2
 
@@ -303,6 +317,7 @@ AutoAction:
 
     # Should we enable this module?
     enabled: true
+    # The maximum time in milliseconds between death and respawn required to trigger this check
     maxDelta: 850
     setback_type: NONE
     setback_vl: -1
@@ -358,7 +373,14 @@ AutoAction:
 
     # Should we enable this module?
     enabled: true
+    # The minimum delay in milliseconds between armor equip actions required to trigger this check
     maxDelta: 100
+
+  # Should we enable this module? ( AutoTotem )
+  p: true
+
+  # Should we enable this module? ( AutoTotem )
+  q: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -685,7 +707,7 @@ Velocity:
     multiple: 0.999
     # How large of an offset from the player's velocity should we create a violation for?
     # Measured in blocks from the possible velocity
-    offset: 0.075
+    offset: 0.001
     # How large of a violation in a tick before the player gets immediately setback?
     # -1 to disable
     setback_offset: 0.1
@@ -719,7 +741,7 @@ Inventory:
     enabled: true
     # At what deviation from player movement should we trigger a violation?
     # Measured in blocks from the possible movement
-    offset: 0.040
+    offset: 0.1
     # Fixes the desynchronization issue when jumping with an open container or block menu
     fix_jump_desync: true
 
@@ -732,18 +754,17 @@ Inventory:
   # Should we enable this module?
   e: true
 
-  # Inventory F Module
-  f:
-
-    # Should we enable this module?
-    enabled: true
-    delta: 37.2
+  # Should we enable this module?
+  f: true
 
   # Inventory G Module
   g:
 
     # Should we enable this module?
     enabled: true
+    # Enable this if you allow touch mode or cross-platform with Bedrock Edition.
+    # This helps prevent false flags during rapid item movements in the inventory.
+    sensor_mode: false
     setback_vl: 3
 
   # Inventory H Module (ChestStealer)
@@ -751,6 +772,7 @@ Inventory:
 
     # Should we enable this module?
     enabled: true
+    # The minimum average delay in milliseconds between interactions required to trigger this check
     delta: 65
 
   # Inventory I Module (InventoryCleaner)
@@ -778,16 +800,6 @@ Inventory:
 
   # Should we enable this module?
   n: true
-
-  # Inventory O Module
-  o:
-
-    # Should we enable this module?
-    enabled: true
-    delta: 39.2
-
-  # Enabled this check if you want to allow "ItemsScroller"
-  itemsScroller: false
 
   setback_type: DARKNESS, INVENTORY_CLOSE
   setback_vl: 1
@@ -908,13 +920,8 @@ Chat:
   # Should we enable this module?
   d: true
 
-  # Chat E Module
-  e:
-
-    # Should we enable this module?
-    enabled: true
-    # Enable this check if you want to allow "KeyBind"
-    bind_mods: false
+  # Should we enable this module?
+  e: true
 
   # Should we enable this module?
   f: true
@@ -1139,6 +1146,12 @@ Scaffold:
 
   # Should we enable this module?
   i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
 
   setback_type: DARKNESS
   setback_vl: 1

@@ -103,6 +103,12 @@ Aim:
   # Should we enable this module?
   t: true
 
+  # Should we enable this module?
+  u: true
+
+  # Should we enable this module?
+  v: true
+
   # Список можливих типів сетбеків:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS,
   # CANCEL_ATTACK, GRIM, FOOD, DAMAGE_REDUCE, NONE
@@ -206,6 +212,17 @@ KillAura:
     # Якщо встановлено в false, бот завжди буде атакувати гравця.
     # Щоб функція працювала, потрібно встановити false в only_random_name, щоб застосувати це значення!
     copy_attack_type: true
+    # Чи має бот плавно підлітати до гравця при появі?
+    # Бот заспавниться на відстані та швидко підлетить до спини гравця.
+    # Якщо false, бот буде миттєво з'являтися прямо за спиною.
+    # Це допоможе запобігти деяким обходам AntiBot модулів.
+    spawn_glide: true
+    # Чи повинен бот використовувати реалістичні стрейфи?
+    # Бот перестане хаотично трястися і почне рухатися плавно,
+    # імітуючи інерцію та логіку рухів справжнього гравця.
+    # Це робить траєкторію бота природною, що не дозволяє розумним
+    # AntiBot модулям його обходити.
+    move_strafe: true
     # Чи має Darkness завжди копіювати спорядження гравця? Це виправляє деякі обхідні маневри.
     copy_inventory: true
     # Чи повинен бот отримувати пошкодження від гравця? Якщо true, бот втрачає HP при ударі.
@@ -289,9 +306,6 @@ KillAura:
   # Should we enable this module?
   q: true
 
-  # Увімкніть цю перевірку, якщо хочете дозволити "TapeMouse"
-  tapeMouse: false
-
   setback_type: CANCEL_ATTACK
   setback_vl: 2
 
@@ -303,6 +317,7 @@ AutoAction:
 
     # Should we enable this module?
     enabled: true
+    # Максимальний час у мілісекундах між смертю та відродженням, необхідний для спрацювання цієї перевірки
     maxDelta: 850
     setback_type: NONE
     setback_vl: -1
@@ -358,7 +373,14 @@ AutoAction:
 
     # Should we enable this module?
     enabled: true
+    # Мінімальна затримка в мілісекундах між екіпіруванням броні, необхідна для спрацювання цієї перевірки
     maxDelta: 100
+
+  # Should we enable this module? ( AutoTotem )
+  p: true
+
+  # Should we enable this module? ( AutoTotem )
+  q: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -685,7 +707,7 @@ Velocity:
     multiple: 0.999
     # Для якого зсуву від руху гравця ми повинні створити порушення?
     # Вимірюється в блоках від можливого руху
-    offset: 0.075
+    offset: 0.001
     # Наскільки велике порушення в тіку, перш ніж гравець отримає негайний відкат?
     # -1 для вимкнення
     setback_offset: 0.1
@@ -719,7 +741,7 @@ Inventory:
     enabled: true
     # Для якого відхилення від руху гравця ми маємо створити порушення?
     # Вимірюється в блоках від можливого руху
-    offset: 0.040
+    offset: 0.1
     # Виправляє проблему десинхронізації при стрибку з відкритими контейнерами або блоками
     fix_jump_desync: true
 
@@ -732,18 +754,17 @@ Inventory:
   # Should we enable this module?
   e: true
 
-  # Inventory F Module
-  f:
-
-    # Should we enable this module?
-    enabled: true
-    delta: 37.2
+  # Should we enable this module?
+  f: true
 
   # Inventory G Module
   g:
 
     # Should we enable this module?
     enabled: true
+    # Увімкніть, якщо ви дозволяєте використання сенсорного режиму або гру з Bedrock.
+    # Це допоможе запобігти помилковим прапорцям при швидкому переміщенні предметів в інвентарі.
+    sensor_mode: false
     setback_vl: 3
 
   # Inventory H Module (ChestStealer)
@@ -751,6 +772,7 @@ Inventory:
 
     # Should we enable this module?
     enabled: true
+    # Мінімальне середнє значення затримки в мілісекундах між кліками, необхідне для спрацювання цієї перевірки
     delta: 65
 
   # Inventory I Module (InventoryCleaner)
@@ -778,16 +800,6 @@ Inventory:
 
   # Should we enable this module?
   n: true
-
-  # Inventory O Module
-  o:
-
-    # Should we enable this module?
-    enabled: true
-    delta: 39.2
-
-  # Увімкніть цю перевірку, якщо ви хочете дозволити "ItemsScroller"
-  itemsScroller: false
 
   setback_type: DARKNESS, INVENTORY_CLOSE
   setback_vl: 1
@@ -908,13 +920,8 @@ Chat:
   # Should we enable this module?
   d: true
 
-  # Chat E Module
-  e:
-
-    # Should we enable this module?
-    enabled: true
-    # Увімкніть цю перевірку, якщо хочете дозволити "KeyBind"
-    bind_mods: false
+  # Should we enable this module?
+  e: true
 
   # Should we enable this module?
   f: true
@@ -1139,6 +1146,12 @@ Scaffold:
 
   # Should we enable this module?
   i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
 
   setback_type: DARKNESS
   setback_vl: 1

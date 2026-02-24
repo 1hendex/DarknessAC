@@ -103,6 +103,12 @@ Aim:
   # Should we enable this module?
   t: true
 
+  # Should we enable this module?
+  u: true
+
+  # Should we enable this module?
+  v: true
+
   # Список возможных типов сетбека:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS,
   # CANCEL_ATTACK, GRIM, FOOD, DAMAGE_REDUCE, NONE
@@ -206,6 +212,17 @@ KillAura:
     # Если установлено в false, бот всегда будет атаковать игрока.
     # Чтобы функция работала, нужно установить false в only_random_name, чтобы применить это значение!
     copy_attack_type: true
+    # Должен ли бот плавно прилетать к игроку при появлении?
+    # Бот заспавнится вдалеке и быстро подлетит к спине игрока.
+    # Если false, бот будет мгновенно появляться прямо за спиной.
+    # Это предотвратит некоторые обходы AntiBot модулям
+    spawn_glide: true
+    # Должен ли бот использовать реалистичные стрейфы?
+    # Бот перестанет хаотично трястись и начнет двигаться плавно,
+    # имитируя инерцию и логику движений реального игрока.
+    # Это делает траекторию бота естественной, что не позволяет умным
+    # AntiBot модулям его обходить.
+    move_strafe: true
     # Должна ли Даркнесс всегда копировать снаряжение игрока? Это исправляет некоторые обходы.
     copy_inventory: true
     # Должен ли бот получать урон от игрока? Если true, бот теряет ХП при ударе.
@@ -300,6 +317,7 @@ AutoAction:
 
     # Should we enable this module?
     enabled: true
+    # Максимальное время в миллисекундах между смертью и возрождением, необходимое для срабатывания этой проверки
     maxDelta: 850
     setback_type: NONE
     setback_vl: -1
@@ -355,7 +373,14 @@ AutoAction:
 
     # Should we enable this module?
     enabled: true
+    # Минимальная задержка в миллисекундах между экипировкой брони, необходимая для срабатывания этой проверки
     maxDelta: 100
+
+  # Should we enable this module? ( AutoTotem )
+  p: true
+
+  # Should we enable this module? ( AutoTotem )
+  q: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -683,7 +708,7 @@ Velocity:
     multiple: 0.999
     # Для какого смещения от движения игрока мы должны создать нарушение?
     # Измеряется в блоках от возможного движения
-    offset: 0.075
+    offset: 0.001
     # Насколько велико нарушение в тике, прежде чем игрок получит немедленный откат?
     # -1 для отключения
     setback_offset: 0.1
@@ -717,7 +742,7 @@ Inventory:
     enabled: true
     # Для какого смещения от движения игрока мы должны создать нарушение?
     # Измеряется в блоках от возможного движения
-    offset: 0.040
+    offset: 0.1
     # Исправляет проблему рассинхронизации при прыжке с открытыми контейнерами блоков.
     fix_jump_desync: true
 
@@ -730,18 +755,17 @@ Inventory:
   # Should we enable this module?
   e: true
 
-  # Inventory F Module
-  f:
-
-    # Should we enable this module?
-    enabled: true
-    delta: 37.2
+  # Should we enable this module?
+  f: true
 
   # Inventory G Module
   g:
 
     # Should we enable this module?
     enabled: true
+    # Включите, если вы разрешаете использование сенсорного режима или игру с Bedrock.
+    # Это поможет предотвратить ложные флаги при быстром перемещении предметов в инвентаре.
+    sensor_mode: false
     setback_vl: 3
 
   # Inventory H Module (ChestStealer)
@@ -749,6 +773,7 @@ Inventory:
 
     # Should we enable this module?
     enabled: true
+    # Минимальное среднее значение задержки в миллисекундах между кликами, необходимое для срабатывания этой проверки
     delta: 65
 
   # Inventory I Module (InventoryCleaner)
@@ -776,13 +801,6 @@ Inventory:
 
   # Should we enable this module?
   n: true
-
-  # Inventory O Module
-  o:
-
-    # Should we enable this module?
-    enabled: true
-    delta: 39.2
 
   setback_type: DARKNESS, INVENTORY_CLOSE
   setback_vl: 1
@@ -1129,6 +1147,12 @@ Scaffold:
 
   # Should we enable this module?
   i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
 
   setback_type: DARKNESS
   setback_vl: 1
