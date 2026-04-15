@@ -58,8 +58,13 @@ Aim:
   # Should we enable this module?
   e: true
 
-  # Should we enable this module?
-  f: true
+  # Aim F Module
+  f:
+
+    # Should we enable this module?
+    enabled: true
+    # At what angle must a player snap to be flagged as cheating?
+    delta: 25.0
 
   # Should we enable this module?
   g: true

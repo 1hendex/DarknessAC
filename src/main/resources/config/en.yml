@@ -49,6 +49,7 @@ client_settings:
       - "^badlion$"
       - "^optifine$"
       - "^vanilla$"
+      - "^quilt$"
       - "^fabric$"
       - "^Feather Fabric$"
       - "(^lunarclient:v\\d+\\.\\d+\\.\\d+-\\d{4}$)|(^lunarclient:[a-z0-9]{7}/[\\w_/-]{3,32}$)"
@@ -59,6 +60,7 @@ client_settings:
     - "^1.12.2$"
     - "^mcp$"
     - "^ForgeOptiFine 1.16.5/forge/modified$"
+    - ".*/.*"
 
   # Minimum/Maximum client brand name length.
   symbol_limiter: 5:16
@@ -325,8 +327,20 @@ InformationHider:
     potion: true
     # Spams the cheat with spoofed effect packets, completely cluttering its PotionList with trash.
     end_effect: true
+    # Spawns invisible players around the user. Forces cheats to draw fake tracers and boxes at empty locations.
+    esp_tracer: true
     # Shuffles inventory items while moving, breaking AutoTotem and InvWalk features in cheats.
     inventory: true
+
+    # Spams the cheat client with fake packets of totem pops, shield usage, and ender pearl throws.
+    # This breaks cheat alerts for totems/shields and disrupts the TargetPearl functionality.
+    fake_action:
+      # Specify the chance for fake effects to trigger (from 1 to 100).
+      # Setting values >= 25.0 is not recommended as it may cause server lag.
+      # Set to -1 to completely disable.
+      totem_chance: 6.5
+      shield_chance: 6.0
+      pearl_chance: 4.0
 
     # This module creates fake staff members in the tab list to hide real moderators from cheats.
     # Don’t worry these bots exist only on the cheat client side, real players can’t see them.
