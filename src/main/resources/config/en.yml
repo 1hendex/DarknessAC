@@ -309,8 +309,22 @@ InformationHider:
     gamemode: true
     # Sends a spoofed world seed to prevent cheats from locating ores and structures.
     seed: true
+
     # Hides health and statistics data from scoreboards and the tab list.
-    scoreboard: true
+    # Replaces real HP values in the player list with fake ones.
+    scoreboard:
+      # Should health be masked in scoreboards and the tab list?
+      # If InformationHider.parts.health.value is set to -1, this module will be disabled.
+      enabled: true
+      # List of scoreboard objective name patterns to intercept.
+      # Darkness looks for these keywords in objective names to identify where HP is displayed.
+      patterns:
+        - "health"
+        - "hp"
+        - "hearts"
+        - "TAB-BelowName"
+        - "TAB-Sidebar"
+        - "TAB-TabList"
 
     # Masks equipment and character visual effects.
     # Hides enchantments on armor and items so cheats cannot see their type or level.

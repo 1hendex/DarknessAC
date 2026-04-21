@@ -143,6 +143,11 @@ checks_command:
   not-found-total: "&8» &cNo checks found."
   not-found-type: "&8» &cNone."
   separator: "&7, "
+  check_not_found: "%prefix% &cCheck &7'%check%' &cnot found!"
+  check_enabled: "%prefix% &fCheck &a%check% &fhas been &aenabled&f!"
+  check_disabled: "%prefix% &fCheck &c%check% &fhas been &cdisabled&f!"
+  check_already_enabled: "%prefix% &fCheck &a%check% &fis already &aenabled&f!"
+  check_already_disabled: "%prefix% &fCheck &c%check% &fis already &cdisabled&f!"
   check:
     enabled: "&a%checkName%%experimental%"
     disabled: "&c%checkName%%experimental%"
