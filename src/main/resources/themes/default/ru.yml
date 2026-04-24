@@ -140,7 +140,7 @@ lag_command:
 
 checks_command:
   space: ' '
-  type-space: ' '
+  type_space: ' '
   type: "&8» &7Категория проверки: &f%checkType%"
   not_found_total: "&8» &cПроверки не найдены."
   not_found_type: "&8» &cОтсутствуют."

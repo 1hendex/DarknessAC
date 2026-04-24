@@ -425,6 +425,7 @@ packet_logger:
     - WINDOW_CONFIRMATION
     - KEEP_ALIVE
     - PONG
+    - CLIENT_TICK_END
 
 # Назва сервера, яка буде відображатися в логах гравців та повідомленнях Discord
 server_name: Darkness Server

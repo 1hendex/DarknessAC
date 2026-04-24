@@ -217,6 +217,11 @@ KillAura:
     # If set to false, the bot will always attack the player.
     # For the function to work, you need to set false in only_random_name to apply this value!
     copy_attack_type: true
+    # Which player type to use for creating the bot?
+    # 1. offline - uses offline players who have joined the server
+    # 2. online - uses online players currently on the server: on 1.8-1.16 with real UUID, on 1.17+ with random UUID
+    # ONLINE mode is more realistic but can be bypassed on 1.17+ versions due to random UUID
+    copy_player_type: offline
     # Should the bot smoothly fly to the player when spawning?
     # The bot will spawn at a distance and quickly fly up behind the player's back.
     # If false, the bot will instantly appear directly behind the back.

@@ -426,6 +426,7 @@ packet_logger:
     - WINDOW_CONFIRMATION
     - KEEP_ALIVE
     - PONG
+    - CLIENT_TICK_END
 
 # The server name that will be shown in Player Logs and Discord Messages
 server_name: Darkness Server

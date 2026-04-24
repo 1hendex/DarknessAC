@@ -134,6 +134,11 @@ checks_command:
   not_found_total: "&8» &cПроверки не найдены."
   not_found_type: "&8» &cОтсутствуют."
   separator: "&7, "
+  check_not_found: "%prefix% &cЧек &7'%check%' &cне найден!"
+  check_enabled: "%prefix% &fЧек &a%check% &fбыл &aвключен&f!"
+  check_disabled: "%prefix% &fЧек &c%check% &fбыл &cвыключен&f!"
+  check_already_enabled: "%prefix% &fЧек &a%check% &fуже &aвключен&f!"
+  check_already_disabled: "%prefix% &fЧек &c%check% &fуже &cвыключен&f!"
   check:
     enabled: "&a%checkName%%experimental%"
     disabled: "&c%checkName%%experimental%"
