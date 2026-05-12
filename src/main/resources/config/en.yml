@@ -346,15 +346,15 @@ InformationHider:
     # Shuffles inventory items while moving, breaking AutoTotem and InvWalk features in cheats.
     inventory: true
 
-    # Spams the cheat client with fake packets of totem pops, shield usage, and ender pearl throws.
-    # This breaks cheat alerts for totems/shields and disrupts the TargetPearl functionality.
-    fake_action:
-      # Specify the chance for fake effects to trigger (from 1 to 100).
-      # Setting values >= 25.0 is not recommended as it may cause server lag.
-      # Set to -1 to completely disable.
+    # Spams the cheat with fake totem explosion packets.
+    # This breaks the totem pop notifications in cheats.
+    totem:
+      # Specify the chance of creating a fake totem for cheats from 1 to 100.
+      # Values >= 25.0 are not recommended as they increase server load and may cause lag.
+      # Set to -1 to disable completely.
       totem_chance: 6.5
-      shield_chance: 6.0
-      pearl_chance: 4.0
+      # Specify how many blocks below the player the fake totem bot will appear.
+      height: 15
 
     # This module creates fake staff members in the tab list to hide real moderators from cheats.
     # Don’t worry these bots exist only on the cheat client side, real players can’t see them.

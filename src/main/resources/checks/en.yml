@@ -542,6 +542,9 @@ Interpolation:
     # We account for Optifine by switching trig tables but dropping this to 0.001 will reduce FastMath
     # flagging the anticheat if this compensation doesn't work...
     offset: 0.023
+    # Maximum allowed offset for a single packet.
+    # If a player exceeds this value, they will be immediately disconnected from the server.
+    max_offset: 3.0
     # How large of a violation in a tick before the player gets immediately setback?
     # -1 to disable
     setback_offset: 0.23
@@ -552,6 +555,9 @@ Interpolation:
     # This is to stop the player from gathering too many violations and never being able to clear them all
     # Default advantage ceiling (x axis = seconds, y axis = 1/1000 block): https://www.desmos.com/calculator/4lovswdarj
     max_ceiling: 4
+    # Max tolerance for look interpolation while using fireworks.
+    # Bump this up to 0.10 if you're catching false flags during sharp turns with fireworks.
+    elytra_boost_look_offset: 0.05
 
   setback_type: NONE
   setback_vl: -1
@@ -966,6 +972,14 @@ Exploit:
   # The maximum allowed height a player can rise to when colliding with a boat
   # before Darkness considers it an attempt to use BoatFly
   allow_offset_boat_collision: 0.012
+  # Enable this if you want to patch exploits for CreativeFly aka DragonFly.
+  allow_flying_checks:
+    # Should Darkness validate movement speed limits while flying?
+    enabled: true
+    # What is the allowed offset before we flag it as a violation?
+    # Keep in mind that custom clients like Lunar can cause false positives,
+    # so tweak this value to fit your server's needs and player base.
+    offset: 0.05
 
   setback_type: NONE
   setback_vl: -1

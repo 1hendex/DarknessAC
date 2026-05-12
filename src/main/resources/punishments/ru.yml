@@ -14,6 +14,7 @@
 # %player% - имя игрока
 # [alert] - специальная команда для оповещения
 # [webhook] - специальная команда для оповещения через Discord webhook
+# [server] - специальная команда для логирования на backend сервер
 # [log] - специальная команда для записывания флагов игроков в YAML/MYSQL/SQLITE
 # [proxy] - специальная команда для оповещения на другие серверы, подключенные к вашему прокси (BungeeCord/Velocity)
 Punishments:
@@ -35,6 +36,7 @@ Punishments:
       # Выполняется, когда пользователь получает флаг 100, и после этого каждый 50-й флаг после 10
       - '1:1 [alert]'
       - '3:2 [webhook]'
+      - '3:2 [server]'
       - '1:2 [log]'
       - '3:1 [proxy]'
       - '2:2 darkness bot %player%'
@@ -48,6 +50,7 @@ Punishments:
     commands:
       - '1:1 [alert]'
       - '3:2 [webhook]'
+      - '3:2 [server]'
       - '1:2 [log]'
       - '3:1 [proxy]'
       - '2:2 darkness rotate %player%'
@@ -61,6 +64,7 @@ Punishments:
     commands:
       - '1:1 [alert]'
       - '1:2 [webhook]'
+      - '1:2 [server]'
       - '1:2 [log]'
       - '1:1 [proxy]'
       - '1:2 darkness bot %player%'
@@ -74,6 +78,7 @@ Punishments:
     commands:
       - '5:5 [alert]'
       - '5:5 [webhook]'
+      - '5:5 [server]'
       - '5:5 [log]'
       - '5:5 [proxy]'
       - '10:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
@@ -85,6 +90,7 @@ Punishments:
     commands:
       - '1:1 [alert]'
       - '1:1 [webhook]'
+      - '1:1 [server]'
       - '1:1 [log]'
       - '4:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
 
@@ -95,6 +101,7 @@ Punishments:
     commands:
       - '1:1 [alert]'
       - '1:1 [webhook]'
+      - '1:1 [server]'
       - '1:1 [proxy]'
       - '1:1 [log]'
       - '1:0 darkness rotate %player%'
@@ -107,6 +114,7 @@ Punishments:
     commands:
       - '1:1 [alert]'
       - '1:1 [webhook]'
+      - '1:1 [server]'
       - '1:1 [log]'
       - '4:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
       - '6:0 darkness ban %player% &cВы забанены за подозрение в использовании читов.'
@@ -118,6 +126,7 @@ Punishments:
     commands:
       - '5:5 [alert]'
       - '5:5 [webhook]'
+      - '5:5 [server]'
       - '5:5 [log]'
       - '2:2 darkness bot %player%'
       - '2:2 darkness rotate %player%'
@@ -131,6 +140,7 @@ Punishments:
     commands:
       - '1:1 [alert]'
       - '4:4 [webhook]'
+      - '4:4 [server]'
       - '1:1 [log]'
       - '1:1 [proxy]'
       - '1:2 darkness bot %player%'
@@ -148,6 +158,7 @@ Punishments:
     commands:
       - '1:2 [alert]'
       - '1:2 [webhook]'
+      - '1:2 [server]'
       - '1:2 [log]'
       - '1:2 [proxy]'
       - '1:2 darkness bot %player%'
@@ -160,6 +171,7 @@ Punishments:
     commands:
       - '40:20 [alert]'
       - '40:20 [webhook]'
+      - '40:20 [server]'
       - '20:20 [log]'
       - '40:20 [proxy]'
       - '60:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
@@ -173,6 +185,7 @@ Punishments:
       - '2:3 [proxy]'
       - '1:1 [log]'
       - '2:3 [webhook]'
+      - '2:3 [server]'
       - '4:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
       - '6:0 darkness ban %player% &cВы забанены за подозрение в использовании читов.'
 
@@ -183,6 +196,7 @@ Punishments:
     commands:
       - '1:5 [alert]'
       - '2:5 [webhook]'
+      - '2:5 [server]'
       - '2:5 [log]'
       - '1:1 [proxy]'
       - '20:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
@@ -195,6 +209,7 @@ Punishments:
     commands:
       - '6:4 [alert]'
       - '6:4 [webhook]'
+      - '6:4 [server]'
       - '6:4 [log]'
       - '6:4 [proxy]'
       - '35:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
@@ -206,6 +221,7 @@ Punishments:
     commands:
       - '1:1 [alert]'
       - '4:2 [webhook]'
+      - '4:2 [server]'
       - '2:2 [log]'
       - '1:1 [proxy]'
       - '2:4 darkness bot %player%'
@@ -218,6 +234,7 @@ Punishments:
     commands:
       - '5:5 [alert]'
       - '10:10 [webhook]'
+      - '10:10 [server]'
       - '10:10 [log]'
       - '5:5 [proxy]'
       - '4:3 darkness shuffle %player% many'
@@ -230,6 +247,7 @@ Punishments:
     commands:
       - '3:3 [alert]'
       - '4:4 [webhook]'
+      - '4:4 [server]'
       - '4:4 [log]'
       - '3:3 [proxy]'
       - '6:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
@@ -241,6 +259,7 @@ Punishments:
     commands:
       - '1:1 [alert]'
       - '1:1 [webhook]'
+      - '1:1 [server]'
       - '1:1 [log]'
       - '1:1 [proxy]'
       - '5:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
@@ -268,6 +287,7 @@ Punishments:
       - '2:3 [proxy]'
       - '1:1 [log]'
       - '1:2 [webhook]'
+      - '1:2 [server]'
       - '1:0 darkness ban %player% &cВы забанены за подозрение в использовании читов.'
 
   Crash:
@@ -278,6 +298,7 @@ Punishments:
     commands:
       - '1:1 [alert]'
       - '3:3 [webhook]'
+      - '3:3 [server]'
       - '3:3 [proxy]'
       - '3:3 [log]'
       - '3:0 darkness crash %player% position'
