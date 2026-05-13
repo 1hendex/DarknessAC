@@ -128,6 +128,27 @@ packet_settings:
   # This prevents high latency players from being able to use 1 firework boost with an elytra forever.
   max_ping_firework_boost: 1000
 
+## Connection Settings
+connection_settings:
+
+  # If true, the server will hold or cancel packets if the player starts lagging.
+  force_hold_server_packets: true
+
+  # Transaction response delay after which a player is considered to be lagging.
+  enforce_latency_ms: 500
+
+  # How many seconds can pass without movement packets before Darkness issues a flag?
+  enforce_flying_second: 4
+
+  # Should hits be cancelled if the player is experiencing severe network lag?
+  cancel_hits: true
+
+  # Enable this to block player movement processing if their latency exceeds the limits.
+  block_movement: true
+
+  # If true, the server will stop sending world data (entity movement, blocks) to the lagging player.
+  cancel_outbound_packets: true
+
 # Punishment command settings // Not recommended for use — will be removed soon
 point_command:
 
@@ -345,6 +366,9 @@ InformationHider:
     esp_tracer: true
     # Shuffles inventory items while moving, breaking AutoTotem and InvWalk features in cheats.
     inventory: true
+    # Momentarily hides all items when opening a container.
+    # Breaks ChestStealer logic by tricking the cheat into thinking it's closing an empty chest.
+    chest_loot: true
 
     # Spams the cheat with fake totem explosion packets.
     # This breaks the totem pop notifications in cheats.
