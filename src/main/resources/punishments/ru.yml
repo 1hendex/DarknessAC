@@ -117,7 +117,7 @@ Punishments:
       - '1:1 [server]'
       - '1:1 [log]'
       - '4:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
-      - '6:0 darkness ban %player% &cВы забанены за подозрение в использовании читов.'
+      - '8:0 darkness ban %player% &cВы забанены за подозрение в использовании читов.'
 
   AutoClicker:
     remove_violations_after: 300
@@ -212,7 +212,7 @@ Punishments:
       - '6:4 [server]'
       - '6:4 [log]'
       - '6:4 [proxy]'
-      - '35:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
+      - '20:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
 
   Velocity:
     remove_violations_after: 250
@@ -220,12 +220,12 @@ Punishments:
       - 'Velocity' # Velocity A x B
     commands:
       - '1:1 [alert]'
-      - '4:2 [webhook]'
-      - '4:2 [server]'
+      - '2:2 [webhook]'
+      - '2:2 [server]'
       - '2:2 [log]'
       - '1:1 [proxy]'
-      - '2:4 darkness bot %player%'
-      - '10:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
+      - '2:3 darkness bot %player%'
+      - '7:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
 
   NoSlowDown:
     remove_violations_after: 250
@@ -245,12 +245,12 @@ Punishments:
     checks:
       - 'Scaffold'
     commands:
-      - '3:3 [alert]'
-      - '4:4 [webhook]'
-      - '4:4 [server]'
-      - '4:4 [log]'
-      - '3:3 [proxy]'
-      - '6:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
+      - '1:2 [alert]'
+      - '2:2 [webhook]'
+      - '2:2 [server]'
+      - '2:2 [log]'
+      - '2:2 [proxy]'
+      - '4:0 darkness punish %player% &cВы кикнуты за подозрение в использовании читов.'
 
   Baritone:
     remove_violations_after: 500
@@ -267,25 +267,22 @@ Punishments:
   AutoBan:
     remove_violations_after: 300
     checks:
-      - 'Aim (H)'
-      - 'Aim (S)'
-      - 'Analysis (C)'
-      - 'Analysis (J)'
-      - 'Analysis (L)'
-      - 'Analysis (M)'
-      - 'Analysis (N)'
-      - 'Analysis (O)'
       - 'KillAura (E)'
       - 'KillAura (M)'
       - 'KillAura (Q)'
+      - 'KillAura (R)'
+      - 'BadPackets (A)'
       - 'BadPackets (D)'
+      - 'BadPackets (Y)'
       - 'Sprint (D)'
+      - 'Elytra (C)'
+      - 'AutoClicker (F)'
+      - 'Inventory (A)'
       - 'Inventory (J)'
-      - 'Inventory (F)'
     commands:
-      - '1:1 [alert]'
-      - '2:3 [proxy]'
-      - '1:1 [log]'
+      - '1:2 [alert]'
+      - '1:2 [proxy]'
+      - '1:2 [log]'
       - '1:2 [webhook]'
       - '1:2 [server]'
       - '1:0 darkness ban %player% &cВы забанены за подозрение в использовании читов.'
@@ -297,12 +294,12 @@ Punishments:
       - 'Exploit' # ExploitA (Log4j), ExploitB (TabComplete), ExploitC (Book Crasher)
     commands:
       - '1:1 [alert]'
-      - '3:3 [webhook]'
-      - '3:3 [server]'
-      - '3:3 [proxy]'
-      - '3:3 [log]'
-      - '3:0 darkness crash %player% position'
-      - '3:0 darkness ban %player% &cВы забанены за подозрение в использовании читов.'
+      - '1:3 [webhook]'
+      - '1:3 [server]'
+      - '1:3 [proxy]'
+      - '1:3 [log]'
+      - '1:0 darkness crash %player% position'
+      - '1:0 darkness kick %player% &cВы кикнуты за подозрение в использовании читов.'
 
 punishments:
   checks_updates: true

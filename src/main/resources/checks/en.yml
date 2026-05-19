@@ -114,6 +114,9 @@ Aim:
   # Should we enable this module?
   v: true
 
+  # Should we enable this module?
+  w: true
+
   # List of possible setback types:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS,
   # CANCEL_ATTACK, GRIM, FOOD, DAMAGE_REDUCE, NONE
@@ -315,6 +318,9 @@ KillAura:
 
   # Should we enable this module?
   q: true
+
+  # Should we enable this module?
+  r: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 2
@@ -522,6 +528,9 @@ Protocol:
 
   # Should we enable this module?
   q: true
+
+  # Should we enable this module?
+  r: true
 
   setback_type: NONE
   setback_vl: -1
@@ -814,7 +823,7 @@ Inventory:
   # Should we enable this module?
   m: true
 
-  # Should we enable this module?
+  # Should we enable this module? (FastClose)
   n: true
 
   setback_type: DARKNESS, INVENTORY_CLOSE
@@ -865,8 +874,13 @@ Crash:
   # Should we enable this module?
   j: true
 
-  # Should we enable this module?
-  k: true
+  # Crash K Module
+  k:
+
+    # Should we enable this module?
+    enabled: true
+    # Maximum absolute value of the head rotation angle in one direction
+    maxYaw: 100000
 
   # Should we enable this module?
   l: true
@@ -876,6 +890,18 @@ Crash:
 
   # Should we enable this module?
   n: true
+
+  # Should we enable this module?
+  o: true
+
+  # Should we enable this module?
+  p: true
+
+  # Should we enable this module?
+  r: true
+
+  # Should we enable this module?
+  s: true
 
   setback_type: NONE
   setback_vl: -1
@@ -889,7 +915,7 @@ Chat:
     # Should we enable this module?
     enabled: true
     # Maximum speed message sending by the player
-    maxDelta: 115
+    maxDelay: 115
 
   # Chat B Module
   b:
@@ -959,6 +985,12 @@ Exploit:
 
   # Should we enable this module?
   c: true # Book Crasher
+
+  # Should we enable this module?
+  d: true # Packet Data Crasher
+
+  # Should we enable this module?
+  e: true # WorldEdit Crasher
 
   # You can gain high speeds when sprint jumping with an elytra, this prevents the exploit when set to false
   # Mojang screwed up netcode by making elytra start client sided and elytra end server sided
@@ -1138,6 +1170,9 @@ Interact:
   # Should we enable this module?
   m: true
 
+  # Should we enable this module? (NoInteract)
+  n: true
+
   setback_type: DARKNESS
   setback_vl: 3
 
@@ -1176,6 +1211,9 @@ Scaffold:
 
   # Should we enable this module?
   k: true
+
+  # Should we enable this module?
+  l: true
 
   setback_type: DARKNESS
   setback_vl: 1

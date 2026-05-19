@@ -373,11 +373,22 @@ InformationHider:
     # Spams the cheat with fake totem explosion packets.
     # This breaks the totem pop notifications in cheats.
     totem:
+
+      # Should fake bots be created to break TotemPopCounter?
+      enabled: true
+      # Module operation mode:
+      # 1. always - constant random spam with fake totems during combat.
+      # 2. on_totem - spoof triggers ONLY when a real player nearby pops a totem.
+      mode: on_totem
       # Specify the chance of creating a fake totem for cheats from 1 to 100.
-      # Values >= 25.0 are not recommended as they increase server load and may cause lag.
-      # Set to -1 to disable completely.
+      # It is not recommended to set values >= 25.0, as this will create extra load and may cause lag.
+      # Only works if mode is set to ALWAYS.
       totem_chance: 6.5
-      # Specify how many blocks below the player the fake totem bot will appear.
+      # The number of fake bots that will simultaneously activate a totem underground.
+      # The higher the value, the more it will spam the cheater's screen and break the detection logic in the software.
+      # Only works if mode is set to ON_TOTEM.
+      bots: 5
+      # Specify how many blocks below the player the fake bot with the totem will appear.
       height: 15
 
     # This module creates fake staff members in the tab list to hide real moderators from cheats.
@@ -449,6 +460,7 @@ packet_logger:
   ignore:
     - WINDOW_CONFIRMATION
     - KEEP_ALIVE
+    - PLAYER_FLYING
     - PONG
     - CLIENT_TICK_END
 
