@@ -187,6 +187,7 @@ help:
   - '&8» &c/darkness ban <player> <reason> &f- &7Ban player from server.'
   - '&8» &c/darkness addpoint <player> &f- &7Give ban point to player.'
   - '&8» &c/darkness resetpoints <player> &f- &7Reset all ban points for player.'
+  - '&8» &c/darkness topvl &f- &7View a list of players with the most violations.'
   - '&8» &c/darkness checks &f- &7View all active Darkness checks.'
   - '&8» &c/darkness shuffle <player> <method> &f- &7Shuffle player slots.'
   - '&8» &c/darkness crash <player> <method> &f- &7Crash player client.'

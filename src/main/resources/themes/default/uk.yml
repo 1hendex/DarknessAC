@@ -187,6 +187,7 @@ help:
   - '&8» &c/darkness ban <player> <reason> &f- &7Забанити гравця на сервері.'
   - '&8» &c/darkness addpoint <player> &f- &7Видати бан-поінт гравцю.'
   - '&8» &c/darkness resetpoints <player> &f- &7Скинути всі бан-поінти гравця.'
+  - '&8» &c/darkness topvl &f- &7Переглянути список гравців із найбільшою кількістю порушень.'
   - '&8» &c/darkness checks &f- &7Переглянути всі активні перевірки Darkness.'
   - '&8» &c/darkness shuffle <player> <method> &f- &7Перемішати слоти гравця.'
   - '&8» &c/darkness crash <player> <method> &f- &7Крашнути клієнт гравця.'
