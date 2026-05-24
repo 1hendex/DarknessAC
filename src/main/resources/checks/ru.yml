@@ -903,6 +903,9 @@ Crash:
   # Should we enable this module?
   s: true
 
+  # Should we enable this module?
+  t: true
+
   setback_type: NONE
   setback_vl: -1
 

@@ -96,19 +96,30 @@ alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7провалил &f%ch
 alert_hover_enabled: false
 alert_hover_command: "/darkness spectate %player%"
 alert_hover:
-- '&7Описание:&r'
-- '&c%description%'
-- ' '
-- '&7Информация:&r'
-- '&c%information%'
-- ' '
-- '&7Версия: &c&r%version%'
-- ' '
-- '&7Ping: &c&r%ping%'
-- ' '
-- '&7TPS: &c&r%tps%'
-- ' '
-- '&cНажмите, чтобы начать слежку'
+  - '&7Описание:&r'
+  - '&c%description%'
+  - ' '
+  - '&7Информация:&r'
+  - '&c%information%'
+  - ' '
+  - '&7Версия: &c&r%version%'
+  - ' '
+  - '&7Ping: &c&r%ping%'
+  - ' '
+  - '&7TPS: &c&r%tps%'
+  - ' '
+  - '&cНажмите, чтобы начать слежку'
+
+topvl_command:
+  - ' '
+  - '%prefix%'
+  - ' '
+  - '&8» &7Топ нарушителей:'
+  - ' '
+  - '&7%violators%'
+  - ' '
+topvl_format: "&8- &7%player_name% &7(&c%vl% VL&7)"
+topvl_hover: "&cНажмите, чтобы следить за %player_name%"
 
 profile_command:
   - ' '

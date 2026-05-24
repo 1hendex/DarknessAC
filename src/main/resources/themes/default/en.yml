@@ -94,19 +94,30 @@ alerts_format_proxy: "%prefix% &f[&cPROXY&f] &f%player% &7failed &f%check_name%%
 alert_hover_enabled: true
 alert_hover_command: "/darkness spectate %player%"
 alert_hover:
-    - '&7Description:&r'
-    - '&c%description%'
-    - ' '
-    - '&7Information:&r'
-    - '&c%information%'
-    - ' '
-    - '&7Version: &c&r%version%'
-    - ' '
-    - '&7Ping: &c&r%ping%'
-    - ' '
-    - '&7TPS: &c&r%tps%'
-    - ' '
-    - '&cClick to start spectating'
+  - '&7Description:&r'
+  - '&c%description%'
+  - ' '
+  - '&7Information:&r'
+  - '&c%information%'
+  - ' '
+  - '&7Version: &c&r%version%'
+  - ' '
+  - '&7Ping: &c&r%ping%'
+  - ' '
+  - '&7TPS: &c&r%tps%'
+  - ' '
+  - '&cClick to start spectating'
+
+topvl_command:
+  - ' '
+  - '%prefix%'
+  - ' '
+  - '&8» &7Top Violators:'
+  - ' '
+  - '&7%violators%'
+  - ' '
+topvl_format: "&8- &7%player_name% &7(&c%vl% VL&7)"
+topvl_hover: "&cClick to spectate %player_name%"
 
 profile_command:
   - ' '
@@ -138,10 +149,10 @@ lag_command:
 
 checks_command:
   space: ' '
-  type-space: ' '
+  type_space: ' '
   type: "&8» &7Check Category: &f%checkType%"
-  not-found-total: "&8» &cNo checks found."
-  not-found-type: "&8» &cNone."
+  not_found_total: "&8» &cNo checks found."
+  not_found_type: "&8» &cNone."
   separator: "&7, "
   check_not_found: "%prefix% &cCheck &7'%check%' &cnot found!"
   check_enabled: "%prefix% &fCheck &a%check% &fhas been &aenabled&f!"
