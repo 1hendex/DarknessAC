@@ -148,7 +148,7 @@ connection_settings:
   block_movement: true
 
   # Если true, сервер перестанет отправлять данные о мире (движение других сущностей, блоки) лагающему игроку.
-  cancel_outbound_packets: true
+  cancel_outbound_packets: false
 
 # Настройки команд наказания // Не рекомендуется к использованию - скоро будет удалено
 point_command:
@@ -477,7 +477,20 @@ command_name: darkness,dl
 # Отключите это для некоторого прироста производительности
 disable_bypass_permission: false
 
+proxy:
+  # Включите, если ваш сервер находится в РФ и не может подключиться к системе лицензирования.
+  enabled: false
+
+  # Настройки прокси.
+  # Типы: http, socks4, socks5
+  protocol:
+    type: socks5
+    host: ""
+    port: 0
+    username: ""
+    password: ""
+
 config:
   checks_updates: true
   lang: ru
-  version: 1
+  version: 2

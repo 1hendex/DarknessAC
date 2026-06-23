@@ -384,19 +384,11 @@ AutoAction:
   # Should we enable this module? ( AutoRespawn )
   n: true
 
-  # AutoAction O Module ( AutoArmor )
-  o:
-
-    # Should we enable this module?
-    enabled: true
-    # Мінімальна затримка в мілісекундах між екіпіруванням броні, необхідна для спрацювання цієї перевірки
-    maxDelta: 100
+  # Should we enable this module? ( AutoTotem )
+  o: true
 
   # Should we enable this module? ( AutoTotem )
   p: true
-
-  # Should we enable this module? ( AutoTotem )
-  q: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -798,7 +790,7 @@ Inventory:
     # Should we enable this module?
     enabled: true
     # Мінімальне середнє значення затримки в мілісекундах між кліками, необхідне для спрацювання цієї перевірки
-    delta: 65
+    delta: 40
 
   # Inventory I Module (InventoryCleaner)
   i:
@@ -903,8 +895,28 @@ Crash:
   # Should we enable this module?
   s: true
 
-  # Should we enable this module?
-  t: true
+  # Crash T Module
+  t:
+
+    # Should we enable this module?
+    enabled: true
+    characters:
+      - "{"
+      - "}"
+      - "@"
+      - "="
+      - "nbt"
+    starts:
+      - "/to "
+      - "//to"
+      - "/calc "
+      - "//calc"
+    contains:
+      - "targetoffset"
+      - "for("
+      - "^(."
+      - "*."
+
 
   setback_type: NONE
   setback_vl: -1
@@ -1299,4 +1311,4 @@ Elytra:
 checks:
   checks_updates: true
   lang: uk
-  version: 1
+  version: 2

@@ -147,7 +147,7 @@ connection_settings:
   block_movement: true
 
   # If true, the server will stop sending world data (entity movement, blocks) to the lagging player.
-  cancel_outbound_packets: true
+  cancel_outbound_packets: false
 
 # Punishment command settings // Not recommended for use — will be removed soon
 point_command:
@@ -477,7 +477,20 @@ command_name: darkness,dl
 # Disable this for some performance gain
 disable_bypass_permission: false
 
+proxy:
+  # Enable if your server is located in the Russia and cannot connect to the licensing system.
+  enabled: false
+
+  # Proxy settings.
+  # Types: http, socks4, socks5
+  protocol:
+    type: socks5
+    host: ""
+    port: 0
+    username: ""
+    password: ""
+
 config:
   checks_updates: true
   lang: en
-  version: 1
+  version: 2
