@@ -304,4 +304,4 @@ Punishments:
 punishments:
   checks_updates: true
   lang: ru
-  version: 1
+  version: 3
