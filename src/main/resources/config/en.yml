@@ -110,6 +110,10 @@ packet_settings:
   # Maximum allowed negative timer offset of the player before kicking (in milliseconds)
   # Triggers on Timer (0.1), Freeze
   negative_timer: 5000
+  # Kicks for sending packets with an impossible position
+  invalid_packet_position: true
+  # Kicks for sending invalid view angles that create an identical movement pattern
+  invalid_packet_rotation: true
   # This setting applies only to clients 1.17–1.20.5 on 1.8 servers
   cancel_duplicate_packet: true
   # Should rotation be ignored in duplicate packets?
@@ -363,7 +367,15 @@ InformationHider:
     # Spams the cheat with spoofed effect packets, completely cluttering its PotionList with trash.
     end_effect: true
     # Spawns invisible players around the user. Forces cheats to draw fake tracers and boxes at empty locations.
-    esp_tracer: true
+    esp_tracer:
+
+      # Should fake invisible bots be created around the player?
+      enabled: true
+      # Should fake bots be spawned in the tab list?
+      # If false, bots will only be visible in the world but won't appear in the player list.
+      # Legitimate players won't notice the bots at all, while cheats will still see ESP lines.
+      spawn_tab: true
+
     # Shuffles inventory items while moving, breaking AutoTotem and InvWalk features in cheats.
     inventory: true
     # Momentarily hides all items when opening a container.
@@ -376,6 +388,10 @@ InformationHider:
 
       # Should fake bots be created to break TotemPopCounter?
       enabled: true
+      # Should fake bots be spawned in the tab list?
+      # If false, bots will appear only in the world underground, not interfering with legitimate players.
+      # Cheats will see totem explosions, but the bots won't clutter the tab list.
+      spawn_tab: true
       # Module operation mode:
       # 1. always - constant random spam with fake totems during combat.
       # 2. on_totem - spoof triggers ONLY when a real player nearby pops a totem.
@@ -493,4 +509,4 @@ proxy:
 config:
   checks_updates: true
   lang: en
-  version: 2
+  version: 1

@@ -191,6 +191,9 @@ Analysis:
   # Should we enable this module?
   o: true
 
+  # Should we enable this module?
+  p: true
+
   setback_type: CANCEL_ATTACK
   setback_vl: 2
 
@@ -381,6 +384,18 @@ AutoAction:
   # Should we enable this module? ( AutoBlock )
   l: true
 
+  # AutoAction M Module ( AutoBow )
+  m:
+
+    # Should we enable this module?
+    enabled: true
+    # Tolerance in ticks around the full-charge threshold to count a release as "exact"
+    exact_window: 0.5
+    # How many perfect-timing releases in a row are allowed before it flags
+    max_exact_hits: 3
+    setback_type: NONE
+    setback_vl: -1
+
   # Should we enable this module? ( AutoRespawn )
   n: true
 
@@ -389,6 +404,16 @@ AutoAction:
 
   # Should we enable this module? ( AutoTotem )
   p: true
+
+  # AutoAction Q Module ( AutoTool )
+  q:
+
+    # Should we enable this module?
+    enabled: true
+    # Maximum delay in milliseconds between paired slot switches.
+    max_switch_delay: 75
+    # How many rapid returns between two slots are allowed before flagging.
+    max_rapid_returns: 6
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -545,7 +570,7 @@ Interpolation:
     offset: 0.023
     # Maximum allowed offset for a single packet.
     # If a player exceeds this value, they will be immediately disconnected from the server.
-    max_offset: 3.0
+    max_offset: 10.0
     # How large of a violation in a tick before the player gets immediately setback?
     # -1 to disable
     setback_offset: 0.23
@@ -917,6 +942,9 @@ Crash:
       - "^(."
       - "*."
 
+  # Should we enable this module?
+  u: true
+
   setback_type: NONE
   setback_vl: -1
 
@@ -1187,6 +1215,9 @@ Interact:
   # Should we enable this module? (NoInteract)
   n: true
 
+  # Should we enable this module? (MissingEntityPacket)
+  o: true
+
   setback_type: DARKNESS
   setback_vl: 3
 
@@ -1310,4 +1341,4 @@ Elytra:
 checks:
   checks_updates: true
   lang: en
-  version: 2
+  version: 1

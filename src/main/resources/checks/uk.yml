@@ -191,6 +191,9 @@ Analysis:
   # Should we enable this module?
   o: true
 
+  # Should we enable this module?
+  p: true
+
   setback_type: CANCEL_ATTACK
   setback_vl: 2
 
@@ -381,6 +384,18 @@ AutoAction:
   # Should we enable this module? ( AutoBlock )
   l: true
 
+  # AutoAction M Module ( AutoBow )
+  m:
+
+    # Should we enable this module?
+    enabled: true
+    # Допуск у тиках навколо порогу повного заряду, щоб зарахувати відпускання як "точне"
+    exact_window: 0.5
+    # Скільки підряд в ідеальний таймінг допускається, перш ніж спрацює флаг
+    max_exact_hits: 3
+    setback_type: NONE
+    setback_vl: -1
+
   # Should we enable this module? ( AutoRespawn )
   n: true
 
@@ -389,6 +404,16 @@ AutoAction:
 
   # Should we enable this module? ( AutoTotem )
   p: true
+
+  # AutoAction Q Module ( AutoTool )
+  q:
+
+    # Should we enable this module?
+    enabled: true
+    # Максимальна затримка в мілісекундах між парними перемиканнями слотів.
+    max_switch_delay: 75
+    # Скільки швидких повернень між двома слотами дозволено до флагу.
+    max_rapid_returns: 6
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -545,7 +570,7 @@ Interpolation:
     offset: 0.023
     # Максимально допустиме зміщення для одного пакета.
     # Якщо гравець перевищить це значення, його буде негайно кікнуто з сервера.
-    max_offset: 3.0
+    max_offset: 10.0
     # Наскільки велике порушення в тіку, перш ніж гравець отримає негайний відкат?
     # -1 для відключення
     setback_offset: 0.23
@@ -917,6 +942,8 @@ Crash:
       - "^(."
       - "*."
 
+  # Should we enable this module?
+  u: true
 
   setback_type: NONE
   setback_vl: -1
@@ -1188,6 +1215,9 @@ Interact:
   # Should we enable this module? (NoInteract)
   n: true
 
+  # Should we enable this module? (MissingEntityPacket)
+  o: true
+
   setback_type: DARKNESS
   setback_vl: 3
 
@@ -1311,4 +1341,4 @@ Elytra:
 checks:
   checks_updates: true
   lang: uk
-  version: 2
+  version: 1
