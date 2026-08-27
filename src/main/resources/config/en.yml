@@ -52,7 +52,7 @@ client_settings:
       - "^quilt$"
       - "^fabric$"
       - "^Feather Fabric$"
-      - "(^lunarclient:v\\d+\\.\\d+\\.\\d+-\\d{4}$)|(^lunarclient:[a-z0-9]{7}/[\\w_/-]{3,32}$)"
+      - "(^lunarclient:v\\d+\\.\\d+\\.\\d+-\\d{4}(,fabric)?$)|(^lunarclient:[a-z0-9]{7}/[\\w_/-]{3,32}$)"
       - "^labymod$"
 
   # Client brands containing the following names will be blocked from joining the server
@@ -94,7 +94,7 @@ client_settings:
     - "WDL|CONTROL"
     - "Bspkrs Client"
 
-  # Darkness will blacklist specific Forge versions that include built-in Reach hacks (Forge 1.18.2 — 1.19.3).
+  # Darkness will blacklist specific Forge versions that include built-in Reach hacks (Forge 1.18.2 - 1.19.3).
   # Setting this to false will allow these clients to connect to the server.
   # Use at your own risk.
   disconnect_blacklisted_forge_versions: true
@@ -153,7 +153,7 @@ connection_settings:
   # If true, the server will stop sending world data (entity movement, blocks) to the lagging player.
   cancel_outbound_packets: false
 
-# Punishment command settings // Not recommended for use — will be removed soon
+# Punishment command settings // Not recommended for use - will be removed soon
 point_command:
 
   # Commands that will be executed under various conditions (e.g., violations)
@@ -310,7 +310,7 @@ InformationHider:
   # Hides data about players/mobs to block cheat clients from getting extra info.
   # Regular players won't notice, but cheats will suffer.
   parts:
-    # Spoofs health — players and mobs always show spoofed health
+    # Spoofs health - players and mobs always show spoofed health
     # Useful against health bars in mods and cheats
     health:
       # Specify the value Darkness should spoof for players from 0 to 20.
@@ -375,6 +375,72 @@ InformationHider:
       # If false, bots will only be visible in the world but won't appear in the player list.
       # Legitimate players won't notice the bots at all, while cheats will still see ESP lines.
       spawn_tab: true
+
+    # Conceals players behind walls and blocks on the packet level.
+    # Breaks ESP, Tracers, and Wallhack functionality in cheat clients.
+    #
+    # PERFORMANCE:
+    # - In enclosed spaces (caves, arenas), this module REDUCES network and server load
+    #   because it stops sending movement packets for hidden players.
+    # - With a HIGH concentration of players in one area, block visibility checks
+    #   can cause increased CPU load.
+    esp:
+
+      # Should players be hidden behind obstacles?
+      enabled: true
+      # Maximum distance (in blocks) at which player visibility is checked.
+      # Lower values reduce server load.
+      max_distance: 48.0
+      # Horizontal field of view (in degrees) used to decide whether a player is on screen.
+      # Increase this for ultrawide monitors; 180 disables sideways FOV misses.
+      max_fov: 165.0
+      # Safe radius (in blocks) around the player where everyone is always visible.
+      # Helps avoid rendering delay when a player suddenly peeks around a corner.
+      proximity_distance: 3.0
+      # Delay before hiding a player behind a wall (in ticks).
+      # Prevents model flickering around corners and smoothes out ping latency.
+      hide_delay_ticks: 5
+      # How often to recalculate player visibility (in ticks).
+      # Lower values decrease performance, higher values may cause
+      # players to remain hidden for too long and suddenly pop up.
+      interval_ticks: 2
+      # Should sound effects from players hidden behind walls be concealed?
+      hide_sounds: false
+      # Should glowing outlines be stripped from players behind walls?
+      hide_glowing: false
+      # Should players be hidden while the viewer has the blindness effect?
+      hide_players_when_blind: true
+      # Calculate line of sight for 3rd person camera perspectives (F5)?
+      # Prevents players from disappearing when peeking around corners.
+      calculate_third_person_modes: true
+      # By default, vanilla nametags are visible through walls unless sneaking.
+      # Setting this to false will hide all players behind walls regardless of sneaking.
+      # Setting this to true hides only sneaking players - saves CPU and preserves nametags.
+      only_sneaking: false
+      # List of blocks that players will not be hidden behind.
+      ignored_blocks:
+        - "barrier"
+        - "anvil"
+        - "air"
+        - "glass"
+        - "pane"
+        - "water"
+        - "bubble_column"
+        - "leaves"
+        - "fence"
+        - "trapdoor"
+        - "door"
+        - "lily_pad"
+        - "web"
+        - "ladder"
+        - "iron_bars"
+        - "bell"
+        - "slime_block"
+        - "honey_block"
+
+      # List of worlds where this module will be completely disabled.
+      disabled_worlds:
+        - ""
 
     # Shuffles inventory items while moving, breaking AutoTotem and InvWalk features in cheats.
     inventory: true

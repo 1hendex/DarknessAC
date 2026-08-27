@@ -117,6 +117,9 @@ Aim:
   # Should we enable this module?
   w: true
 
+  # Should we enable this module?
+  x: true
+
   # List of possible setback types:
   # INVENTORY_CLOSE, ELYTRA_CLOSE, NCP, DARKNESS,
   # CANCEL_ATTACK, GRIM, FOOD, DAMAGE_REDUCE, NONE
@@ -266,14 +269,8 @@ KillAura:
   # Should we enable this module?
   c: true
 
-  # KillAura D Module
-  d:
-
-    # Should we enable this module?
-    enabled: true
-    # At what distance should the player be for the check?
-    min_distance: 0.7
-    combat_time: 10
+  # Should we enable this module?
+  d: true
 
   # Should we enable this module?
   e: true
@@ -321,9 +318,6 @@ KillAura:
 
   # Should we enable this module?
   q: true
-
-  # Should we enable this module?
-  r: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 2
@@ -384,17 +378,13 @@ AutoAction:
   # Should we enable this module? ( AutoBlock )
   l: true
 
-  # AutoAction M Module ( AutoBow )
+  # AutoAction M Module ( PerfectDelay )
   m:
 
     # Should we enable this module?
     enabled: true
-    # Tolerance in ticks around the full-charge threshold to count a release as "exact"
-    exact_window: 0.5
-    # How many perfect-timing releases in a row are allowed before it flags
-    max_exact_hits: 3
-    setback_type: NONE
-    setback_vl: -1
+    # Допуск в тиках вокруг порога полной зарядки, чтобы засчитать отпускание как "точное"
+    delta: 0.5
 
   # Should we enable this module? ( AutoRespawn )
   n: true
@@ -414,6 +404,24 @@ AutoAction:
     max_switch_delay: 75
     # How many rapid returns between two slots are allowed before flagging.
     max_rapid_returns: 6
+
+  # Should we enable this module? ( AutoSign )
+  r: true
+
+  # Should we enable this module? ( AutoSign )
+  s: true
+
+  # Should we enable this module? ( AutoSwap )
+  t: true
+
+  # Should we enable this module? ( ClickPearl )
+  u: true
+
+  # Should we enable this module? ( ClickPearl )
+  v: true
+
+  # Should we enable this module? ( ClickPearl )
+  w: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -549,6 +557,12 @@ Protocol:
   # Should we enable this module?
   r: true
 
+  # Should we enable this module?
+  s: true
+
+  # Should we enable this module?
+  t: true
+
   setback_type: NONE
   setback_vl: -1
 
@@ -664,6 +678,21 @@ Sprint:
 
   # Should we enable this module?
   g: true
+
+  # Should we enable this module?
+  h: true
+
+  # Should we enable this module?
+  i: true
+
+  # Should we enable this module?
+  j: true
+
+  # Should we enable this module?
+  k: true
+
+  # Should we enable this module?
+  l: true
 
   setback_type: CANCEL_ATTACK
   setback_vl: 1
@@ -793,7 +822,7 @@ Inventory:
   # Should we enable this module?
   d: true
 
-  # Should we enable this module?
+  # Should we enable this module? (MultiAction)
   e: true
 
   # Should we enable this module?
@@ -818,11 +847,7 @@ Inventory:
     delta: 40
 
   # Inventory I Module (InventoryCleaner)
-  i:
-
-    # Should we enable this module?
-    enabled: true
-    setback_vl: 5
+  i: true
 
   # Inventory J Module
   j:
@@ -834,7 +859,7 @@ Inventory:
   # Should we enable this module?
   k: true
 
-  # Should we enable this module?
+  # Should we enable this module? (InvalidClose)
   l: true
 
   # Should we enable this module?
@@ -1185,7 +1210,7 @@ Interact:
   # Should we enable this module? (GhostHand)
   d: true
 
-  # Should we enable this module?
+  # Should we enable this module? (InvalidFace)
   e: true
 
   # Should we enable this module?
@@ -1194,7 +1219,7 @@ Interact:
   # Should we enable this module?
   g: true
 
-  # Should we enable this module?
+  # Should we enable this module? (NoSwingBreak)
   h: true
 
   # Should we enable this module? (BreakReach)
@@ -1215,7 +1240,7 @@ Interact:
   # Should we enable this module? (NoInteract)
   n: true
 
-  # Should we enable this module? (MissingEntityPacket)
+  # Should we enable this module? (NoEntityTrace)
   o: true
 
   setback_type: DARKNESS
@@ -1224,7 +1249,7 @@ Interact:
 ## Scaffold Check
 Scaffold:
 
-  # Should we enable this module?
+  # Should we enable this module? (Expand)
   a: true
 
   # Should we enable this module?
@@ -1233,7 +1258,7 @@ Scaffold:
   # Should we enable this module?
   c: true
 
-  # Should we enable this module?
+  # Should we enable this module? (MultiPlace)
   d: true
 
   # Should we enable this module?
@@ -1242,13 +1267,13 @@ Scaffold:
   # Should we enable this module? (AirPlace)
   f: true
 
-  # Should we enable this module?
+  # Should we enable this module? (Tower)
   g: true
 
-  # Should we enable this module?
+  # Should we enable this module? (FastBridging)
   h: true
 
-  # Should we enable this module?
+  # Should we enable this module? (SafeWalk)
   i: true
 
   # Should we enable this module?
@@ -1259,6 +1284,9 @@ Scaffold:
 
   # Should we enable this module?
   l: true
+
+  # Should we enable this module?
+  m: true
 
   setback_type: DARKNESS
   setback_vl: 1
@@ -1334,6 +1362,9 @@ Elytra:
 
   # Should we enable this module?
   l: true
+
+  # Should we enable this module?
+  m: true
 
   setback_type: DARKNESS
   setback_vl: 1
