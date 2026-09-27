@@ -453,6 +453,72 @@ InformationHider:
       disabled_worlds:
         - ""
 
+    # Conceals players behind walls and blocks on the packet level.
+    # Breaks ESP, Tracers, and Wallhack functionality in cheat clients.
+    #
+    # PERFORMANCE:
+    # - In enclosed spaces (caves, arenas), this module REDUCES network and server load
+    #   because it stops sending movement packets for hidden players.
+    # - With a HIGH concentration of players in one area, block visibility checks
+    #   can cause increased CPU load.
+    esp:
+
+      # Should players be hidden behind obstacles?
+      enabled: true
+      # Maximum distance (in blocks) at which player visibility is checked.
+      # Lower values reduce server load.
+      max_distance: 48.0
+      # Horizontal field of view (in degrees) used to decide whether a player is on screen.
+      # Increase this for ultrawide monitors; 180 disables sideways FOV misses.
+      max_fov: 165.0
+      # Safe radius (in blocks) around the player where everyone is always visible.
+      # Helps avoid rendering delay when a player suddenly peeks around a corner.
+      proximity_distance: 3.0
+      # Delay before hiding a player behind a wall (in ticks).
+      # Prevents model flickering around corners and smoothes out ping latency.
+      hide_delay_ticks: 5
+      # How often to recalculate player visibility (in ticks).
+      # Lower values decrease performance, higher values may cause
+      # players to remain hidden for too long and suddenly pop up.
+      interval_ticks: 2
+      # Should sound effects from players hidden behind walls be concealed?
+      hide_sounds: false
+      # Should glowing outlines be stripped from players behind walls?
+      hide_glowing: false
+      # Should players be hidden while the viewer has the blindness effect?
+      hide_players_when_blind: true
+      # Calculate line of sight for 3rd person camera perspectives (F5)?
+      # Prevents players from disappearing when peeking around corners.
+      calculate_third_person_modes: true
+      # By default, vanilla nametags are visible through walls unless sneaking.
+      # Setting this to false will hide all players behind walls regardless of sneaking.
+      # Setting this to true hides only sneaking players - saves CPU and preserves nametags.
+      only_sneaking: false
+      # List of blocks that players will not be hidden behind.
+      ignored_blocks:
+        - "barrier"
+        - "anvil"
+        - "air"
+        - "glass"
+        - "pane"
+        - "water"
+        - "bubble_column"
+        - "leaves"
+        - "fence"
+        - "trapdoor"
+        - "door"
+        - "lily_pad"
+        - "web"
+        - "ladder"
+        - "iron_bars"
+        - "bell"
+        - "slime_block"
+        - "honey_block"
+
+      # List of worlds where this module will be completely disabled.
+      disabled_worlds:
+        - ""
+
     # Shuffles inventory items while moving, breaking AutoTotem and InvWalk features in cheats.
     inventory: true
     # Momentarily hides all items when opening a container.
