@@ -1,0 +1,21 @@
+# IDE (JetBrains)
+.idea/
+*.iml
+*.iws
+
+# Compilation outputs
+out/
+build/
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db

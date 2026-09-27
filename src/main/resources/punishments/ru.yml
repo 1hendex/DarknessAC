@@ -267,18 +267,18 @@ Punishments:
   AutoBan:
     remove_violations_after: 300
     checks:
-      - 'KillAura (E)'
-      - 'KillAura (M)'
-      - 'KillAura (Q)'
-      - 'KillAura (R)'
-      - 'BadPackets (A)'
-      - 'BadPackets (D)'
-      - 'BadPackets (Y)'
-      - 'Sprint (D)'
-      - 'Elytra (C)'
-      - 'AutoClicker (F)'
-      - 'Inventory (A)'
-      - 'Inventory (J)'
+      - 'KillAura.e'
+      - 'KillAura.m'
+      - 'KillAura.q'
+      - 'KillAura.r'
+      - 'BadPackets.a'
+      - 'BadPackets.d'
+      - 'BadPackets.y'
+      - 'Sprint.d'
+      - 'Elytra.c'
+      - 'AutoClicker.f'
+      - 'Inventory.a'
+      - 'Inventory.j'
     commands:
       - '1:2 [alert]'
       - '1:2 [proxy]'
@@ -304,4 +304,4 @@ Punishments:
 punishments:
   checks_updates: true
   lang: ru
-  version: 3
+  version: 4

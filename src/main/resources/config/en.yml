@@ -52,7 +52,7 @@ client_settings:
       - "^quilt$"
       - "^fabric$"
       - "^Feather Fabric$"
-      - "(^lunarclient:v\\d+\\.\\d+\\.\\d+-\\d{4}$)|(^lunarclient:[a-z0-9]{7}/[\\w_/-]{3,32}$)"
+      - "(^lunarclient:v\\d+\\.\\d+\\.\\d+-\\d{4}(,fabric)?$)|(^lunarclient:[a-z0-9]{7}/[\\w_/-]{3,32}$)"
       - "^labymod$"
 
   # Client brands containing the following names will be blocked from joining the server
@@ -70,8 +70,8 @@ client_settings:
   whitelist_regex: "^[a-zA-Z0-9:_/, .-]+$"
   # Should we block cheat clients by suspicious signs (e.g., Delta Client and others)
   cheat_detector: true
-  # Darkness will block clients by brand name using a regex.
-  # If the client name matches this regex, it will not be able to join the server.
+  # Darkness will block clients by payload channel name using a regex.
+  # If the payload channel matches this regex, it will not be able to join the server.
   payload:
     - "Remix"
     - "CRYSTAL"
@@ -94,7 +94,7 @@ client_settings:
     - "WDL|CONTROL"
     - "Bspkrs Client"
 
-  # Darkness will blacklist specific Forge versions that include built-in Reach hacks (Forge 1.18.2 — 1.19.3).
+  # Darkness will blacklist specific Forge versions that include built-in Reach hacks (Forge 1.18.2 - 1.19.3).
   # Setting this to false will allow these clients to connect to the server.
   # Use at your own risk.
   disconnect_blacklisted_forge_versions: true
@@ -153,7 +153,7 @@ connection_settings:
   # If true, the server will stop sending world data (entity movement, blocks) to the lagging player.
   cancel_outbound_packets: false
 
-# Punishment command settings // Not recommended for use — will be removed soon
+# Punishment command settings // Not recommended for use - will be removed soon
 point_command:
 
   # Commands that will be executed under various conditions (e.g., violations)
@@ -310,12 +310,13 @@ InformationHider:
   # Hides data about players/mobs to block cheat clients from getting extra info.
   # Regular players won't notice, but cheats will suffer.
   parts:
-    # Spoofs health — players and mobs always show spoofed health
+    # Spoofs health - players and mobs always show spoofed health
     # Useful against health bars in mods and cheats
     health:
       # Specify the value Darkness should spoof for players from 0 to 20.
       # A value of 0 will break many KillAura hacks, but also breaks walking animations.
       # Not recommended if you don't want players to walk like they're "moonwalking".
+      # Set to -1 to completely disable this module
       value: 20
       # If enabled, a random value from 0 to 20 will be used.
       # Less noticeable to players and better preserves gameplay.
@@ -328,6 +329,8 @@ InformationHider:
     air: true
     # Hides the hunger level. Breaks AutoEat functions in cheat clients.
     saturation: true
+    # Hides absorption golden hearts from golden apples and status effects.
+    absorption: true
     # Hides the real ping in the tab list. Prevents certain bypasses in AntiBot modules.
     ping: true
     # Hides the game mode. Cheats will always see the player in Creative.
@@ -364,17 +367,91 @@ InformationHider:
     durability: true
     # Hides potion effects from others (prevents seeing Strength, Speed, etc.).
     potion: true
+    # Hides the potion type in hands, offhand, or arrows.
+    potion_items: true
     # Spams the cheat with spoofed effect packets, completely cluttering its PotionList with trash.
     end_effect: true
-    # Spawns invisible players around the user. Forces cheats to draw fake tracers and boxes at empty locations.
-    esp_tracer:
 
-      # Should fake invisible bots be created around the player?
+    # Modifies the server brand on Minecraft’s debug screen (F3).
+    # Useful for displaying custom messages or hiding your server software.
+    server_brand:
+      # Enable server brand spoofing?
       enabled: true
-      # Should fake bots be spawned in the tab list?
-      # If false, bots will only be visible in the world but won't appear in the player list.
-      # Legitimate players won't notice the bots at all, while cheats will still see ESP lines.
-      spawn_tab: true
+      # Brand name visible to clients upon connection and on the F3 screen
+      brand: "Server"
+
+    # Conceals players behind walls and blocks on the packet level.
+    # Breaks ESP, Tracers, and Wallhack functionality in cheat clients.
+    #
+    # PERFORMANCE:
+    # - In enclosed spaces (caves, arenas), this module REDUCES network and server load
+    #   because it stops sending movement packets for hidden players.
+    # - With a HIGH concentration of players in one area, block visibility checks
+    #   can cause increased CPU load.
+    esp:
+
+      # Should players be hidden behind obstacles?
+      enabled: true
+      # Maximum distance (in blocks) at which player visibility is checked.
+      # Lower values reduce server load.
+      max_distance: 48.0
+      # Horizontal field of view (in degrees) used to decide whether a player is on screen.
+      # Increase this for ultrawide monitors; 180 disables sideways FOV misses.
+      max_fov: 165.0
+      # Safe radius (in blocks) around the player where everyone is always visible.
+      # Helps avoid rendering delay when a player suddenly peeks around a corner.
+      proximity_distance: 3.0
+      # Delay before hiding a player behind a wall (in ticks).
+      # Prevents model flickering around corners and smoothes out ping latency.
+      hide_delay_ticks: 5
+      # How often to recalculate player visibility (in ticks).
+      # Lower values decrease performance, higher values may cause
+      # players to remain hidden for too long and suddenly pop up.
+      interval_ticks: 2
+      # Should sound effects from players hidden behind walls be concealed?
+      hide_sounds: false
+      # Should glowing outlines be stripped from players behind walls?
+      hide_glowing: false
+      # Controls hiding behavior related to potion effects.
+      effects:
+        # Should players be hidden while the viewer has the blindness?
+        blindness: true
+        # Should players be hidden while the viewer has the darkness?
+        darkness: true
+        # Should players with invisibility effect be hidden from ESP when they have no held items and no armor?
+        # Potion swirl particles are still shown so vanilla visibility mechanics remain intact.
+        invisible: true
+      # Calculate line of sight for 3rd person camera perspectives (F5)?
+      # Prevents players from disappearing when peeking around corners.
+      calculate_third_person_modes: true
+      # By default, vanilla nametags are visible through walls unless sneaking.
+      # Setting this to false will hide all players behind walls regardless of sneaking.
+      # Setting this to true hides only sneaking players - saves CPU and preserves nametags.
+      only_sneaking: false
+      # List of blocks that players will not be hidden behind.
+      ignored_blocks:
+        - "barrier"
+        - "anvil"
+        - "air"
+        - "glass"
+        - "pane"
+        - "water"
+        - "bubble_column"
+        - "leaves"
+        - "fence"
+        - "trapdoor"
+        - "door"
+        - "lily_pad"
+        - "web"
+        - "ladder"
+        - "iron_bars"
+        - "bell"
+        - "slime_block"
+        - "honey_block"
+
+      # List of worlds where this module will be completely disabled.
+      disabled_worlds:
+        - ""
 
     # Shuffles inventory items while moving, breaking AutoTotem and InvWalk features in cheats.
     inventory: true
@@ -382,29 +459,26 @@ InformationHider:
     # Breaks ChestStealer logic by tricking the cheat into thinking it's closing an empty chest.
     chest_loot: true
 
-    # Spams the cheat with fake totem explosion packets.
-    # This breaks the totem pop notifications in cheats.
+    # Spams the cheat with fake totem pop packets.
+    # This breaks totem pop notifications in cheat clients.
     totem:
 
-      # Should fake bots be created to break TotemPopCounter?
+      # Whether to break TotemPopCounter in cheats.
       enabled: true
+      # Module mode:
+      # 1. duplicate - sends duplicate pop packets for the same player.
+      # 2. bot - spawns fake players underground at the moment of the pop.
+      mode: duplicate
+      # The number of fake packets or bots created per totem pop.
+      # Higher values create more screen clutter for the cheater and break software detection logic.
+      amount: 1
       # Should fake bots be spawned in the tab list?
-      # If false, bots will appear only in the world underground, not interfering with legitimate players.
-      # Cheats will see totem explosions, but the bots won't clutter the tab list.
+      # If set to false, bots will only spawn in the world without disturbing legit players.
+      # Cheats will still detect totem pops, but bots won't clutter the tab list.
+      # Only works if mode is set to BOT.
       spawn_tab: true
-      # Module operation mode:
-      # 1. always - constant random spam with fake totems during combat.
-      # 2. on_totem - spoof triggers ONLY when a real player nearby pops a totem.
-      mode: on_totem
-      # Specify the chance of creating a fake totem for cheats from 1 to 100.
-      # It is not recommended to set values >= 25.0, as this will create extra load and may cause lag.
-      # Only works if mode is set to ALWAYS.
-      totem_chance: 6.5
-      # The number of fake bots that will simultaneously activate a totem underground.
-      # The higher the value, the more it will spam the cheater's screen and break the detection logic in the software.
-      # Only works if mode is set to ON_TOTEM.
-      bots: 5
-      # Specify how many blocks below the player the fake bot with the totem will appear.
+      # Specifies how many blocks below the player the fake totem bot will spawn.
+      # Only works if mode is set to BOT.
       height: 15
 
     # This module creates fake staff members in the tab list to hide real moderators from cheats.
@@ -509,4 +583,4 @@ proxy:
 config:
   checks_updates: true
   lang: en
-  version: 3
+  version: 4
